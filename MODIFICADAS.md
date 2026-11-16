@@ -345,14 +345,6 @@ public class PlayerConnection
 {
     public void UpdateConnectionStatus(bool isConnected)
     {
-        if (isConnected)
-        {
-            SendWelcomeMessage();
-        }
-    }
-
-    private void SendWelcomeMessage()
-    {
     }
 }
 ```
@@ -362,14 +354,6 @@ public class PlayerConnection
 public class PlayerConnection
 {
     public void UpdateConnectionStatus(bool connected)
-    {
-        if (connected)
-        {
-            SendWelcomeMessage();
-        }
-    }
-
-    private void SendWelcomeMessage()
     {
     }
 }
