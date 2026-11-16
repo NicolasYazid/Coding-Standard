@@ -166,3 +166,297 @@ public class DeadwoodCalculator
     }
 }
 ```
+
+---
+
+## 2.1.2 — Variables de instancia
+
+### Antes
+Los campos privados a nivel de clase (variables de instancia) deben llevar el prefijo guion bajo (_) seguido del formato camelCase, para distinguirlas visualmente de las variables locales dentro de los métodos.
+
+**Con estándar**
+```csharp
+private int _currentHealth;
+```
+
+**Sin estándar**
+```csharp
+private int currentHealth;
+```
+
+### Después
+Las variables de instancia (campos de la clase que no son `static` ni `const`) que sean privadas o internas se escriben con el prefijo guion bajo (`_`) seguido de camelCase, para distinguirlas de las variables locales y los parámetros (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class GameTable
+{
+    private int _roundNumber;
+
+    public void StartNextRound()
+    {
+        _roundNumber++;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameTable
+{
+    private int roundNumber;
+
+    public void StartNextRound()
+    {
+        roundNumber++;
+    }
+}
+```
+
+---
+
+## 2.1.3 — Contadores de bucle
+
+### Antes
+El uso de variables de un solo carácter (como i, j, k) está permitido única y exclusivamente para contadores de bucles, siempre y cuando el bloque de código del bucle no supere las 3 líneas.
+
+**Con estándar**
+```csharp
+for (int i = 0; i < 3; i++)
+{
+    SpawnEnemy();
+}
+```
+
+**Sin estándar**
+```csharp
+// Variable de un solo carácter utilizada fuera de un bucle corto
+int c = 10;
+```
+
+### Después
+Se permite un nombre de una sola letra únicamente para el contador de un bucle, siempre que el cuerpo del bucle no supere las 3 líneas, las letras disponibles son (i, j, k), si se necesita otra letra más entonces el código debe ser refactorizado. Microsoft pide evitar los nombres de una sola letra, excepto en contadores de bucles simples (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class CardDealer
+{
+    private const int InitialHandSize = 10;
+
+    public void DealInitialHand(List<Card> deckCards, List<Card> handCards)
+    {
+        for (int i = 0; i < InitialHandSize; i++)
+        {
+            handCards.Add(deckCards[i]);
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class CardDealer
+{
+    private const int InitialHandSize = 10;
+    private int _dealtCardsCount;
+
+    public void DealInitialHand(List<Card> deckCards, List<Card> handCards)
+    {
+        for (int i = 0; i < InitialHandSize; i++)
+        {
+            Card dealtCard = deckCards[i];
+            dealtCard.IsFaceUp = false;
+            handCards.Add(dealtCard);
+            _dealtCardsCount++;
+        }
+    }
+}
+```
+
+---
+
+## 2.1.4 — Colecciones
+
+### Antes
+Las variables que representan colecciones deben nombrarse siempre en plural para indicar la contención de múltiples valores.
+
+**Con estándar**
+```csharp
+List<string> collectedItems;
+```
+
+**Sin estándar**
+```csharp
+List<string> collectedItem;
+```
+
+### Después
+Toda variable, parámetro, campo o propiedad que guarde una colección se nombra en plural, describiendo los elementos que contiene. Queda prohibido nombrarla en singular o tener los sufijos "List" o "Collection". En caso de sustantivos incontables o sin plural, se deben usar términos colectivos descriptivos (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class PlayerHand
+{
+    private readonly List<Card> _heldCards = new List<Card>();
+
+    public void AddDrawnCard(Card drawnCard)
+    {
+        _heldCards.Add(drawnCard);
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerHand
+{
+    private readonly List<Card> _heldCardList = new List<Card>();
+
+    public void AddDrawnCard(Card drawnCard)
+    {
+        _heldCardList.Add(drawnCard);
+    }
+}
+```
+
+---
+
+## 2.1.5 — Booleanos con prefijo "is" (Estado)
+
+### Antes
+El prefijo is debe utilizarse para variables booleanas que describan un estado físico, lógico o una condición actual en la que se encuentra una entidad o sistema.
+
+**Con estándar**
+```csharp
+bool isPoisoned;
+```
+
+**Sin estándar**
+```csharp
+bool poisoned;
+```
+
+### Después
+El prefijo is debe utilizarse para variables booleanas que describan un estado físico, lógico o una condición actual en la que se encuentra una entidad o sistema (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class MatchSession
+{
+    private bool _isPaused;
+
+    public void PauseMatch()
+    {
+        _isPaused = true;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchSession
+{
+    private bool _paused;
+
+    public void PauseMatch()
+    {
+        _paused = true;
+    }
+}
+```
+
+---
+
+## 2.1.6 — Booleanos con prefijo "has" (Posesión o estado completado)
+
+### Antes
+El prefijo has debe utilizarse para variables booleanas que indiquen la posesión de un objeto, atributo, o bien, que un evento ya ha ocurrido o finalizado.
+
+**Con estándar**
+```csharp
+bool hasBossKey;
+```
+
+**Sin estándar**
+```csharp
+bool bossKey;
+```
+
+### Después
+El prefijo has debe utilizarse para variables booleanas que indiquen la posesión de un objeto, atributo, o bien, que un evento ya ha ocurrido o finalizado (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class PlayerTurn
+{
+    private bool _hasDrawnCard;
+
+    public void DrawCard()
+    {
+        _hasDrawnCard = true;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerTurn
+{
+    private bool _drawnCard;
+
+    public void DrawCard()
+    {
+        _drawnCard = true;
+    }
+}
+```
+
+---
+
+## 2.1.7 — Booleanos con prefijo "can" (Capacidad o permiso)
+
+### Antes
+El prefijo can debe utilizarse para variables booleanas que determinen si una entidad tiene la capacidad, el permiso o los requisitos cumplidos para realizar una acción específica.
+
+**Con estándar**
+```csharp
+bool canDoubleJump;
+```
+
+**Sin estándar**
+```csharp
+bool doubleJump;
+```
+
+### Después
+El prefijo can debe utilizarse para variables booleanas que determinen si una entidad tiene la capacidad, el permiso o los requisitos cumplidos para realizar una acción específica (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class KnockValidator
+{
+    private const int MaxKnockDeadwood = 10;
+
+    public bool CheckKnockAvailability(int deadwoodPoints)
+    {
+        bool canKnock = deadwoodPoints <= MaxKnockDeadwood;
+
+        return canKnock;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class KnockValidator
+{
+    private const int MaxKnockDeadwood = 10;
+
+    public bool CheckKnockAvailability(int deadwoodPoints)
+    {
+        bool knock = deadwoodPoints <= MaxKnockDeadwood;
+
+        return knock;
+    }
+}
+```

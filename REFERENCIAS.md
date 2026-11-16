@@ -37,3 +37,39 @@
 
 - **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
   **Qué respalda:** pide camelCase para los argumentos de métodos y las variables locales, y evitar abreviaturas o acrónimos en los nombres, excepto los ampliamente conocidos y aceptados.
+
+### 2.1.2 — Variables de instancia
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+  **Qué respalda:** indica que los campos de instancia privados e internos que no son constantes empiezan con guion bajo (`_`) y usan camelCase.
+
+### 2.1.3 — Contadores de bucle
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+  **Qué respalda:** pide evitar los nombres de una sola letra, excepto en contadores de bucles simples.
+
+### 2.1.4 — Colecciones
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
+  **Qué respalda:** pide nombrar las colecciones con una frase en plural que describa sus elementos, en lugar de una frase en singular seguida de "List" o "Collection".
+
+### 2.1.5 — Booleanos con prefijo "is" (estado)
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
+  **Qué respalda:** pide nombrar los booleanos con una frase afirmativa y permite los prefijos "Is", "Can" o "Has" cuando aportan significado.
+
+### 2.1.6 — Booleanos con prefijo "has" (posesión o estado completado)
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
+  **Qué respalda:** pide nombrar los booleanos con una frase afirmativa y permite los prefijos "Is", "Can" o "Has" cuando aportan significado.
+
+### 2.1.7 — Booleanos con prefijo "can" (capacidad o permiso)
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
+  **Qué respalda:** pide nombrar los booleanos con una frase afirmativa y permite los prefijos "Is", "Can" o "Has" cuando aportan significado.

@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 1 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 7 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **3** | **133** |
+| | **Total** | **9** | **133** |
 
 ---
 
@@ -60,12 +60,12 @@
 
 ### 2.1 Variables
 - [x] **2.1.1** Formato de variables locales
-- [ ] **2.1.2** Variables de instancia ✏️
-- [ ] **2.1.3** Contadores de bucle ✏️
-- [ ] **2.1.4** Colecciones ✏️
-- [ ] **2.1.5** Booleanos con prefijo `is` (estado)
-- [ ] **2.1.6** Booleanos con prefijo `has` (posesión o estado completado)
-- [ ] **2.1.7** Booleanos con prefijo `can` (capacidad o permiso)
+- [x] **2.1.2** Variables de instancia
+- [x] **2.1.3** Contadores de bucle
+- [x] **2.1.4** Colecciones
+- [x] **2.1.5** Booleanos con prefijo `is` (estado)
+- [x] **2.1.6** Booleanos con prefijo `has` (posesión o estado completado)
+- [x] **2.1.7** Booleanos con prefijo `can` (capacidad o permiso)
 - [ ] **2.1.8** Declaración única
 - [ ] **2.1.9** Prevención de sombreado de datos
 - [ ] **2.1.10** Exención de abreviatura para excepciones (`ex`)
@@ -410,3 +410,7 @@
 | 2026-11-15 | 1.1.3 | **Eliminada.** Sin fuente de C# que la respalde. |
 | 2026-11-15 | 2.1.1 | **Aprobada.** Incluye parámetros; prohíbe abreviaturas salvo las ampliamente conocidas y aceptadas. |
 | 2026-11-15 | 2.1.2, 2.1.3, 2.1.4 | Pasan a corrección ✏️. |
+| 2026-11-15 | 2.1.2 | **Aprobada.** Solo variables de instancia privadas o internas (no `static` ni `const`); con cita. |
+| 2026-11-15 | 2.1.3 | **Aprobada.** Letras limitadas a i, j, k; con cita. |
+| 2026-11-15 | 2.1.4 | **Aprobada.** Cubre variables, parámetros, campos y propiedades; prohíbe sufijos "List" y "Collection"; con cita. |
+| 2026-11-15 | 2.1.5, 2.1.6, 2.1.7 | **Aprobadas.** Mismo texto con cita agregada; ejemplos corregidos (tema Gin Rummy y estructura compilable). |
