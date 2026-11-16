@@ -3,6 +3,7 @@
 > **Índice de control del estándar definitivo.**
 > Una casilla marcada (☑) significa que la regla está **aprobada como definitiva**.
 > Este archivo solo lista las reglas; su contenido completo vive en el documento del estándar.
+> Las fuentes de cada regla aprobada están en [REFERENCIAS.md](REFERENCIAS.md).
 
 ---
 
@@ -10,7 +11,7 @@
 
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
-| 1 | [Idioma](#1-idioma) | 0 | 3 |
+| 1 | [Idioma](#1-idioma) | 1 | 3 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 0 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
@@ -26,7 +27,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **0** | **134** |
+| | **Total** | **1** | **134** |
 
 ---
 
@@ -49,16 +50,16 @@
 ## 1. Idioma
 
 ### 1.1 Reglas sobre el idioma
-- [ ] **1.1.1** Prohibición de identificadores en español ✏️
-- [ ] **1.1.2** Idioma de los comentarios y la documentación
-- [ ] **1.1.3** Idioma de los mensajes de error (logs y excepciones)
+- [x] **1.1.1** Identificadores en inglés
+- [ ] **1.1.2** Idioma de los comentarios y la documentación ✏️
+- [ ] **1.1.3** Idioma de los mensajes de error (logs y excepciones) ✏️
 
 ---
 
 ## 2. Reglas de nombrado
 
 ### 2.1 Variables
-- [ ] **2.1.1** Formato de variables locales
+- [ ] **2.1.1** Formato de variables locales ✏️
 - [ ] **2.1.2** Variables de instancia
 - [ ] **2.1.3** Contadores de bucle
 - [ ] **2.1.4** Colecciones
@@ -403,3 +404,5 @@ _Ninguna por ahora._
 |-------|-------|--------|
 | 2026-11-15 | — | Creación del índice a partir del estándar base (118 páginas). Ninguna regla aprobada. |
 | 2026-11-15 | 1.1.1 | Pasa a corrección ✏️. |
+| 2026-11-15 | 1.1.1 | **Aprobada.** Título cambiado a "Identificadores en inglés"; ahora cubre todo identificador (tipo, miembro, variable o namespace). |
+| 2026-11-15 | 1.1.2, 1.1.3, 2.1.1 | Pasan a corrección ✏️. |
