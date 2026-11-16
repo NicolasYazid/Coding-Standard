@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 10 | 44 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 11 | 44 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **12** | **132** |
+| | **Total** | **13** | **132** |
 
 ---
 
@@ -72,7 +72,7 @@
 - [x] **2.1.11** Prefijo estático `s_`
 
 ### 2.2 Propiedades
-- [ ] **2.2.1** Nomenclatura de propiedades
+- [x] **2.2.1** Nomenclatura de propiedades
 - [ ] **2.2.2** Plantilla vacía sin título ni contenido 🗑️
 - [ ] **2.2.3** Plantilla vacía sin título ni contenido 🗑️
 - [ ] **2.2.4** Declaración correcta de propiedades
@@ -421,3 +421,4 @@
 | 2026-11-15 | 2.1.9 | **Eliminada.** Imposible de violar en C# 7.3 con las reglas de nombrado aprobadas. |
 | 2026-11-15 | 2.1.10 | **Aprobada.** Fija `ex` como único nombre de la excepción en `catch`; con cita. |
 | 2026-11-15 | 2.1.11 | **Aprobada e invertida.** Título cambiado a "Prefijo estático `s_`": ahora exige `s_` en campos `static` privados o internos, siguiendo a Microsoft. |
+| 2026-11-16 | 2.2.1 | **Aprobada.** Mismo texto con cita; ejemplos con tema Gin Rummy. |

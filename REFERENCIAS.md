@@ -91,3 +91,9 @@
 
 - **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
   **Qué respalda:** indica que los campos `static` privados o internos usan el prefijo `s_`; aclara que no es el comportamiento predeterminado de Visual Studio, pero se puede configurar en editorconfig.
+
+### 2.2.1 — Nomenclatura de propiedades
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Capitalization conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
+  **Qué respalda:** pide PascalCase para todos los nombres de miembros públicos, tipos y espacios de nombres; su tabla de ejemplos incluye las propiedades.

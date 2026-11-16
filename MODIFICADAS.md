@@ -600,3 +600,45 @@ public class MatchLobby
     private static int _activeMatchesCount;
 }
 ```
+
+---
+
+## 2.2.1 — Nomenclatura de propiedades
+
+### Antes
+Los nombres de las propiedades deben escribirse en PascalCase.
+
+**Con estándar**
+```csharp
+public class PlayerStats
+{
+    public int CurrentScore { get; private set; }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerStats
+{
+    public int currentScore { get; private set; }
+}
+```
+
+### Después
+Los nombres de las propiedades deben escribirse en PascalCase (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class GameTable
+{
+    public int CurrentRound { get; private set; }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameTable
+{
+    public int currentRound { get; private set; }
+}
+```
