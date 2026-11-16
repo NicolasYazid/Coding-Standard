@@ -1,0 +1,405 @@
+# 📘 Estándar de codificación C# — Gin Rummy
+
+> **Índice de control del estándar definitivo.**
+> Una casilla marcada (☑) significa que la regla está **aprobada como definitiva**.
+> Este archivo solo lista las reglas; su contenido completo vive en el documento del estándar.
+
+---
+
+## 📊 Progreso
+
+| # | Sección | Aprobadas | Total |
+|---|---------|:---------:|:-----:|
+| 1 | [Idioma](#1-idioma) | 0 | 3 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 0 | 45 |
+| 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
+| 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
+| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
+| 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
+| 8 | [Comentarios](#8-comentarios) | 0 | 12 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 0 | 20 |
+| 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
+| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
+| 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
+| 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
+| 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
+| 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
+| 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
+| | **Total** | **0** | **134** |
+
+---
+
+## 🔖 Leyenda
+
+| Marca | Significado |
+|:-----:|-------------|
+| ☑ | Regla aprobada (definitiva) |
+| ☐ | Regla pendiente de revisión |
+| 🆕 | Regla nueva (no existía en el estándar base) |
+| ✏️ | Regla en corrección |
+| 🗑️ | Regla propuesta para eliminar |
+| 🔗 | Depende de otra regla (se indica cuál) |
+| 🕳️ | Subsección sin reglas: hay que crearlas o eliminar la subsección |
+
+**IDs:** cada regla tiene un número fijo (`sección.subsección.regla`). Si una regla se elimina, pasa a la sección [Reglas eliminadas](#-reglas-eliminadas) y su número no se reutiliza.
+
+---
+
+## 1. Idioma
+
+### 1.1 Reglas sobre el idioma
+- [ ] **1.1.1** Prohibición de identificadores en español ✏️
+- [ ] **1.1.2** Idioma de los comentarios y la documentación
+- [ ] **1.1.3** Idioma de los mensajes de error (logs y excepciones)
+
+---
+
+## 2. Reglas de nombrado
+
+### 2.1 Variables
+- [ ] **2.1.1** Formato de variables locales
+- [ ] **2.1.2** Variables de instancia
+- [ ] **2.1.3** Contadores de bucle
+- [ ] **2.1.4** Colecciones
+- [ ] **2.1.5** Booleanos con prefijo `is` (estado)
+- [ ] **2.1.6** Booleanos con prefijo `has` (posesión o estado completado)
+- [ ] **2.1.7** Booleanos con prefijo `can` (capacidad o permiso)
+- [ ] **2.1.8** Declaración única
+- [ ] **2.1.9** Prevención de sombreado de datos
+- [ ] **2.1.10** Exención de abreviatura para excepciones (`ex`)
+- [ ] **2.1.11** Prohibición del prefijo estático `s_`
+
+### 2.2 Propiedades
+- [ ] **2.2.1** Nomenclatura de propiedades
+- [ ] **2.2.2** Plantilla vacía sin título ni contenido 🗑️
+- [ ] **2.2.3** Plantilla vacía sin título ni contenido 🗑️
+- [ ] **2.2.4** Declaración correcta de propiedades
+- [ ] **2.2.5** Modificación de valor en propiedades
+
+### 2.3 Componentes de interfaz gráfica
+- 🕳️ Sin reglas
+
+### 2.4 Identificadores de interfaz
+- 🕳️ Sin reglas
+
+### 2.5 Constantes
+- [ ] **2.5.1** Nomenclatura (PascalCase)
+- [ ] **2.5.2** Inmutabilidad en tiempo de compilación (`const`)
+- [ ] **2.5.3** Inmutabilidad en tiempo de ejecución (`static readonly`)
+
+### 2.6 Métodos
+- [ ] **2.6.1** Nomenclatura (PascalCase)
+- [ ] **2.6.2** Verbos o frases verbales
+- [ ] **2.6.3** Límite de parámetros
+
+### 2.7 Manejadores de eventos (prefijos On, Handle, Toggle)
+- [ ] **2.7.1** Prefijo `On` (reacción a eventos del sistema)
+- [ ] **2.7.2** Prefijo `Handle` (procesamiento de entradas)
+- [ ] **2.7.3** Prefijo `Toggle` (alternancia de estados booleanos)
+- [ ] **2.7.4** Descriptores directos (sin prefijo)
+- [ ] **2.7.5** Límite de parámetros en eventos
+
+### 2.8 Métodos de prueba unitaria
+- [ ] **2.8.1** Estructura de nomenclatura (prefijo `Test`)
+- [ ] **2.8.2** Nombres descriptivos vs. genéricos
+- [ ] **2.8.3** Cobertura de lógica central y flujos existentes
+- [ ] **2.8.4** Atributo de prueba y exenciones
+
+### 2.9 Clases
+- [ ] **2.9.1** Nomenclatura base (PascalCase)
+- [ ] **2.9.2** Prohibición de prefijos especiales
+- [ ] **2.9.3** Acrónimo arquitectónico (`Dao`)
+- [ ] **2.9.4** Acrónimo arquitectónico (`Dto`)
+
+### 2.10 Clases controladoras
+- [ ] **2.10.1** Sufijo obligatorio y nomenclatura completa
+- [ ] **2.10.2** Eliminación de prefijos tecnológicos
+
+### 2.11 Interfaces
+- [ ] **2.11.1** Prefijo obligatorio y convención base (PascalCase)
+- [ ] **2.11.2** Prohibición de redundancias
+
+### 2.12 Sufijos por responsabilidad
+- [ ] **2.12.1** Acceso a datos (`Dao`)
+- [ ] **2.12.2** Servicios lógicos (`Service`)
+- [ ] **2.12.3** Procesamiento de eventos (`Handler`)
+- [ ] **2.12.4** Validación de estados (`Validator`)
+- [ ] **2.12.5** Lógica auxiliar (`Common`)
+- [ ] **2.12.6** Excepciones personalizadas (sufijo `Exception`)
+
+---
+
+## 3. Organización del proyecto
+
+### 3.1 Capa de acceso a datos / Persistencia
+- 🕳️ Sin reglas
+
+### 3.2 Contratos e implementaciones DAO
+- 🕳️ Sin reglas
+
+### 3.3 Capa lógica (Core del videojuego)
+- 🕳️ Sin reglas
+
+### 3.4 Capa GUI (Interfaz visual del juego)
+- 🕳️ Sin reglas
+
+### 3.5 Separación Vistas / Controladores
+- 🕳️ Sin reglas
+
+### 3.6 Control de versiones
+- 🕳️ Sin reglas
+
+---
+
+## 4. Estilo de código
+
+### 4.1 Formato y estructura general
+- [ ] **4.1.1** Indentación base (4 espacios)
+- [ ] **4.1.2** Límite de columna (140 caracteres) y ruptura de línea
+- [ ] **4.1.3** Indentación en líneas continuadas
+
+### 4.2 Uso de espacios en blanco
+- [ ] **4.2.1** Separación vertical entre métodos y constructores
+- [ ] **4.2.2** Agrupación vertical de propiedades simples (auto-propiedades)
+- [ ] **4.2.3** Separación vertical de propiedades complejas
+- [ ] **4.2.4** Agrupación lógica y prohibición de múltiples líneas en blanco
+- [ ] **4.2.5** Espacios en operadores binarios
+- [ ] **4.2.6** Espacios en estructuras de control
+- [ ] **4.2.7** Ausencia de espacios en métodos
+- [ ] **4.2.8** Espaciado en delimitadores de listas (comas)
+
+### 4.3 Organización del código en el archivo
+- [ ] **4.3.1** Orden estructural del archivo
+- [ ] **4.3.2** Agrupación y orden de directivas `using`
+- [ ] **4.3.3** Declaración única por archivo
+
+### 4.4 Orden de miembros en la clase
+- [ ] **4.4.1** Jerarquía estructural de miembros
+- [ ] **4.4.2** Orden de métodos por visibilidad
+
+---
+
+## 5. Prácticas de programación
+
+### 5.1 Un único return
+- [ ] **5.1.1** Punto único de retorno en métodos con valor de retorno
+
+### 5.2 Prevención de números mágicos
+- [ ] **5.2.1** Prevención de números mágicos
+
+### 5.3 Número máximo de operadores en expresiones
+- [ ] **5.3.1** Número máximo de operaciones en expresiones
+
+### 5.4 Complejidad ciclomática
+- [ ] **5.4.1** Complejidad ciclomática
+
+### 5.5 Manejo de nulos
+- [ ] **5.5.1** Prohibición de retorno nulo en colecciones
+
+### 5.6 Uso de expresiones lambda
+- [ ] **5.6.1** Regla sin definir (sin título ni contenido) ✏️
+
+---
+
+## 6. Manejo de errores y excepciones
+
+### 6.1 Uso de bloques try-catch y manejo de excepciones específicas
+- [ ] **6.1.1** Captura de excepciones específicas
+- [ ] **6.1.2** Prohibición de bloques `catch` vacíos
+- [ ] **6.1.3** Priorización de excepciones del sistema 🗑️ 🔗 duplicada con 6.4.2
+
+### 6.2 Orden jerárquico en los bloques catch
+- [ ] **6.2.1** Orden de mayor a menor especificidad
+- [ ] **6.2.2** Jerarquía con excepciones personalizadas
+
+### 6.3 Propagación y empaquetamiento de excepciones
+- [ ] **6.3.1** Propagación directa (`throw;`)
+- [ ] **6.3.2** Empaquetamiento de excepciones (`InnerException`)
+
+### 6.4 Jerarquía de excepciones personalizadas del videojuego
+- [ ] **6.4.1** Creación de la excepción base del dominio
+- [ ] **6.4.2** Priorización de excepciones del sistema 🔗 duplicada con 6.1.3
+- [ ] **6.4.3** Herencia de excepciones específicas (jerarquía de un solo nivel)
+
+### 6.5 Uso obligatorio de la sentencia using
+- [ ] **6.5.1** Prohibición de liberación manual (`Dispose`)
+- [ ] **6.5.2** Preferencia por la declaración simplificada (C# 8.0+)
+- [ ] **6.5.3** Uso del bloque tradicional para liberación anticipada
+
+---
+
+## 7. Manejo de logs
+
+### 7.1 Prohibición de la salida estándar
+- [ ] **7.1.1** Prohibición de consola para eventos operativos e informativos
+- [ ] **7.1.2** Prohibición de volcado de excepciones en consola
+
+### 7.2 Declaración e inicialización del logger (`ILogger`)
+- [ ] **7.2.1** Declaración de la variable de instancia (`ILogger<T>`)
+- [ ] **7.2.2** Inicialización mediante inyección de dependencias
+
+### 7.3 Categorización y niveles de log
+- [ ] **7.3.1** Nivel Trace
+- [ ] **7.3.2** Nivel Debug
+- [ ] **7.3.3** Nivel Info
+- [ ] **7.3.4** Nivel Warning
+- [ ] **7.3.5** Nivel Error
+- [ ] **7.3.6** Nivel Fatal (Critical)
+
+### 7.4 Marcadores de posición
+- [ ] **7.4.1** Estructura obligatoria de marcadores de posición
+- [ ] **7.4.2** Nomenclatura de los marcadores de posición (PascalCase)
+
+---
+
+## 8. Comentarios
+
+### 8.1 Reglas individuales para los comentarios
+- [ ] **8.1.1** Comentarios de una línea (`//`): formato y ubicación
+- [ ] **8.1.2** Comentarios en bloque (`/* */`)
+- [ ] **8.1.3** Justificación lógica del comentario (el "por qué", no el "qué")
+- [ ] **8.1.4** Prohibición de comentarios redundantes
+- [ ] **8.1.5** Documentación XML (`///`): cuándo se usa
+- [ ] **8.1.6** Documentación XML (`///`): etiquetas obligatorias
+- [ ] **8.1.7** Documentación XML: formato válido
+- [ ] **8.1.8** Comentario especial `TODO`
+- [ ] **8.1.9** Comentario especial `FIXME`
+- [ ] **8.1.10** Ciclo de vida de `TODO` y `FIXME`
+- [ ] **8.1.11** Prohibición de código muerto comentado
+- [ ] **8.1.12** Balance y densidad de comentarios
+
+---
+
+## 9. Estructuras de control
+
+### 9.1 Uso de llaves
+- [ ] **9.1.1** Estilo de llaves (Allman)
+- [ ] **9.1.2** Obligatoriedad de las llaves
+- [ ] **9.1.3** Interior del bloque
+
+### 9.2 Sentencias condicionales (`if`, `else`)
+- [ ] **9.2.1** Agrupación de las cláusulas
+- [ ] **9.2.2** Prohibición de comparar con literales booleanos
+- [ ] **9.2.3** Cláusula de guarda 🔗 5.1.1
+
+### 9.3 Bucles (`for`, `while`, `do-while`)
+- [ ] **9.3.1** Ámbito de la variable de control
+- [ ] **9.3.2** Recorrido de colecciones
+- [ ] **9.3.3** Prohibición de modificar la colección recorrida
+- [ ] **9.3.4** Elección del `do-while`
+- [ ] **9.3.5** Condición de salida en la cabecera
+
+### 9.4 Sentencias `switch`
+- [ ] **9.4.1** Elección del `switch`
+- [ ] **9.4.2** Uso de llaves en el cuerpo de un `case`
+- [ ] **9.4.3** Cláusula `default` obligatoria
+- [ ] **9.4.4** Agrupación de etiquetas
+- [ ] **9.4.5** Cuerpo de la sección
+
+### 9.5 Uso del operador ternario
+- [ ] **9.5.1** Ámbito de uso
+- [ ] **9.5.2** Prohibición del ternario anidado
+- [ ] **9.5.3** Prohibición de literales booleanos
+- [ ] **9.5.4** Extensión del ternario
+
+---
+
+## 10. Conexión con la base de datos / Almacenamiento local
+
+### 10.1 Usuarios de base de datos
+- 🕳️ Sin reglas
+
+### 10.2 Credenciales y archivo de configuración
+- 🕳️ Sin reglas
+
+### 10.3 Manejo de conexiones
+- 🕳️ Sin reglas
+
+### 10.4 Manejo seguro de recursos
+- 🕳️ Sin reglas
+
+### 10.5 Manejo de transacciones
+- 🕳️ Sin reglas
+
+### 10.6 Consultas parametrizadas
+- 🕳️ Sin reglas
+
+---
+
+## 11. Pruebas unitarias
+
+### 11.1 Ubicación y nomenclatura
+- [ ] **11.1.1** Ubicación lógica (namespaces)
+- [ ] **11.1.2** Nomenclatura de la clase de prueba
+
+### 11.2 Estructura de un test
+- [ ] **11.2.1** Patrón lógico (Arrange, Act, Assert) sin comentarios
+- [ ] **11.2.2** Límite de aserciones
+- [ ] **11.2.3** Configuración inicial compartida
+
+### 11.3 Métodos builders en pruebas
+- [ ] **11.3.1** Nomenclatura y visibilidad
+- [ ] **11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto
+
+---
+
+## 12. Validación de entrada y seguridad
+
+### 12.1 Centralización de validaciones
+- 🕳️ Sin reglas
+
+### 12.2 Almacenamiento de contraseñas
+- 🕳️ Sin reglas
+
+### 12.3 Gestión de sesión
+- 🕳️ Sin reglas
+
+---
+
+## 13. DTOs y modelos de dominio
+
+### 13.1 Estructura de un DTO
+- 🕳️ Sin reglas
+
+---
+
+## 14. Manejo de documentos / Assets
+
+### 14.1 Manejo y guardado de archivos
+- 🕳️ Sin reglas
+
+### 14.2 Generación automática de documentos
+- 🕳️ Sin reglas
+
+---
+
+## 15. Gestión gráfica
+
+### 15.1 Navegación entre vistas / escenas
+- 🕳️ Sin reglas
+
+### 15.2 Mensajes e indicadores al usuario
+- 🕳️ Sin reglas
+
+---
+
+## 16. Dependencias externas y de seguridad
+
+### 16.1 Vulnerabilidades conocidas
+- 🕳️ Sin reglas
+
+---
+
+## 🗑️ Reglas eliminadas
+
+_Ninguna por ahora._
+
+---
+
+## 📝 Bitácora de cambios
+
+| Fecha | Regla | Cambio |
+|-------|-------|--------|
+| 2026-11-15 | — | Creación del índice a partir del estándar base (118 páginas). Ninguna regla aprobada. |
+| 2026-11-15 | 1.1.1 | Pasa a corrección ✏️. |
