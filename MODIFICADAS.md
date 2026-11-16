@@ -792,3 +792,75 @@ public class DiscardPile
     }
 }
 ```
+
+---
+
+## 9.1.1 — Estilo de llaves (Allman)
+
+### Antes
+Se usa el estilo Allman: la llave de apertura y la de cierre ocupan cada una su propia línea, al nivel de indentación de la sentencia que las abre, siguiendo la convención oficial de C# de Microsoft (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class MatchSession
+{
+    private int _reconnectAttempts;
+
+    public void ResetReconnectAttempts(
+        bool isPlayerConnected)
+    {
+        if (isPlayerConnected)
+        {
+            _reconnectAttempts = 0;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchSession
+{
+    private int _reconnectAttempts;
+
+    public void ResetReconnectAttempts(
+        bool isPlayerConnected)
+    {
+        if (isPlayerConnected) {
+            _reconnectAttempts = 0;
+        }
+    }
+}
+```
+
+### Después
+Cada llave `{` y `}` va en su propia línea, alineada con la línea que la abre, aunque entre ellas haya una sola instrucción (Microsoft, 2025a). Las únicas excepciones son los accesores (regla 9.1.4), los inicializadores (regla 9.1.5) y las llaves dentro de un texto, que no son código: `$"Player {playerName}"`.
+
+**Con estándar**
+```csharp
+public class GameRound
+{
+    public bool IsLastRound { get; private set; }
+
+    public void FinishRound(bool hasKnocked)
+    {
+        if (hasKnocked)
+        {
+            IsLastRound = true;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameRound {
+    public bool IsLastRound { get; private set; }
+
+    public void FinishRound(bool hasKnocked) {
+        if (hasKnocked) {
+            IsLastRound = true;
+        }
+    }
+}
+```

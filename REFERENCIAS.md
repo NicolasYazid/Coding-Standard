@@ -123,3 +123,15 @@
 
 - **Referencia:** Microsoft. (2023, 25 de julio). *Add braces (IDE0011)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0011
   **Qué respalda:** la regla de estilo IDE0011 trata del uso de llaves para encerrar bloques de código; su valor predeterminado prefiere llaves incluso para una sola línea de código.
+
+### 9.1.1 — Estilo de llaves (Allman)
+**Cita en el texto:** (Microsoft, 2025a)
+
+- **Referencia:** Microsoft. (2025, 18 de enero). *.NET coding conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+  **Qué respalda:** pide el estilo Allman: la llave de apertura y la de cierre en su propia línea, alineadas con el nivel de indentación actual.
+
+### 9.1.4 — Formato de los accesores
+**Cita en el texto:** (Microsoft, 2025b)
+
+- **Referencia:** Microsoft. (2025, 30 de enero). *C# formatting options*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
+  **Qué respalda:** la opción `csharp_preserve_single_line_blocks` tiene como valor predeterminado dejar en una sola línea los bloques de código escritos así.

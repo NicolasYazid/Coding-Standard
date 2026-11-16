@@ -36,3 +36,52 @@ public class PlayerTurn
     }
 }
 ```
+
+---
+
+## 9.1.4 — Formato de los accesores
+
+**Origen:** separada de la regla 9.1.1 para que cada regla trate un solo tema; el estándar base no decía cómo escribir los accesores.
+
+Las auto-propiedades se escriben en una sola línea: `{ get; private set; }`. Un `get` o `set` con una sola instrucción va en una sola línea: `get { return _totalScore; }`. Si tiene dos o más instrucciones, cada llave va en su propia línea. Visual Studio conserva por defecto los bloques escritos en una sola línea (Microsoft, 2025b).
+
+**Con estándar**
+```csharp
+public class PlayerScore
+{
+    private const int MinimumScore = 0;
+    private int _totalScore;
+
+    public int TotalScore
+    {
+        get { return _totalScore; }
+        private set
+        {
+            int validScore = Math.Max(MinimumScore, value);
+            _totalScore = validScore;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerScore
+{
+    private const int MinimumScore = 0;
+    private int _totalScore;
+
+    public int TotalScore
+    {
+        get
+        {
+            return _totalScore;
+        }
+        private set
+        {
+            int validScore = Math.Max(MinimumScore, value);
+            _totalScore = validScore;
+        }
+    }
+}
+```

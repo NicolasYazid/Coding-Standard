@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 2 | 20 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 4 | 22 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **16** | **133** |
+| | **Total** | **18** | **135** |
 
 ---
 
@@ -276,9 +276,11 @@
 ## 9. Estructuras de control
 
 ### 9.1 Uso de llaves
-- [ ] **9.1.1** Estilo de llaves (Allman)
+- [x] **9.1.1** Estilo de llaves (Allman)
 - [x] **9.1.2** Obligatoriedad de las llaves
 - [x] **9.1.3** Interior del bloque
+- [x] **9.1.4** Formato de los accesores 🆕
+- [ ] **9.1.5** Formato de los inicializadores de objeto 🆕 ✏️
 
 ### 9.2 Sentencias condicionales (`if`, `else`)
 - [ ] **9.2.1** Agrupación de las cláusulas
@@ -426,3 +428,6 @@
 | 2026-11-16 | 2.2.6 | **Aprobada (nueva).** Separada de la regla 2.2.4 original. Pendiente de confirmar: agregar el caso `protected set` para clases derivadas. |
 | 2026-11-16 | 9.1.3 | **Aprobada.** Cita reemplazada por StyleCop (SA1505 y SA1508); ejemplos corregidos. |
 | 2026-11-16 | 9.1.2 | **Aprobada.** "exige" cambiado por "prefiere" y cita con fecha (IDE0011); ejemplos corregidos. |
+| 2026-11-16 | 9.1.1 | **Aprobada.** Excepciones explícitas: accesores (9.1.4), inicializadores (9.1.5) y llaves dentro de texto. |
+| 2026-11-16 | 9.1.4 | **Aprobada (nueva).** Accesores de una instrucción en una línea; de dos o más, en varias líneas. |
+| 2026-11-16 | 9.1.5 | Nueva, en corrección ✏️. |
