@@ -381,30 +381,20 @@ El prefijo has debe utilizarse para variables booleanas que indiquen la posesió
 
 **Con estándar**
 ```csharp
-public class TurnValidator
+public class PlayerTurn
 {
-    private const int HandSizeBeforeDraw = 10;
-
-    public bool CheckDrawCompleted(int heldCardsCount)
+    public void DiscardCard(bool hasDrawnCard)
     {
-        bool hasDrawnCard = heldCardsCount > HandSizeBeforeDraw;
-
-        return hasDrawnCard;
     }
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class TurnValidator
+public class PlayerTurn
 {
-    private const int HandSizeBeforeDraw = 10;
-
-    public bool CheckDrawCompleted(int heldCardsCount)
+    public void DiscardCard(bool drawnCard)
     {
-        bool drawnCard = heldCardsCount > HandSizeBeforeDraw;
-
-        return drawnCard;
     }
 }
 ```
@@ -431,30 +421,20 @@ El prefijo can debe utilizarse para variables booleanas que determinen si una en
 
 **Con estándar**
 ```csharp
-public class KnockValidator
+public class PlayerTurn
 {
-    private const int MaxKnockDeadwood = 10;
-
-    public bool CheckKnockAvailability(int deadwoodPoints)
+    public void DeclareKnock(bool canKnock)
     {
-        bool canKnock = deadwoodPoints <= MaxKnockDeadwood;
-
-        return canKnock;
     }
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class KnockValidator
+public class PlayerTurn
 {
-    private const int MaxKnockDeadwood = 10;
-
-    public bool CheckKnockAvailability(int deadwoodPoints)
+    public void DeclareKnock(bool knock)
     {
-        bool knock = deadwoodPoints <= MaxKnockDeadwood;
-
-        return knock;
     }
 }
 ```
