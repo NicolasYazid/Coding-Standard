@@ -642,3 +642,81 @@ public class GameTable
     public int currentRound { get; private set; }
 }
 ```
+
+---
+
+## 9.1.3 — Interior del bloque
+
+### Antes
+El bloque no debe empezar ni terminar con una línea en blanco, ya que las líneas en blanco se reservan para separar grupos lógicos de código, no para rodear un bloque completo (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class DisconnectHandler
+{
+    private int _reconnectAttempts;
+
+    public void HandleDisconnect(bool isPlayerConnected)
+    {
+        if (!isPlayerConnected)
+        {
+            _reconnectAttempts = 0;
+        }
+     }
+}
+```
+
+**Sin estándar**
+```csharp
+public class DisconnectHandler
+{
+    private int _reconnectAttempts;
+
+    public void HandleDisconnect(bool isPlayerConnected)
+    {
+        if (!isPlayerConnected)
+        {
+
+            _reconnectAttempts = 0;
+
+        }
+    }
+}
+```
+
+### Después
+Ningún bloque de código empieza ni termina con una línea en blanco: no se deja una línea vacía después de una llave de apertura ni antes de una llave de cierre (DotNetAnalyzers, s.f.-a, s.f.-b).
+
+**Con estándar**
+```csharp
+public class PlayerConnection
+{
+    public bool IsDisconnected { get; private set; }
+
+    public void HandleDisconnect(bool hasLostConnection)
+    {
+        if (hasLostConnection)
+        {
+            IsDisconnected = true;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerConnection
+{
+    public bool IsDisconnected { get; private set; }
+
+    public void HandleDisconnect(bool hasLostConnection)
+    {
+
+        if (hasLostConnection)
+        {
+            IsDisconnected = true;
+        }
+
+    }
+}
+```

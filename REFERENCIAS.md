@@ -105,3 +105,15 @@
   **Qué respalda:** pide crear propiedades de solo lectura si quien las usa no debe poder cambiar su valor.
 - **Referencia:** Microsoft. (2025, 19 de noviembre). *Properties (C# programming guide)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
   **Qué respalda:** muestra que con un `set` privado la propiedad puede leerse desde cualquier código, pero solo asignarse desde la propia clase.
+
+---
+
+## 9. Estructuras de control
+
+### 9.1.3 — Interior del bloque
+**Cita en el texto:** (DotNetAnalyzers, s.f.-a, s.f.-b)
+
+- **Referencia:** DotNetAnalyzers. (s.f.-a). *SA1505: Opening braces should not be followed by blank line*. GitHub. Recuperado el 16 de noviembre de 2026, de https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1505.md
+  **Qué respalda:** marca como violación una línea en blanco después de una llave de apertura.
+- **Referencia:** DotNetAnalyzers. (s.f.-b). *SA1508: Closing braces should not be preceded by blank line*. GitHub. Recuperado el 16 de noviembre de 2026, de https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1508.md
+  **Qué respalda:** marca como violación una línea en blanco antes de una llave de cierre.
