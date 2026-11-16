@@ -834,7 +834,7 @@ public class MatchSession
 ```
 
 ### Después
-Cada llave `{` y `}` va en su propia línea, alineada con la línea que la abre, aunque entre ellas haya una sola instrucción (Microsoft, 2025a). Las únicas excepciones son los accesores (regla 9.1.4), los inicializadores (regla 9.1.5) y las llaves dentro de un texto, que no son código: `$"Player {playerName}"`.
+Cada llave `{` y `}` va en su propia línea, alineada con la línea que la abre, aunque entre ellas haya una sola instrucción (Microsoft, 2025a). Las únicas excepciones son los accesores (regla 9.1.4), los inicializadores (reglas 9.1.5 a 9.1.8) y las llaves dentro de un texto, que no son código: `$"Player {playerName}"`.
 
 **Con estándar**
 ```csharp

@@ -155,3 +155,9 @@
   **Qué respalda:** sus ejemplos escriben en una sola línea los arreglos de una dimensión. Es respaldo por ejemplos, no una indicación escrita.
 - **Referencia:** Microsoft. (2025, 18 de enero). *.NET coding conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
   **Qué respalda:** recomienda partir en varias líneas las instrucciones largas para mejorar su lectura (caso en que se supera el límite de columna).
+
+### 9.1.5 — Formato de los inicializadores de objeto
+**Cita en el texto:** (Microsoft, 2025b)
+
+- **Referencia:** Microsoft. (2025, 30 de enero). *C# formatting options*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
+  **Qué respalda:** la opción `csharp_new_line_before_members_in_object_initializers` tiene como valor predeterminado exigir que los miembros de un inicializador de objeto vayan en líneas separadas.

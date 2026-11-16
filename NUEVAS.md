@@ -212,3 +212,41 @@ public class RankCatalog
     }
 }
 ```
+
+---
+
+## 9.1.5 — Formato de los inicializadores de objeto
+
+**Origen:** el estándar base no decía cómo escribir los inicializadores de objeto; surgió al definir las excepciones de la regla 9.1.1.
+
+Un inicializador de objeto con un solo miembro va en una sola línea: `new PlayerRanking { Wins = wins }`. Si tiene dos o más miembros, cada llave y cada miembro van en su propia línea, que es el formato predeterminado de Visual Studio para los inicializadores de objeto (Microsoft, 2025b).
+
+**Con estándar**
+```csharp
+public class RankingBuilder
+{
+    public PlayerRanking BuildRanking(string username, int wins)
+    {
+        PlayerRanking ranking = new PlayerRanking
+        {
+            Username = username,
+            Wins = wins
+        };
+
+        return ranking;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class RankingBuilder
+{
+    public PlayerRanking BuildRanking(string username, int wins)
+    {
+        PlayerRanking ranking = new PlayerRanking { Username = username, Wins = wins };
+
+        return ranking;
+    }
+}
+```
