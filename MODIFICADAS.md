@@ -341,26 +341,26 @@ El prefijo is debe utilizarse para variables booleanas que describan un estado f
 
 **Con estándar**
 ```csharp
-public class MatchSession
+public class TurnTracker
 {
-    private bool _isPaused;
-
-    public void PauseMatch()
+    public bool CheckPlayerTurn(int currentPlayerId, int playerId)
     {
-        _isPaused = true;
+        bool isPlayerTurn = currentPlayerId == playerId;
+
+        return isPlayerTurn;
     }
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class MatchSession
+public class TurnTracker
 {
-    private bool _paused;
-
-    public void PauseMatch()
+    public bool CheckPlayerTurn(int currentPlayerId, int playerId)
     {
-        _paused = true;
+        bool playerTurn = currentPlayerId == playerId;
+
+        return playerTurn;
     }
 }
 ```
@@ -387,26 +387,30 @@ El prefijo has debe utilizarse para variables booleanas que indiquen la posesió
 
 **Con estándar**
 ```csharp
-public class PlayerTurn
+public class TurnValidator
 {
-    private bool _hasDrawnCard;
+    private const int HandSizeBeforeDraw = 10;
 
-    public void DrawCard()
+    public bool CheckDrawCompleted(int heldCardsCount)
     {
-        _hasDrawnCard = true;
+        bool hasDrawnCard = heldCardsCount > HandSizeBeforeDraw;
+
+        return hasDrawnCard;
     }
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class PlayerTurn
+public class TurnValidator
 {
-    private bool _drawnCard;
+    private const int HandSizeBeforeDraw = 10;
 
-    public void DrawCard()
+    public bool CheckDrawCompleted(int heldCardsCount)
     {
-        _drawnCard = true;
+        bool drawnCard = heldCardsCount > HandSizeBeforeDraw;
+
+        return drawnCard;
     }
 }
 ```
