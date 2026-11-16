@@ -864,3 +864,109 @@ public class GameRound {
     }
 }
 ```
+
+---
+
+## 9.2.1 — Agrupación de las cláusulas
+
+### Antes
+Las cláusulas de una condición compuesta se agrupan con paréntesis explícitos alrededor de cada comparación relacional, siguiendo la regla de estilo de Microsoft que prefiere paréntesis para aclarar la precedencia entre operadores relacionales y lógicos (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class ReconnectValidator
+{
+    public bool CanReconnect(int disconnectCount, int elapsedSeconds)
+    {
+        return (disconnectCount < 3) && (elapsedSeconds <= 60);
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ReconnectValidator
+{
+    public bool CanReconnect(int disconnectCount, int elapsedSeconds)
+    {
+        return disconnectCount < 3 && elapsedSeconds <= 60;
+    }
+}
+```
+
+### Después
+En una expresión que une comparaciones con `&&` o `||`, cada comparación va entre paréntesis, para que el orden en que se evalúan los operadores quede claro (Microsoft, 2022). Una comparación es una expresión con `==`, `!=`, `<`, `>`, `<=`, `>=` o `is`.
+
+**Con estándar**
+```csharp
+public class ReconnectValidator
+{
+    private const int MaxDisconnects = 3;
+    private const int MaxWaitSeconds = 60;
+
+    public bool CanReconnect(int disconnectCount, int elapsedSeconds)
+    {
+        return (disconnectCount < MaxDisconnects) && (elapsedSeconds <= MaxWaitSeconds);
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ReconnectValidator
+{
+    private const int MaxDisconnects = 3;
+    private const int MaxWaitSeconds = 60;
+
+    public bool CanReconnect(int disconnectCount, int elapsedSeconds)
+    {
+        return disconnectCount < MaxDisconnects && elapsedSeconds <= MaxWaitSeconds;
+    }
+}
+```
+
+---
+
+## 9.2.2 — Prohibición de comparar con literales booleanos
+
+### Antes
+Un booleano no anulable se evalúa directamente. Queda prohibido compararlo con true o con false.
+
+### Después
+Un booleano no anulable se evalúa directamente: queda prohibido compararlo con `true` o con `false`, porque esa comparación es innecesaria (Microsoft, 2023).
+
+**Ejemplos (sin cambios respecto al estándar base)**
+
+**Con estándar**
+```csharp
+public class ConnectionMonitor
+{
+    private bool _isPlayerConnected;
+    private int _timeoutSeconds;
+
+    public void CheckConnection()
+    {
+        if (_isPlayerConnected)
+        {
+            _timeoutSeconds = 0;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ConnectionMonitor
+{
+    private bool _isPlayerConnected;
+    private int _timeoutSeconds;
+
+    public void CheckConnection()
+    {
+        if (_isPlayerConnected == true)
+        {
+            _timeoutSeconds = 0;
+        }
+    }
+}
+```

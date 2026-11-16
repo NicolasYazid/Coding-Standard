@@ -161,3 +161,15 @@
 
 - **Referencia:** Microsoft. (2025, 30 de enero). *C# formatting options*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
   **Qué respalda:** la opción `csharp_new_line_before_members_in_object_initializers` tiene como valor predeterminado exigir que los miembros de un inicializador de objeto vayan en líneas separadas.
+
+### 9.2.1 — Agrupación de las cláusulas
+**Cita en el texto:** (Microsoft, 2022)
+
+- **Referencia:** Microsoft. (2022, 20 de octubre). *Parentheses preferences (IDE0047 and IDE0048)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048
+  **Qué respalda:** define los operadores relacionales y su valor predeterminado usa paréntesis para aclarar la precedencia de esos operadores.
+
+### 9.2.2 — Prohibición de comparar con literales booleanos
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 25 de julio). *Remove unnecessary equality operator (IDE0100)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0100
+  **Qué respalda:** marca como innecesario el operador de igualdad al comparar una expresión booleana no constante con `true` o `false`.

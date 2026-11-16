@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 8 | 25 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 10 | 25 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **22** | **138** |
+| | **Total** | **24** | **138** |
 
 ---
 
@@ -286,8 +286,8 @@
 - [x] **9.1.8** Formato de los inicializadores de arreglo 🆕
 
 ### 9.2 Sentencias condicionales (`if`, `else`)
-- [ ] **9.2.1** Agrupación de las cláusulas
-- [ ] **9.2.2** Prohibición de comparar con literales booleanos
+- [x] **9.2.1** Agrupación de las cláusulas
+- [x] **9.2.2** Prohibición de comparar con literales booleanos
 - [ ] **9.2.3** Cláusula de guarda 🔗 5.1.1
 
 ### 9.3 Bucles (`for`, `while`, `do-while`)
@@ -441,3 +441,5 @@
 | 2026-11-16 | 9.1.6 | Descripción actualizada: agrega el caso en que la línea supera el límite de columna (4.1.2). |
 | 2026-11-16 | 9.1.5 | **Aprobada (nueva).** Un miembro en una línea; dos o más, cada llave y miembro en su propia línea. |
 | 2026-11-16 | 9.1.1 | Texto ajustado: las excepciones de inicializadores remiten a las reglas 9.1.5 a 9.1.8. |
+| 2026-11-16 | 9.2.1 | **Aprobada.** Define comparación (lista cerrada de operadores) y cita con fecha; constantes en lugar de números mágicos. |
+| 2026-11-16 | 9.2.2 | **Aprobada.** Agrega el motivo y la cita (IDE0100); ejemplos sin cambios. |
