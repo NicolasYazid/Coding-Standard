@@ -341,26 +341,30 @@ El prefijo is debe utilizarse para variables booleanas que describan un estado f
 
 **Con estándar**
 ```csharp
-public class TurnTracker
+public class MatchRoom
 {
-    public bool CheckPlayerTurn(int currentPlayerId, int playerId)
-    {
-        bool isPlayerTurn = currentPlayerId == playerId;
+    private const int MaxPlayers = 2;
 
-        return isPlayerTurn;
+    public bool CheckMatchFull(List<Player> joinedPlayers)
+    {
+        bool isMatchFull = joinedPlayers.Count == MaxPlayers;
+
+        return isMatchFull;
     }
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class TurnTracker
+public class MatchRoom
 {
-    public bool CheckPlayerTurn(int currentPlayerId, int playerId)
-    {
-        bool playerTurn = currentPlayerId == playerId;
+    private const int MaxPlayers = 2;
 
-        return playerTurn;
+    public bool CheckMatchFull(List<Player> joinedPlayers)
+    {
+        bool matchFull = joinedPlayers.Count == MaxPlayers;
+
+        return matchFull;
     }
 }
 ```
