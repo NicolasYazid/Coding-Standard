@@ -448,3 +448,41 @@ public class PlayerTurn
     }
 }
 ```
+
+---
+
+## 2.1.8 — Declaración única
+
+### Antes
+Se debe declarar estrictamente una sola variable por línea de código para facilitar su lectura y el control de versiones.
+
+**Con estándar**
+```csharp
+int maxSlots = 5;
+int currentSlots = 0;
+```
+
+**Sin estándar**
+```csharp
+int maxSlots = 5, currentSlots = 0;
+```
+
+### Después
+Se debe declarar estrictamente una sola variable por línea de código para facilitar su lectura y el control de versiones (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class MatchScore
+{
+    private int _knockerPoints;
+    private int _opponentPoints;
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchScore
+{
+    private int _knockerPoints, _opponentPoints;
+}
+```

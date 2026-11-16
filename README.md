@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 7 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 8 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **9** | **133** |
+| | **Total** | **10** | **133** |
 
 ---
 
@@ -43,6 +43,7 @@
 | 🗑️ | Regla propuesta para eliminar |
 | 🔗 | Depende de otra regla (se indica cuál) |
 | 🕳️ | Subsección sin reglas: hay que crearlas o eliminar la subsección |
+| ⚠️ | La regla depende de una versión de C# superior a la del proyecto (C# 7.3, .NET Framework 4.8) |
 
 **IDs:** cada regla tiene un número fijo (`sección.subsección.regla`). Si una regla se elimina, pasa a la sección [Reglas eliminadas](#-reglas-eliminadas) y su número no se reutiliza.
 
@@ -66,7 +67,7 @@
 - [x] **2.1.5** Booleanos con prefijo `is` (estado)
 - [x] **2.1.6** Booleanos con prefijo `has` (posesión o estado completado)
 - [x] **2.1.7** Booleanos con prefijo `can` (capacidad o permiso)
-- [ ] **2.1.8** Declaración única
+- [x] **2.1.8** Declaración única
 - [ ] **2.1.9** Prevención de sombreado de datos
 - [ ] **2.1.10** Exención de abreviatura para excepciones (`ex`)
 - [ ] **2.1.11** Prohibición del prefijo estático `s_`
@@ -225,7 +226,7 @@
 
 ### 6.5 Uso obligatorio de la sentencia using
 - [ ] **6.5.1** Prohibición de liberación manual (`Dispose`)
-- [ ] **6.5.2** Preferencia por la declaración simplificada (C# 8.0+)
+- [ ] **6.5.2** Preferencia por la declaración simplificada (C# 8.0+) ⚠️ no disponible en C# 7.3
 - [ ] **6.5.3** Uso del bloque tradicional para liberación anticipada
 
 ---
@@ -415,3 +416,5 @@
 | 2026-11-15 | 2.1.4 | **Aprobada.** Cubre variables, parámetros, campos y propiedades; prohíbe sufijos "List" y "Collection"; con cita. |
 | 2026-11-15 | 2.1.5, 2.1.6, 2.1.7 | **Aprobadas.** Mismo texto con cita agregada; ejemplos corregidos (tema Gin Rummy y estructura compilable). |
 | 2026-11-15 | 2.1.5, 2.1.6 | Ejemplos cambiados a variables locales dentro de métodos. |
+| 2026-11-15 | 2.1.8 | **Aprobada.** Mismo texto con cita; ejemplos corregidos. |
+| 2026-11-15 | 6.5.2 | Marcada ⚠️: la declaración `using` simplificada requiere C# 8.0 y el proyecto usa C# 7.3. |

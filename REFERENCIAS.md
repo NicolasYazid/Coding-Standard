@@ -73,3 +73,9 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
   **Qué respalda:** pide nombrar los booleanos con una frase afirmativa y permite los prefijos "Is", "Can" o "Has" cuando aportan significado.
+
+### 2.1.8 — Declaración única
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 18 de enero). *.NET coding conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+  **Qué respalda:** pide escribir una sola declaración por línea.
