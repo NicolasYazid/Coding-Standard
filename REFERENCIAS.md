@@ -79,3 +79,15 @@
 
 - **Referencia:** Microsoft. (2025, 18 de enero). *.NET coding conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
   **Qué respalda:** pide escribir una sola declaración por línea.
+
+### 2.1.10 — Exención de abreviatura para excepciones (`ex`)
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 18 de enero). *.NET coding conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+  **Qué respalda:** el ejemplo de `try-catch` de las convenciones oficiales de C# nombra `ex` a la excepción capturada. No existe una regla escrita de Microsoft sobre ese nombre; el respaldo es su ejemplo oficial.
+
+### 2.1.11 — Prefijo estático `s_`
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+  **Qué respalda:** indica que los campos `static` privados o internos usan el prefijo `s_`; aclara que no es el comportamiento predeterminado de Visual Studio, pero se puede configurar en editorconfig.

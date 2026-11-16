@@ -486,3 +486,117 @@ public class MatchScore
     private int _knockerPoints, _opponentPoints;
 }
 ```
+
+---
+
+## 2.1.10 — Exención de abreviatura para excepciones (`ex`)
+
+### Antes
+Como excepción directa a la regla de prohibición de abreviaturas, se permite y estandariza el uso estricto de la variable ex para capturar excepciones, única y exclusivamente dentro de la declaración de los bloques catch. Queda prohibido el uso de otras abreviaturas heredadas de otros lenguajes (como la letra e o err).
+
+**Con estándar**
+```csharp
+try
+{
+    ConnectToMultiplayerServer();
+}
+catch (TimeoutException ex)
+{
+    RetryConnection();
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+       ConnectToMultiplayerServer();
+}
+catch (TimeoutException e)
+{
+    RetryConnection();
+}
+```
+
+### Después
+La variable que recibe la excepción en un bloque `catch` se llama siempre `ex`; queda prohibido cualquier otro nombre. Es el nombre que usa Microsoft en sus convenciones de código de C# (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class MatchConnector
+{
+    public void ConnectToServer()
+    {
+        try
+        {
+            OpenTcpConnection();
+        }
+        catch (SocketException ex)
+        {
+            throw new InvalidOperationException("The match server is unreachable.", ex);
+        }
+    }
+
+    private void OpenTcpConnection()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchConnector
+{
+    public void ConnectToServer()
+    {
+        try
+        {
+            OpenTcpConnection();
+        }
+        catch (SocketException socketException)
+        {
+            throw new InvalidOperationException("The match server is unreachable.", socketException);
+        }
+    }
+
+    private void OpenTcpConnection()
+    {
+    }
+}
+```
+
+---
+
+## 2.1.11 — Prefijo estático `s_`
+
+### Antes: Prohibición del prefijo estático "s_"
+Los campos estáticos privados o internos usan el mismo prefijo _ que los de instancia. Queda prohibido el prefijo s_.
+
+**Con estándar**
+```csharp
+private static GameSession _currentSession;
+```
+
+**Sin estándar**
+```csharp
+private static GameSession s_currentSession;
+```
+
+### Después: Prefijo estático `s_`
+Los campos `static` privados o internos que no son `const` se escriben con el prefijo `s_` seguido de camelCase, para distinguirlos de las variables de instancia (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class MatchLobby
+{
+    private static int s_activeMatchesCount;
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchLobby
+{
+    private static int _activeMatchesCount;
+}
+```

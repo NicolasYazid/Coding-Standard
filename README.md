@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 8 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 10 | 44 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **10** | **133** |
+| | **Total** | **12** | **132** |
 
 ---
 
@@ -68,9 +68,8 @@
 - [x] **2.1.6** Booleanos con prefijo `has` (posesión o estado completado)
 - [x] **2.1.7** Booleanos con prefijo `can` (capacidad o permiso)
 - [x] **2.1.8** Declaración única
-- [ ] **2.1.9** Prevención de sombreado de datos
-- [ ] **2.1.10** Exención de abreviatura para excepciones (`ex`)
-- [ ] **2.1.11** Prohibición del prefijo estático `s_`
+- [x] **2.1.10** Exención de abreviatura para excepciones (`ex`)
+- [x] **2.1.11** Prefijo estático `s_`
 
 ### 2.2 Propiedades
 - [ ] **2.2.1** Nomenclatura de propiedades
@@ -396,6 +395,7 @@
 ## 🗑️ Reglas eliminadas
 
 - ~~**1.1.3** Idioma de los mensajes de error (logs y excepciones)~~ — sin fuente de C# que la respalde; Microsoft recomienda traducir los mensajes de excepción en aplicaciones localizadas.
+- ~~**2.1.9** Prevención de sombreado de datos~~ — en C# 7.3 el compilador ya impide el sombreado entre variables locales (CS0136), y las reglas 2.1.1, 2.1.2 y 2.1.11 impiden que una variable local se llame igual que un campo.
 
 ---
 
@@ -418,3 +418,6 @@
 | 2026-11-15 | 2.1.5, 2.1.6 | Ejemplos cambiados a variables locales dentro de métodos. |
 | 2026-11-15 | 2.1.8 | **Aprobada.** Mismo texto con cita; ejemplos corregidos. |
 | 2026-11-15 | 6.5.2 | Marcada ⚠️: la declaración `using` simplificada requiere C# 8.0 y el proyecto usa C# 7.3. |
+| 2026-11-15 | 2.1.9 | **Eliminada.** Imposible de violar en C# 7.3 con las reglas de nombrado aprobadas. |
+| 2026-11-15 | 2.1.10 | **Aprobada.** Fija `ex` como único nombre de la excepción en `catch`; con cita. |
+| 2026-11-15 | 2.1.11 | **Aprobada e invertida.** Título cambiado a "Prefijo estático `s_`": ahora exige `s_` en campos `static` privados o internos, siguiendo a Microsoft. |
