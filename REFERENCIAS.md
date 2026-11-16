@@ -135,3 +135,9 @@
 
 - **Referencia:** Microsoft. (2025, 30 de enero). *C# formatting options*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
   **Qué respalda:** la opción `csharp_preserve_single_line_blocks` tiene como valor predeterminado dejar en una sola línea los bloques de código escritos así.
+
+### 9.1.7 — Formato de los tipos anónimos
+**Cita en el texto:** (Microsoft, 2025b)
+
+- **Referencia:** Microsoft. (2025, 30 de enero). *C# formatting options*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
+  **Qué respalda:** la opción `csharp_new_line_before_members_in_anonymous_types` tiene como valor predeterminado exigir que los miembros de los tipos anónimos vayan en líneas separadas.

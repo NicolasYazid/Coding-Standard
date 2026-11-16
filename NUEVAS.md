@@ -85,3 +85,41 @@ public class PlayerScore
     }
 }
 ```
+
+---
+
+## 9.1.7 — Formato de los tipos anónimos
+
+**Origen:** el estándar base no decía cómo escribir los tipos anónimos; surgió al definir las excepciones de la regla 9.1.1.
+
+Un tipo anónimo con un solo miembro va en una sola línea. Si tiene dos o más miembros, cada llave y cada miembro van en su propia línea, que es el formato predeterminado de Visual Studio para los tipos anónimos (Microsoft, 2025b).
+
+**Con estándar**
+```csharp
+public class RankingQuery
+{
+    public object CreatePlayerKey(PlayerProfile profile)
+    {
+        object playerKey = new
+        {
+            profile.PlayerAccountId,
+            profile.Username
+        };
+
+        return playerKey;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class RankingQuery
+{
+    public object CreatePlayerKey(PlayerProfile profile)
+    {
+        object playerKey = new { profile.PlayerAccountId, profile.Username };
+
+        return playerKey;
+    }
+}
+```
