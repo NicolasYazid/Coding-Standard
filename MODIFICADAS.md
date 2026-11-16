@@ -431,30 +431,20 @@ El prefijo can debe utilizarse para variables booleanas que determinen si una en
 
 **Con estándar**
 ```csharp
-public class KnockValidator
+public class PlayerTurn
 {
-    private const int MaxKnockDeadwood = 10;
-
-    public bool CheckKnockAvailability(int deadwoodPoints)
+    public void DeclareKnock(bool canKnock)
     {
-        bool canKnock = deadwoodPoints <= MaxKnockDeadwood;
-
-        return canKnock;
     }
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class KnockValidator
+public class PlayerTurn
 {
-    private const int MaxKnockDeadwood = 10;
-
-    public bool CheckKnockAvailability(int deadwoodPoints)
+    public void DeclareKnock(bool knock)
     {
-        bool knock = deadwoodPoints <= MaxKnockDeadwood;
-
-        return knock;
     }
 }
 ```
