@@ -147,3 +147,11 @@
 
 - **Referencia:** Microsoft. (2026, 11 de febrero). *Object and collection initializers (C# programming guide)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers
   **Qué respalda:** sus ejemplos escriben en una sola línea las colecciones de valores simples, y en varias líneas, un objeto por línea, las colecciones de objetos. Es respaldo por ejemplos, no una indicación escrita.
+
+### 9.1.8 — Formato de los inicializadores de arreglo
+**Cita en el texto:** (Microsoft, 2026b)
+
+- **Referencia:** Microsoft. (2026, 20 de enero). *Arrays*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays
+  **Qué respalda:** sus ejemplos escriben en una sola línea los arreglos de una dimensión. Es respaldo por ejemplos, no una indicación escrita.
+- **Referencia:** Microsoft. (2025, 18 de enero). *.NET coding conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+  **Qué respalda:** recomienda partir en varias líneas las instrucciones largas para mejorar su lectura (caso en que se supera el límite de columna).

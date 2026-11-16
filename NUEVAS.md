@@ -130,7 +130,7 @@ public class RankingQuery
 
 **Origen:** el estándar base no decía cómo escribir los inicializadores de colección; surgió al definir las excepciones de la regla 9.1.1.
 
-Un inicializador de colección cuyos elementos son valores simples (variables, constantes o literales) va en una sola línea. Si sus elementos son objetos creados con `new`, cada llave y cada elemento van en su propia línea, como en los ejemplos de Microsoft (Microsoft, 2026a).
+Un inicializador de colección cuyos elementos son valores simples (variables, constantes o literales) va en una sola línea; si esa línea supera el límite de columna (regla 4.1.2), cada llave y cada elemento van en su propia línea. Si sus elementos son objetos creados con `new`, cada llave y cada elemento van en su propia línea, como en los ejemplos de Microsoft (Microsoft, 2026a).
 
 **Con estándar**
 ```csharp
@@ -160,6 +160,55 @@ public class MatchSetup
             guestName
         };
         List<Card> aceCards = new List<Card> { new Card(Suit.Hearts, CardRank.Ace), new Card(Suit.Spades, CardRank.Ace) };
+    }
+}
+```
+
+---
+
+## 9.1.8 — Formato de los inicializadores de arreglo
+
+**Origen:** el estándar base no decía cómo escribir los inicializadores de arreglo; surgió al definir las excepciones de la regla 9.1.1.
+
+Un inicializador de arreglo se escribe en una sola línea, como en los ejemplos de Microsoft (Microsoft, 2026b). Si esa línea supera el límite de columna (regla 4.1.2), cada llave y cada elemento van en su propia línea.
+
+**Con estándar**
+```csharp
+public class RankCatalog
+{
+    public void LoadRankNames(string hostName, string guestName)
+    {
+        string[] seatNames = { hostName, guestName };
+        string[] rankNames =
+        {
+            "Bronze",
+            "Silver",
+            "Gold",
+            "Platinum",
+            "Diamond",
+            "Master",
+            "Grandmaster",
+            "Champion",
+            "Legend",
+            "Mythic",
+            "Immortal"
+        };
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class RankCatalog
+{
+    public void LoadRankNames(string hostName, string guestName)
+    {
+        string[] seatNames =
+        {
+            hostName,
+            guestName
+        };
+        string[] rankNames = { "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Champion", "Legend", "Mythic", "Immortal" };
     }
 }
 ```
