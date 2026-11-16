@@ -141,3 +141,9 @@
 
 - **Referencia:** Microsoft. (2025, 30 de enero). *C# formatting options*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
   **Qué respalda:** la opción `csharp_new_line_before_members_in_anonymous_types` tiene como valor predeterminado exigir que los miembros de los tipos anónimos vayan en líneas separadas.
+
+### 9.1.6 — Formato de los inicializadores de colección
+**Cita en el texto:** (Microsoft, 2026a)
+
+- **Referencia:** Microsoft. (2026, 11 de febrero). *Object and collection initializers (C# programming guide)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers
+  **Qué respalda:** sus ejemplos escriben en una sola línea las colecciones de valores simples, y en varias líneas, un objeto por línea, las colecciones de objetos. Es respaldo por ejemplos, no una indicación escrita.

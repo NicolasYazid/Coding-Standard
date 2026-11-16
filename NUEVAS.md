@@ -123,3 +123,43 @@ public class RankingQuery
     }
 }
 ```
+
+---
+
+## 9.1.6 — Formato de los inicializadores de colección
+
+**Origen:** el estándar base no decía cómo escribir los inicializadores de colección; surgió al definir las excepciones de la regla 9.1.1.
+
+Un inicializador de colección cuyos elementos son valores simples (variables, constantes o literales) va en una sola línea. Si sus elementos son objetos creados con `new`, cada llave y cada elemento van en su propia línea, como en los ejemplos de Microsoft (Microsoft, 2026a).
+
+**Con estándar**
+```csharp
+public class MatchSetup
+{
+    public void PrepareTable(string hostName, string guestName)
+    {
+        List<string> playerNames = new List<string> { hostName, guestName };
+        List<Card> aceCards = new List<Card>
+        {
+            new Card(Suit.Hearts, CardRank.Ace),
+            new Card(Suit.Spades, CardRank.Ace)
+        };
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchSetup
+{
+    public void PrepareTable(string hostName, string guestName)
+    {
+        List<string> playerNames = new List<string>
+        {
+            hostName,
+            guestName
+        };
+        List<Card> aceCards = new List<Card> { new Card(Suit.Hearts, CardRank.Ace), new Card(Suit.Spades, CardRank.Ace) };
+    }
+}
+```
