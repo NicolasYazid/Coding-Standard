@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 10 | 25 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 10 | 24 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **24** | **138** |
+| | **Total** | **24** | **137** |
 
 ---
 
@@ -288,7 +288,6 @@
 ### 9.2 Sentencias condicionales (`if`, `else`)
 - [x] **9.2.1** Agrupación de las cláusulas
 - [x] **9.2.2** Prohibición de comparar con literales booleanos
-- [ ] **9.2.3** Cláusula de guarda 🔗 5.1.1
 
 ### 9.3 Bucles (`for`, `while`, `do-while`)
 - [ ] **9.3.1** Ámbito de la variable de control
@@ -401,6 +400,7 @@
 ## 🗑️ Reglas eliminadas
 
 - ~~**1.1.3** Idioma de los mensajes de error (logs y excepciones)~~ — sin fuente de C# que la respalde; Microsoft recomienda traducir los mensajes de excepción en aplicaciones localizadas.
+- ~~**9.2.3** Cláusula de guarda~~ — eliminada por decisión del equipo; su redacción castigaba métodos `void` con un solo `if` y dependía de la regla 5.1.1.
 - ~~**2.1.9** Prevención de sombreado de datos~~ — en C# 7.3 el compilador ya impide el sombreado entre variables locales (CS0136), y las reglas 2.1.1, 2.1.2 y 2.1.11 impiden que una variable local se llame igual que un campo.
 
 ---
@@ -443,3 +443,4 @@
 | 2026-11-16 | 9.1.1 | Texto ajustado: las excepciones de inicializadores remiten a las reglas 9.1.5 a 9.1.8. |
 | 2026-11-16 | 9.2.1 | **Aprobada.** Define comparación (lista cerrada de operadores) y cita con fecha; constantes en lugar de números mágicos. |
 | 2026-11-16 | 9.2.2 | **Aprobada.** Agrega el motivo y la cita (IDE0100); ejemplos sin cambios. |
+| 2026-11-16 | 9.2.3 | **Eliminada.** Decisión del equipo. |

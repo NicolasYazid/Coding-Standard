@@ -58,3 +58,56 @@ public void UpdateHealth(int _health)
     this._health = _health;
 }
 ```
+
+---
+
+## 9.2.3 — Cláusula de guarda
+
+**Motivo de eliminación:** decisión del equipo. Su redacción hacía violación cualquier método `void` cuyo cuerpo fuera un solo `if` (53 métodos del proyecto y varios ejemplos de reglas aprobadas), y dependía de la regla 5.1.1 (punto único de retorno).
+
+### Regla original
+Las condiciones que impiden continuar la ejecución de un método se resuelven con una salida temprana (return), en lugar de anidar el resto del cuerpo dentro de ellas, ya que esta técnica reduce la profundidad de anidamiento y mejora la legibilidad del código (McConnell, 2004).
+
+**Con estándar**
+```csharp
+public class TurnProcessor
+{
+    public void ProcessTurn(bool isMatchActive, bool hasCardsInStock)
+    {
+        if (!isMatchActive)
+        {
+            return;
+        }
+        if (!hasCardsInStock)
+        {
+            return;
+        }
+        DealNextCard();
+    }
+
+    private void DealNextCard()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TurnProcessor
+{
+    public void ProcessTurn(bool isMatchActive, bool hasCardsInStock)
+    {
+        if (isMatchActive)
+        {
+            if (hasCardsInStock)
+            {
+                DealNextCard();
+            }
+        }
+    }
+
+    private void DealNextCard()
+    {
+    }
+}
+```
