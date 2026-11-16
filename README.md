@@ -415,4 +415,3 @@
 | 2026-11-15 | 2.1.4 | **Aprobada.** Cubre variables, parámetros, campos y propiedades; prohíbe sufijos "List" y "Collection"; con cita. |
 | 2026-11-15 | 2.1.5, 2.1.6, 2.1.7 | **Aprobadas.** Mismo texto con cita agregada; ejemplos corregidos (tema Gin Rummy y estructura compilable). |
 | 2026-11-15 | 2.1.5, 2.1.6 | Ejemplos cambiados a variables locales dentro de métodos. |
-| 2026-11-15 | 2.1.5, 2.1.6, 2.1.7 | Ejemplos simplificados a un parámetro booleano. |
