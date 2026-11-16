@@ -4,6 +4,7 @@
 > Una casilla marcada (☑) significa que la regla está **aprobada como definitiva**.
 > Este archivo solo lista las reglas; su contenido completo vive en el documento del estándar.
 > Las fuentes de cada regla aprobada están en [REFERENCIAS.md](REFERENCIAS.md).
+> Evidencia de cambios respecto al estándar base: [NUEVAS.md](NUEVAS.md) · [MODIFICADAS.md](MODIFICADAS.md) · [ELIMINADAS.md](ELIMINADAS.md).
 
 ---
 
@@ -11,8 +12,8 @@
 
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
-| 1 | [Idioma](#1-idioma) | 1 | 3 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 0 | 45 |
+| 1 | [Idioma](#1-idioma) | 2 | 2 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 1 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -27,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **1** | **134** |
+| | **Total** | **3** | **133** |
 
 ---
 
@@ -51,18 +52,17 @@
 
 ### 1.1 Reglas sobre el idioma
 - [x] **1.1.1** Identificadores en inglés
-- [ ] **1.1.2** Idioma de los comentarios y la documentación ✏️
-- [ ] **1.1.3** Idioma de los mensajes de error (logs y excepciones) ✏️
+- [x] **1.1.2** Idioma de los comentarios y la documentación
 
 ---
 
 ## 2. Reglas de nombrado
 
 ### 2.1 Variables
-- [ ] **2.1.1** Formato de variables locales ✏️
-- [ ] **2.1.2** Variables de instancia
-- [ ] **2.1.3** Contadores de bucle
-- [ ] **2.1.4** Colecciones
+- [x] **2.1.1** Formato de variables locales
+- [ ] **2.1.2** Variables de instancia ✏️
+- [ ] **2.1.3** Contadores de bucle ✏️
+- [ ] **2.1.4** Colecciones ✏️
 - [ ] **2.1.5** Booleanos con prefijo `is` (estado)
 - [ ] **2.1.6** Booleanos con prefijo `has` (posesión o estado completado)
 - [ ] **2.1.7** Booleanos con prefijo `can` (capacidad o permiso)
@@ -394,7 +394,7 @@
 
 ## 🗑️ Reglas eliminadas
 
-_Ninguna por ahora._
+- ~~**1.1.3** Idioma de los mensajes de error (logs y excepciones)~~ — sin fuente de C# que la respalde; Microsoft recomienda traducir los mensajes de excepción en aplicaciones localizadas.
 
 ---
 
@@ -406,3 +406,7 @@ _Ninguna por ahora._
 | 2026-11-15 | 1.1.1 | Pasa a corrección ✏️. |
 | 2026-11-15 | 1.1.1 | **Aprobada.** Título cambiado a "Identificadores en inglés"; ahora cubre todo identificador (tipo, miembro, variable o namespace). |
 | 2026-11-15 | 1.1.2, 1.1.3, 2.1.1 | Pasan a corrección ✏️. |
+| 2026-11-15 | 1.1.2 | **Aprobada.** Ahora menciona la documentación XML (`///`) y tiene cita. |
+| 2026-11-15 | 1.1.3 | **Eliminada.** Sin fuente de C# que la respalde. |
+| 2026-11-15 | 2.1.1 | **Aprobada.** Incluye parámetros; prohíbe abreviaturas salvo las ampliamente conocidas y aceptadas. |
+| 2026-11-15 | 2.1.2, 2.1.3, 2.1.4 | Pasan a corrección ✏️. |

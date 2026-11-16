@@ -21,3 +21,19 @@
   **Qué respalda:** el analizador de Microsoft divide cada identificador en palabras y revisa su ortografía con el diccionario en inglés; no existen diccionarios de otros idiomas.
 - **Referencia:** Microsoft. (2023, 3 de octubre). *General naming conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions
   **Qué respalda:** pide elegir identificadores fáciles de leer y pone como ejemplo que `HorizontalAlignment` se lee mejor en inglés que `AlignmentHorizontal`.
+
+### 1.1.2 — Idioma de los comentarios y la documentación
+**Cita en el texto:** (ABB, 2019)
+
+- **Referencia:** ABB. (2019, 9 de abril). *C# coding standards* (Documento 9AAD134036, rev. D). https://library.e.abb.com/public/c9cbb85cca364efe85bf65f651c97ef8/ABB-Dev-CS%20Coding%20Standards%20(9AAD134036-D).pdf
+  **Qué respalda:** la regla C#302 de este estándar de C# pide que todos los comentarios y variables se escriban en inglés, sean gramaticalmente correctos y tengan la puntuación apropiada.
+
+---
+
+## 2. Reglas de nombrado
+
+### 2.1.1 — Formato de variables locales
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+  **Qué respalda:** pide camelCase para los argumentos de métodos y las variables locales, y evitar abreviaturas o acrónimos en los nombres, excepto los ampliamente conocidos y aceptados.
