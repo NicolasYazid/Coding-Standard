@@ -97,3 +97,11 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Capitalization conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
   **Qué respalda:** pide PascalCase para todos los nombres de miembros públicos, tipos y espacios de nombres; su tabla de ejemplos incluye las propiedades.
+
+### 2.2.6 — Set restringido
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Property design*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/property
+  **Qué respalda:** pide crear propiedades de solo lectura si quien las usa no debe poder cambiar su valor.
+- **Referencia:** Microsoft. (2025, 19 de noviembre). *Properties (C# programming guide)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
+  **Qué respalda:** muestra que con un `set` privado la propiedad puede leerse desde cualquier código, pero solo asignarse desde la propia clase.
