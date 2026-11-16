@@ -117,3 +117,9 @@
   **Qué respalda:** marca como violación una línea en blanco después de una llave de apertura.
 - **Referencia:** DotNetAnalyzers. (s.f.-b). *SA1508: Closing braces should not be preceded by blank line*. GitHub. Recuperado el 16 de noviembre de 2026, de https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1508.md
   **Qué respalda:** marca como violación una línea en blanco antes de una llave de cierre.
+
+### 9.1.2 — Obligatoriedad de las llaves
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 25 de julio). *Add braces (IDE0011)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0011
+  **Qué respalda:** la regla de estilo IDE0011 trata del uso de llaves para encerrar bloques de código; su valor predeterminado prefiere llaves incluso para una sola línea de código.

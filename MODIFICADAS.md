@@ -720,3 +720,75 @@ public class PlayerConnection
     }
 }
 ```
+
+---
+
+## 9.1.2 — Obligatoriedad de las llaves
+
+### Antes
+El cuerpo de toda estructura de control se delimita con llaves, aunque conste de una sola instrucción, siguiendo la regla de análisis de Microsoft que exige llaves incluso en bloques de una sola línea (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class DrawPileService
+{
+    private int _remainingCards;
+
+    public void DrawCard(
+        bool isStockEmpty)
+    {
+        if (isStockEmpty)
+        {
+            _remainingCards = 0;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class DrawPileService
+{
+    private int _remainingCards;
+
+    public void DrawCard(
+        bool isStockEmpty)
+    {
+        if (isStockEmpty)
+            _remainingCards = 0;
+    }
+}
+```
+
+### Después
+El cuerpo de toda estructura de control se delimita con llaves, aunque conste de una sola instrucción, siguiendo la regla de análisis de Microsoft que prefiere llaves incluso en bloques de una sola línea (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class DiscardPile
+{
+    public bool IsEmpty { get; private set; }
+
+    public void ClearPile(bool isRoundOver)
+    {
+        if (isRoundOver)
+        {
+            IsEmpty = true;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class DiscardPile
+{
+    public bool IsEmpty { get; private set; }
+
+    public void ClearPile(bool isRoundOver)
+    {
+        if (isRoundOver)
+            IsEmpty = true;
+    }
+}
+```

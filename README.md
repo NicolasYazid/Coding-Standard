@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 1 | 20 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 2 | 20 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **15** | **133** |
+| | **Total** | **16** | **133** |
 
 ---
 
@@ -277,7 +277,7 @@
 
 ### 9.1 Uso de llaves
 - [ ] **9.1.1** Estilo de llaves (Allman)
-- [ ] **9.1.2** Obligatoriedad de las llaves
+- [x] **9.1.2** Obligatoriedad de las llaves
 - [x] **9.1.3** Interior del bloque
 
 ### 9.2 Sentencias condicionales (`if`, `else`)
@@ -425,3 +425,4 @@
 | 2026-11-16 | 2.2.1 | **Aprobada.** Mismo texto con cita; ejemplos con tema Gin Rummy. |
 | 2026-11-16 | 2.2.6 | **Aprobada (nueva).** Separada de la regla 2.2.4 original. Pendiente de confirmar: agregar el caso `protected set` para clases derivadas. |
 | 2026-11-16 | 9.1.3 | **Aprobada.** Cita reemplazada por StyleCop (SA1505 y SA1508); ejemplos corregidos. |
+| 2026-11-16 | 9.1.2 | **Aprobada.** "exige" cambiado por "prefiere" y cita con fecha (IDE0011); ejemplos corregidos. |
