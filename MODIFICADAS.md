@@ -1078,3 +1078,15 @@ La condición que termina el bucle se declara en su cabecera; queda prohibido el
 
 ### Después
 Mismo texto; la cita (Microsoft, s.f.) ahora remite a la página verificada de la clase `TcpListener`. **Ejemplos sin cambios respecto al estándar base.**
+
+---
+
+## 9.3.2 — Recorrido de colecciones
+
+### Antes
+Cuando se recorre una colección completa y no se necesita el índice, se usa foreach, ya que es el ciclo recomendado para lectura de colecciones al no requerir gestión manual de índices ni exponerse a errores de desbordamiento (Microsoft, s.f.).
+
+### Después
+Cuando se recorre una colección completa y no se necesita el índice, se usa foreach, ya que simplifica el código al no requerir la variable del índice (Microsoft, 2026d).
+
+**Ejemplos sin cambios respecto al estándar base.**

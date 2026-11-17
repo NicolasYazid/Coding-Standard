@@ -191,3 +191,9 @@
 
 - **Referencia:** Microsoft. (s.f.). *TcpListener class*. Microsoft Learn. Recuperado el 16 de noviembre de 2026, de https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcplistener
   **Qué respalda:** el ejemplo oficial usa un bucle `while(true)` que llama a `AcceptTcpClient` para escuchar conexiones (excepción de la regla).
+
+### 9.3.2 — Recorrido de colecciones
+**Cita en el texto:** (Microsoft, 2026d)
+
+- **Referencia:** Microsoft. (2026, 13 de abril). *Refactoring to convert between a for loop and a foreach statement*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/ide/reference/convert-for-loop-to-foreach
+  **Qué respalda:** convertir un `for` a `foreach` es útil cuando no se necesita la variable del bucle como índice y se quiere simplificar el código.

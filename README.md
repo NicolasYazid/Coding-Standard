@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 13 | 23 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 14 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **27** | **136** |
+| | **Total** | **28** | **136** |
 
 ---
 
@@ -291,7 +291,7 @@
 
 ### 9.3 Bucles (`for`, `while`, `do-while`)
 - [x] **9.3.1** Ámbito de la variable de control
-- [ ] **9.3.2** Recorrido de colecciones ✏️
+- [x] **9.3.2** Recorrido de colecciones
 - [x] **9.3.3** Prohibición de modificar la colección recorrida
 - [x] **9.3.5** Condición de salida en la cabecera
 
@@ -447,3 +447,4 @@
 | 2026-11-16 | 9.3.1, 9.3.3, 9.3.5 | **Aprobadas.** Citas sin fecha reemplazadas por fuentes verificadas; 9.3.3 renombra la clase del ejemplo (sufijo Manager). |
 | 2026-11-16 | 9.3.4 | **Eliminada.** Decisión del equipo. |
 | 2026-11-16 | 9.3.2 | En corrección ✏️: su texto atribuye a Microsoft afirmaciones que la fuente no hace. |
+| 2026-11-16 | 9.3.2 | **Aprobada.** Motivo ajustado a lo que dice la fuente; cita verificada. |
