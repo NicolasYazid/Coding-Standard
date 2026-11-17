@@ -1884,3 +1884,51 @@ public class GameRound
     }
 }
 ```
+
+---
+
+## 2.6.3 — Límite de parámetros
+
+### Antes
+Para evitar firmas excesivamente complejas y mantener el código claro, los métodos deberán recibir como máximo tres parámetros. Si un método requiere una mayor cantidad de datos de entrada, se debe refactorizar utilizando un objeto de transferencia de datos (DTO) o una estructura que encapsule dicha información.
+
+**Con estándar**
+```csharp
+public void MovePlayer(float speed, float directionX, bool isDashing)
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void MovePlayer(float speed, float directionX, bool isDashing, float jumpForce)
+{
+}
+```
+
+### Después
+Un método o constructor recibe como máximo tres parámetros, para que su firma sea clara (SonarSource, s.f.). Si necesita más datos, se agrupan en una clase y el método recibe esa clase. Quedan fuera los métodos que implementan una interfaz de .NET, porque su firma la define .NET.
+
+**Con estándar**
+```csharp
+public class MatchHistory
+{
+    public void RegisterKnock(int knockerId, int deadwoodPoints, bool isGin)
+    {
+    }
+
+    public void RegisterRoundResult(RoundResult roundResult)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchHistory
+{
+    public void RegisterRoundResult(int winnerId, int loserId, int deadwoodDifference, bool isGin)
+    {
+    }
+}
+```

@@ -285,3 +285,9 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
   **Qué respalda:** los nombres de los métodos deben ser verbos o frases verbales.
+
+### 2.6.3 — Límite de parámetros
+**Cita en el texto:** (SonarSource, s.f.)
+
+- **Referencia:** SonarSource. (s.f.). *Methods should not have too many parameters (S107)*. Recuperado el 17 de noviembre de 2026, de https://rules.sonarsource.com/csharp/tag/brain-overload/RSPEC-107
+  **Qué respalda:** regla de análisis de código para C# que marca los métodos con más parámetros que el límite configurado (el del equipo es tres).
