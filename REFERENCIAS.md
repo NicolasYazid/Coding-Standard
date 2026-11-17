@@ -315,3 +315,9 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
   **Qué respalda:** pide dar a los métodos nombres que sean verbos o frases verbales ("DO give methods names that are verbs or verb phrases").
+
+### 2.8.1 — Estructura de nomenclatura (prefijo Test)
+**Cita en el texto:** (Microsoft, 2026i)
+
+- **Referencia:** Microsoft. (2026i, 6 de noviembre). *Unit testing best practices for .NET*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices
+  **Qué respalda:** el nombre de una prueba tiene tres partes: el método que se prueba, el escenario y el comportamiento esperado (ejemplo `Add_SingleNumber_ReturnsSameNumber`). El prefijo `Test` es decisión del equipo.

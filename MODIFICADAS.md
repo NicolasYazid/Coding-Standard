@@ -2156,3 +2156,53 @@ public class MeldValidator
     }
 }
 ```
+
+## 2.8.1 — Estructura de nomenclatura (prefijo Test)
+
+### Antes
+La convención de nombres para los métodos de prueba unitaria difiere de los métodos operativos. Deben comenzar obligatoriamente con el prefijo Test, seguido del nombre del método que se está probando, el flujo o escenario evaluado, y finalmente el resultado esperado. Las partes deben estar separadas por guiones bajos (_).
+
+Estructura: Test + nombre del método + flujo/escenario evaluado + resultado esperado
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_TakeDamage_ShieldIsActive_ReturnsZeroDamage()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void TakeDamage_ShieldIsActive_ReturnsZeroDamage()
+{
+}
+```
+
+### Después
+La convención de nombres para los métodos de prueba unitaria difiere de los métodos operativos. Deben comenzar obligatoriamente con el prefijo Test, seguido del nombre del método que se está probando, el flujo o escenario evaluado, y finalmente el resultado esperado. Las partes deben estar separadas por guiones bajos (_) (Microsoft, 2026i).
+
+Estructura: Test + nombre del método + flujo/escenario evaluado + resultado esperado
+
+**Con estándar**
+```csharp
+public class MeldFinderTests
+{
+    [Test]
+    public void Test_FindMelds_ThreeKings_ReturnsOneMeld()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MeldFinderTests
+{
+    [Test]
+    public void FindMelds_ThreeKings_ReturnsOneMeld()
+    {
+    }
+}
+```
