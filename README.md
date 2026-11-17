@@ -15,7 +15,7 @@
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 41 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
-| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 1 | 6 |
+| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 2 | 6 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
@@ -27,7 +27,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **51** | **132** |
+| | **Total** | **52** | **132** |
 
 ---
 
@@ -161,7 +161,7 @@
 - [x] **5.1.1** Punto único de retorno en métodos con valor de retorno
 
 ### 5.2 Prevención de números mágicos
-- [ ] **5.2.1** Prevención de números mágicos
+- [x] **5.2.1** Prevención de números mágicos
 
 ### 5.3 Número máximo de operadores en expresiones
 - [ ] **5.3.1** Número máximo de operaciones en expresiones
@@ -455,3 +455,4 @@
 | 2026-11-17 | 2.8.4 | Título cambiado a "Atributos de prueba". |
 | 2026-11-17 | 2.10.1, 2.10.2 | **Eliminada la subsección 2.10 completa.** El proyecto no usa controladores (patrón MVC). |
 | 2026-11-17 | 5.1.1 | **Aprobada.** Se agrega que es una regla del equipo (sin cita: no hay fuente oficial de C# que la exija). Ejemplos sin cambios. |
+| 2026-11-17 | 5.2.1 | **Aprobada sin cambios.** El equipo conserva su texto (solo números con significado dentro del contexto del juego). |

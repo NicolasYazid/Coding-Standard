@@ -338,3 +338,8 @@
 **Cita en el texto:** ninguna.
 
 - **Sin referencia:** regla del equipo. No se encontró una fuente oficial de C# que exija un solo `return`; la regla S1142 de SonarSource solo existe para otros lenguajes y permite hasta tres.
+
+### 5.2.1 — Prevención de números mágicos
+**Cita en el texto:** (Microsoft, s.f.)
+
+- **Referencia:** conservada del texto del equipo. No se identificó una página de Microsoft Learn específica sobre números mágicos. Fuente de C# alternativa disponible: SonarSource. (s.f.). *Magic numbers should not be used* (S109, C#). https://rules.sonarsource.com/csharp/type/Code%20Smell/RSPEC-109

@@ -2389,3 +2389,33 @@ public class KnockScorer
     }
 }
 ```
+
+## 5.2.1 — Prevención de números mágicos
+
+**Aprobada sin cambios** respecto al estándar base.
+
+Todo valor numérico literal con un significado específico dentro del contexto del juego debe reemplazarse por una constante con nombre descriptivo, evitando así números sin contexto dispersos en el código (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class KnockService
+{
+    private const int MaxKnockDeadwood = 10;
+
+    public bool CanKnock(int deadwoodScore)
+    {
+        return deadwoodScore <= MaxKnockDeadwood;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class KnockService
+{
+    public bool CanKnock(int deadwoodScore)
+    {
+        return deadwoodScore <= 10;
+    }
+}
+```
