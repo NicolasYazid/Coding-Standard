@@ -1788,3 +1788,99 @@ public class PlayerNameValidator
     private static Regex s_usernameRegex = new Regex(UsernamePattern);
 }
 ```
+
+---
+
+## 2.6.1 — Nomenclatura (PascalCase)
+
+### Antes
+Los nombres de los métodos deben definirse utilizando estrictamente el formato PascalCase (la primera letra de cada palabra en mayúscula), alineándose con las convenciones oficiales de Microsoft para C#.
+
+**Con estándar**
+```csharp
+public void CalculateScore()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void calculateScore()
+{
+}
+```
+
+### Después
+Los nombres de los métodos deben definirse utilizando estrictamente el formato PascalCase, con la primera letra de cada palabra en mayúscula (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class ScoreCalculator
+{
+    public void CalculateScore()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ScoreCalculator
+{
+    public void calculateScore()
+    {
+    }
+}
+```
+
+---
+
+## 2.6.2 — Verbos o frases verbales
+
+### Antes
+Los nombres de los métodos deberán ser obligatoriamente verbos o frases verbales que describan con precisión la acción que ejecutan. Queda prohibido el uso de sustantivos estáticos para nombrar una acción.
+
+**Con estándar**
+```csharp
+public void SpawnEnemy()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void Enemy()
+{
+}
+```
+
+### Después
+Los nombres de los métodos deberán ser obligatoriamente verbos o frases verbales que empiecen con el verbo y describan con precisión la acción que ejecutan (Microsoft, 2023). Queda prohibido el uso de sustantivos para nombrar una acción. Quedan fuera los constructores y el método `Main`, porque C# les impone su nombre.
+
+**Con estándar**
+```csharp
+public class GameRound
+{
+    public GameRound()
+    {
+    }
+
+    public void DealCards()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameRound
+{
+    public GameRound()
+    {
+    }
+
+    public void Cards()
+    {
+    }
+}
+```

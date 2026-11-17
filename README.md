@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 15 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 17 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **40** | **136** |
+| | **Total** | **42** | **136** |
 
 ---
 
@@ -91,9 +91,9 @@
 - [x] **2.5.3** Uso de `static readonly`
 
 ### 2.6 Métodos
-- [ ] **2.6.1** Nomenclatura (PascalCase)
-- [ ] **2.6.2** Verbos o frases verbales
-- [ ] **2.6.3** Límite de parámetros
+- [x] **2.6.1** Nomenclatura (PascalCase)
+- [x] **2.6.2** Verbos o frases verbales
+- [ ] **2.6.3** Límite de parámetros ✏️
 
 ### 2.7 Manejadores de eventos (prefijos On, Handle, Toggle)
 - [ ] **2.7.1** Prefijo `On` (reacción a eventos del sistema)
@@ -459,3 +459,6 @@
 | 2026-11-17 | 2.5.1 | **Aprobada.** Aplica a campos y constantes locales de cualquier acceso; UPPER_SNAKE_CASE prohibido; cita verificada. |
 | 2026-11-17 | 2.5.2 | **Aprobada.** Título cambiado a "Uso de `const`": obliga a declarar `const` todo campo con valor escrito en el código que nunca se reasigna; citas Field design y CA1802. |
 | 2026-11-17 | 2.5.3 | **Aprobada.** Título cambiado a "Uso de `static readonly`": un campo `static` que nunca se reasigna y no puede ser `const` lleva `readonly`. Subsección 2.5 cerrada. |
+| 2026-11-17 | 2.6.1 | **Aprobada.** Mismo texto; "alineándose con las convenciones de Microsoft" pasa a ser la cita; ejemplos dentro de una clase. |
+| 2026-11-17 | 2.6.2 | **Aprobada.** El nombre empieza con el verbo; "sustantivos estáticos" pasa a "sustantivos"; constructores y `Main` quedan fuera; cita verificada. |
+| 2026-11-17 | 2.6.3 | En corrección ✏️: ejemplos más simples. |

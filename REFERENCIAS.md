@@ -273,3 +273,15 @@
   **Qué respalda:** usar campos `static readonly` para las instancias de objetos predefinidas.
 - **Referencia:** Microsoft. (2026, 2 de abril). *CA1802: Use literals where appropriate*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1802
   **Qué respalda:** el valor de un campo `static readonly` se calcula al ejecutar el programa; el de un `const`, al compilar.
+
+### 2.6.1 — Nomenclatura (PascalCase)
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+  **Qué respalda:** usar PascalCase en los nombres de clases y métodos.
+
+### 2.6.2 — Verbos o frases verbales
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
+  **Qué respalda:** los nombres de los métodos deben ser verbos o frases verbales.
