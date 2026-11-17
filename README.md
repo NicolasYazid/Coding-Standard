@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 22 | 23 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **36** | **136** |
+| | **Total** | **37** | **136** |
 
 ---
 
@@ -305,7 +305,7 @@
 ### 9.5 Uso del operador ternario
 - [x] **9.5.1** Ámbito de uso
 - [x] **9.5.2** Prohibición del ternario anidado
-- [ ] **9.5.3** Prohibición de literales booleanos ✏️
+- [x] **9.5.3** Ramas booleanas explícitas
 - [x] **9.5.4** Extensión del ternario
 
 ---
@@ -455,3 +455,4 @@
 | 2026-11-17 | 9.5.2 | **Aprobada.** Agrega el motivo y qué hacer con más de dos valores (cada ternario en su propia variable); cita de DeepSource (C#). |
 | 2026-11-17 | 9.5.3, 9.5.4 | En corrección ✏️: se investiga en Microsoft la forma explícita `? true : false` y el ternario en varias líneas. |
 | 2026-11-17 | 9.5.4 | **Aprobada.** Invertida: el ternario que no cabe en 140 caracteres se parte en tres líneas, con `?` y `:` al inicio y 4 espacios más de sangría; cita IDE2005. |
+| 2026-11-17 | 9.5.3 | **Aprobada e invertida.** Título cambiado a "Ramas booleanas explícitas": exige escribir las ramas `true` y `false` del ternario y prohíbe dejar solo la condición; cita IDE0075. Subsección 9.5 cerrada; sección 9 completa. |

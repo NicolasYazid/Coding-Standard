@@ -1582,3 +1582,63 @@ public class RoundScorer
     }
 }
 ```
+
+---
+
+## 9.5.3 — Ramas booleanas explícitas (antes: Prohibición de literales booleanos)
+
+### Antes
+Queda prohibido el ternario cuyas ramas son true y false. La condición se asigna directamente.
+
+**Con estándar**
+```csharp
+bool canOpenGate = _hasGateKey && _isGateReachable;
+```
+
+**Sin estándar**
+```csharp
+bool canOpenGate = _hasGateKey && _isGateReachable ? true : false;
+```
+
+### Después
+Las ramas `true` y `false` de un ternario se escriben de forma explícita, para que se vea qué valor resulta en cada caso (Microsoft, 2022b). Queda prohibido omitirlas y dejar solo la condición.
+
+**Con estándar**
+```csharp
+public class TurnValidator
+{
+    public bool CheckKnockAllowed(bool hasDrawnCard, bool isDeadwoodInRange)
+    {
+        bool canKnock = hasDrawnCard && isDeadwoodInRange ? true : false;
+
+        return canKnock;
+    }
+
+    public bool CheckRoundOver(bool hasKnocked, bool isStockEmpty)
+    {
+        bool isRoundOver = hasKnocked || isStockEmpty ? true : false;
+
+        return isRoundOver;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TurnValidator
+{
+    public bool CheckKnockAllowed(bool hasDrawnCard, bool isDeadwoodInRange)
+    {
+        bool canKnock = hasDrawnCard && isDeadwoodInRange;
+
+        return canKnock;
+    }
+
+    public bool CheckRoundOver(bool hasKnocked, bool isStockEmpty)
+    {
+        bool isRoundOver = hasKnocked || isStockEmpty;
+
+        return isRoundOver;
+    }
+}
+```

@@ -245,3 +245,9 @@
 
 - **Referencia:** Microsoft. (2025, 21 de agosto). *Blank line not allowed after conditional expression token (IDE2005)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2005
   **Qué respalda:** el ternario partido en varias líneas, con `?` y `:` al inicio de cada línea y 4 espacios más de sangría (regla experimental).
+
+### 9.5.3 — Ramas booleanas explícitas
+**Cita en el texto:** (Microsoft, 2022b)
+
+- **Referencia:** Microsoft. (2022, 25 de junio). *Simplify conditional expression (IDE0075)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0075
+  **Qué respalda:** con la opción `dotnet_style_prefer_simplified_boolean_expressions = false`, Microsoft muestra como forma válida el ternario `M1() && M2() ? true : false`. El `.editorconfig` debe incluir esa opción en `false`.
