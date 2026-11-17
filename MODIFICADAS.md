@@ -1517,3 +1517,68 @@ public class GinBonusCalculator
     }
 }
 ```
+
+---
+
+## 9.5.4 — Extensión del ternario
+
+### Antes
+El ternario debe caber en una sola línea. Si no cabe, se sustituye por una sentencia condicional.
+
+**Con estándar**
+```csharp
+float appliedGravity = _isFalling ? FallGravity : BaseGravity;
+```
+
+**Sin estándar**
+```csharp
+float appliedGravity = _isFalling
+    ? FallGravity
+    : BaseGravity;
+```
+
+### Después
+Un ternario se escribe en una sola línea si cabe en el límite de 140 caracteres (regla 4.1.2). Si no cabe, se parte en tres líneas: la condición, una línea que empieza con `?` y una línea que empieza con `:`; estas dos últimas llevan 4 espacios más de sangría (Microsoft, 2025d).
+
+**Con estándar**
+```csharp
+public class RoundScorer
+{
+    private const int GinBonus = 25;
+    private const int NoBonus = 0;
+    private const int UndercutBonus = 25;
+
+    public int CalculateBonusPoints(bool isGin)
+    {
+        int bonusPoints = isGin ? GinBonus : NoBonus;
+
+        return bonusPoints;
+    }
+
+    public int CalculateRoundPoints(bool isUndercut, int knockerDeadwoodPoints, int opponentDeadwoodPoints)
+    {
+        int roundPoints = isUndercut
+            ? knockerDeadwoodPoints - opponentDeadwoodPoints + UndercutBonus
+            : opponentDeadwoodPoints - knockerDeadwoodPoints;
+
+        return roundPoints;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class RoundScorer
+{
+    private const int UndercutBonus = 25;
+
+    public int CalculateRoundPoints(bool isUndercut, int knockerDeadwoodPoints, int opponentDeadwoodPoints)
+    {
+        int roundPoints = isUndercut ?
+            knockerDeadwoodPoints - opponentDeadwoodPoints + UndercutBonus :
+            opponentDeadwoodPoints - knockerDeadwoodPoints;
+
+        return roundPoints;
+    }
+}
+```

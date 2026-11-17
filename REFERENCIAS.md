@@ -239,3 +239,9 @@
 
 - **Referencia:** DeepSource. (s.f.). *Avoid nested ternary expressions (CS-R1114)*. Recuperado el 17 de noviembre de 2026, de https://deepsource.com/directory/csharp/issues/CS-R1114
   **Qué respalda:** regla de un analizador de código C#: el ternario anidado afecta la legibilidad y se recomienda no anidarlo. No existe una fuente de Microsoft que lo prohíba.
+
+### 9.5.4 — Extensión del ternario
+**Cita en el texto:** (Microsoft, 2025d)
+
+- **Referencia:** Microsoft. (2025, 21 de agosto). *Blank line not allowed after conditional expression token (IDE2005)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2005
+  **Qué respalda:** el ternario partido en varias líneas, con `?` y `:` al inicio de cada línea y 4 espacios más de sangría (regla experimental).
