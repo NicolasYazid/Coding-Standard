@@ -303,3 +303,9 @@
 
 - **Referencia:** Microsoft. (2021, 12 de octubre). *How to subscribe to and unsubscribe from events*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events
   **Qué respalda:** su ejemplo nombra `HandleCustomEvent` al método que reacciona a un evento (ejemplo de código, no indicación escrita).
+
+### 2.7.3 — Prefijo Toggle (alternancia de estados booleanos)
+**Cita en el texto:** (Microsoft, 2025e)
+
+- **Referencia:** Microsoft. (2025e). *IToggleProvider.Toggle method*. Microsoft Learn. Recuperado el 17 de noviembre de 2026, de https://learn.microsoft.com/en-us/dotnet/api/system.windows.automation.provider.itoggleprovider.toggle
+  **Qué respalda:** en .NET, `Toggle` nombra la acción de pasar de un estado al otro ("Cycles through the toggle states of a control").

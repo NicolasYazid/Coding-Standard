@@ -2036,3 +2036,69 @@ public class GameTableViewModel
     }
 }
 ```
+
+---
+
+## 2.7.3 — Prefijo Toggle (alternancia de estados booleanos)
+
+### Antes
+El prefijo Toggle debe utilizarse exclusivamente cuando la única responsabilidad del manejador sea alternar el estado lógico (verdadero o falso) de un componente o mecánica del juego.
+
+**Con estándar**
+```csharp
+public void ToggleGodMode()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void ChangeGodModeState()
+{
+}
+```
+
+### Después
+El prefijo `Toggle` se usa solo en los métodos que no hacen nada más que cambiar un `bool` a su valor contrario (de `true` a `false`, o de `false` a `true`). Todo método así empieza con `Toggle` seguido de lo que cambia, por ejemplo `ToggleChatFilter` (Microsoft, 2025e).
+
+**Con estándar**
+```csharp
+public class ChatSettings
+{
+    private bool _isChatFilterEnabled;
+    private bool _isSoundEnabled;
+    private int _soundChangesCount;
+
+    public void ToggleChatFilter()
+    {
+        _isChatFilterEnabled = !_isChatFilterEnabled;
+    }
+
+    public void ChangeSoundSetting()
+    {
+        _isSoundEnabled = !_isSoundEnabled;
+        _soundChangesCount++;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ChatSettings
+{
+    private bool _isChatFilterEnabled;
+    private bool _isSoundEnabled;
+    private int _soundChangesCount;
+
+    public void ChangeChatFilterState()
+    {
+        _isChatFilterEnabled = !_isChatFilterEnabled;
+    }
+
+    public void ToggleSound()
+    {
+        _isSoundEnabled = !_isSoundEnabled;
+        _soundChangesCount++;
+    }
+}
+```
