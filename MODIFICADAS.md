@@ -970,3 +970,111 @@ public class ConnectionMonitor
     }
 }
 ```
+
+---
+
+## 9.3.1 — Ámbito de la variable de control
+
+### Antes
+La variable de control del bucle for se debe declarar e inicializar en la propia cabecera del bucle, minimizando su alcance para evitar que quede accesible fuera del bloque que la usa (Software Engineering Institute, s.f.).
+
+### Después
+La variable de control del bucle for se debe declarar e inicializar en la propia cabecera del bucle, minimizando su alcance para evitar que quede accesible fuera del bloque que la usa (Microsoft, 2026c).
+
+**Ejemplos sin cambios respecto al estándar base.**
+
+---
+
+## 9.3.3 — Prohibición de modificar la colección recorrida
+
+### Antes
+Queda prohibido agregar o eliminar elementos de una colección dentro de un foreach que la recorre, ya que modificarla invalida el enumerador y provoca una excepción InvalidOperationException en tiempo de ejecución (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class LobbyManager
+{
+    private List<Player> _connectedPlayers;
+
+    public void RemoveDisconnected()
+    {
+        for (int i = _connectedPlayers.Count - 1; i >= 0; i--)
+        {
+            if (_connectedPlayers[i].IsDisconnected)
+            {
+                _connectedPlayers.RemoveAt(i);
+            }
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class LobbyManager
+{
+    private List<Player> _connectedPlayers;
+
+    public void RemoveDisconnected()
+    {
+        foreach (Player player in _connectedPlayers)
+        {
+            if (player.IsDisconnected)
+            {
+                _connectedPlayers.Remove(player);
+            }
+        }
+    }
+}
+```
+
+### Después
+Queda prohibido agregar o eliminar elementos de una colección dentro de un foreach que la recorre, ya que modificarla invalida el enumerador y provoca una excepción InvalidOperationException en tiempo de ejecución (Microsoft, 2025c).
+
+**Con estándar**
+```csharp
+public class LobbyRoster
+{
+    private List<Player> _connectedPlayers;
+
+    public void RemoveDisconnected()
+    {
+        for (int i = _connectedPlayers.Count - 1; i >= 0; i--)
+        {
+            if (_connectedPlayers[i].IsDisconnected)
+            {
+                _connectedPlayers.RemoveAt(i);
+            }
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class LobbyRoster
+{
+    private List<Player> _connectedPlayers;
+
+    public void RemoveDisconnected()
+    {
+        foreach (Player player in _connectedPlayers)
+        {
+            if (player.IsDisconnected)
+            {
+                _connectedPlayers.Remove(player);
+            }
+        }
+    }
+}
+```
+
+---
+
+## 9.3.5 — Condición de salida en la cabecera
+
+### Antes
+La condición que termina el bucle se declara en su cabecera; queda prohibido el bucle infinito interrumpido desde dentro, salvo en bucles de escucha de conexiones destinados a ejecutarse durante toda la vida del proceso del servidor, patrón que la propia documentación de Microsoft utiliza para TcpListener.AcceptTcpClient (Microsoft, s.f.).
+
+### Después
+Mismo texto; la cita (Microsoft, s.f.) ahora remite a la página verificada de la clase `TcpListener`. **Ejemplos sin cambios respecto al estándar base.**

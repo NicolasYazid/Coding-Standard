@@ -111,3 +111,49 @@ public class TurnProcessor
     }
 }
 ```
+
+---
+
+## 9.3.4 — Elección del do-while
+
+**Motivo de eliminación:** decisión del equipo. La regla solo describía para qué sirve un `do-while` (ejecutar el cuerpo al menos una vez), igual que decir que un `if` sirve para tomar decisiones; no prevenía ningún defecto.
+
+### Regla original
+El do-while se reserva para los casos en que el cuerpo debe ejecutarse al menos una vez antes de evaluar la condición, a diferencia del while, que puede no ejecutarse nunca (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class ServerConnector
+{
+    private const int MaxAttempts = 3;
+    private int _connectionAttempts;
+
+    public void ConnectWithRetry()
+    {
+        do
+        {
+            _connectionAttempts++;
+        }
+        while (_connectionAttempts < MaxAttempts);
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ServerConnector
+{
+    private const int MaxAttempts = 3;
+    private int _connectionAttempts;
+
+    public void ConnectWithRetry()
+    {
+        bool isFirstAttempt = true;
+        while (isFirstAttempt || _connectionAttempts < MaxAttempts)
+        {
+            isFirstAttempt = false;
+            _connectionAttempts++;
+        }
+    }
+}
+```

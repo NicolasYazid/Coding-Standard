@@ -173,3 +173,21 @@
 
 - **Referencia:** Microsoft. (2023, 25 de julio). *Remove unnecessary equality operator (IDE0100)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0100
   **Qué respalda:** marca como innecesario el operador de igualdad al comparar una expresión booleana no constante con `true` o `false`.
+
+### 9.3.1 — Ámbito de la variable de control
+**Cita en el texto:** (Microsoft, 2026c)
+
+- **Referencia:** Microsoft. (2026, 20 de enero). *Iteration statements - for, foreach, do, and while*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
+  **Qué respalda:** la variable de control se declara e inicializa en la sección de inicialización del `for`, y no se puede acceder a ella desde fuera de la sentencia `for`.
+
+### 9.3.3 — Prohibición de modificar la colección recorrida
+**Cita en el texto:** (Microsoft, 2025c)
+
+- **Referencia:** Microsoft. (2025, 1 de julio). *List<T>.GetEnumerator method*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.getenumerator
+  **Qué respalda:** si se agregan, modifican o eliminan elementos de la colección, el enumerador queda invalidado y la siguiente llamada a `MoveNext` lanza `InvalidOperationException`.
+
+### 9.3.5 — Condición de salida en la cabecera
+**Cita en el texto:** (Microsoft, s.f.)
+
+- **Referencia:** Microsoft. (s.f.). *TcpListener class*. Microsoft Learn. Recuperado el 16 de noviembre de 2026, de https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcplistener
+  **Qué respalda:** el ejemplo oficial usa un bucle `while(true)` que llama a `AcceptTcpClient` para escuchar conexiones (excepción de la regla).
