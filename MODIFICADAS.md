@@ -1090,3 +1090,163 @@ Cuando se recorre una colección completa y no se necesita el índice, se usa fo
 Cuando se recorre una colección completa y no se necesita el índice, se usa foreach, ya que simplifica el código al no requerir la variable del índice (Microsoft, 2026d).
 
 **Ejemplos sin cambios respecto al estándar base.**
+
+---
+
+## 9.4.1 — Elección del switch
+
+### Antes
+Cuando un mismo valor se compara contra varias constantes, se usa switch en lugar de una cadena de else if, ya que un switch se lee con más claridad que una cadena larga de else if al comparar un solo valor contra varios casos discretos (Microsoft, s.f.).
+
+El ejemplo con estándar contenía la línea `End Round();`, que no compila.
+
+### Después
+Cuando un mismo valor se compara contra dos o más constantes, se usa switch en lugar de una cadena de else if, ya que un switch se lee con más claridad que una cadena larga de else if al comparar un solo valor contra varios casos discretos (Microsoft, s.f.-a).
+
+**Con estándar**
+```csharp
+public class MatchStateHandler
+{
+    public void ProcessState(MatchState currentState)
+    {
+        switch (currentState)
+        {
+            case MatchState.Dealing:
+                DealCards();
+                break;
+            case MatchState.PlayerTurn:
+                WaitForMove();
+                break;
+            default:
+                EndRound();
+                break;
+        }
+    }
+
+    private void DealCards()
+    {
+    }
+
+    private void WaitForMove()
+    {
+    }
+
+    private void EndRound()
+    {
+    }
+}
+```
+
+---
+
+## 9.4.2 — Uso de llaves en el cuerpo de un case
+
+### Antes
+Un case no requiere llaves propias por defecto, ya que es una etiqueta dentro del bloque único del switch, no una estructura de control independiente. Sin embargo, si un case declara una variable local, su cuerpo debe envolverse obligatoriamente en llaves, ya que sin ellas la variable comparte el ámbito de todo el switch y provoca el error de compilación CS0136 si otro case declara una variable con el mismo nombre (Microsoft, s.f.).
+
+Los ejemplos usaban números sueltos (10 y 0), no tenían default y el ejemplo sin estándar no compilaba.
+
+### Después
+Un case no requiere llaves propias por defecto, ya que es una etiqueta dentro del bloque único del switch, no una estructura de control independiente. Sin embargo, si un case declara una variable local, su cuerpo debe envolverse obligatoriamente en llaves, ya que sin ellas la variable comparte el ámbito de todo el switch y provoca un error de compilación si otro case declara una variable con el mismo nombre (Microsoft, s.f.-b).
+
+**Con estándar**
+```csharp
+public class MatchStateHandler
+{
+    private const int InitialHandSize = 10;
+
+    public void ProcessState(MatchState currentState)
+    {
+        switch (currentState)
+        {
+            case MatchState.Dealing:
+            {
+                int cardsToDeal = InitialHandSize;
+                DealCards(cardsToDeal);
+                break;
+            }
+            default:
+                WaitForMove();
+                break;
+        }
+    }
+
+    private void DealCards(int cardsToDeal)
+    {
+    }
+
+    private void WaitForMove()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchStateHandler
+{
+    private const int InitialHandSize = 10;
+
+    public void ProcessState(MatchState currentState)
+    {
+        switch (currentState)
+        {
+            case MatchState.Dealing:
+                int cardsToDeal = InitialHandSize;
+                DealCards(cardsToDeal);
+                break;
+            default:
+                WaitForMove();
+                break;
+        }
+    }
+
+    private void DealCards(int cardsToDeal)
+    {
+    }
+
+    private void WaitForMove()
+    {
+    }
+}
+```
+
+---
+
+## 9.4.4 — Agrupación de etiquetas
+
+### Antes / Después
+Mismo texto; la cita (Microsoft, s.f.) pasa a (Microsoft, 2026e), con la página verificada. **Ejemplos sin cambios.**
+
+---
+
+## 9.4.5 — Cuerpo de la sección
+
+### Antes / Después
+Mismo texto. El ejemplo sin estándar tenía el número suelto `30`; ahora usa una constante.
+
+**Sin estándar**
+```csharp
+public class TurnStateHandler
+{
+    private const int MaxTurnSeconds = 30;
+    private int _turnTimer;
+
+    public void Handle(TurnState currentState)
+    {
+        switch (currentState)
+        {
+            case TurnState.PlayerTurn:
+                _turnTimer++;
+                if (_turnTimer > MaxTurnSeconds)
+                {
+                    _turnTimer = 0;
+                }
+                break;
+            default:
+                _turnTimer = 0;
+                break;
+        }
+    }
+}
+```

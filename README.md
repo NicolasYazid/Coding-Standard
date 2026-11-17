@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 14 | 23 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 18 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **28** | **136** |
+| | **Total** | **32** | **136** |
 
 ---
 
@@ -296,11 +296,11 @@
 - [x] **9.3.5** Condición de salida en la cabecera
 
 ### 9.4 Sentencias `switch`
-- [ ] **9.4.1** Elección del `switch`
-- [ ] **9.4.2** Uso de llaves en el cuerpo de un `case`
-- [ ] **9.4.3** Cláusula `default` obligatoria
-- [ ] **9.4.4** Agrupación de etiquetas
-- [ ] **9.4.5** Cuerpo de la sección
+- [x] **9.4.1** Elección del `switch`
+- [x] **9.4.2** Uso de llaves en el cuerpo de un `case`
+- [ ] **9.4.3** Cláusula `default` obligatoria ✏️
+- [x] **9.4.4** Agrupación de etiquetas
+- [x] **9.4.5** Cuerpo de la sección
 
 ### 9.5 Uso del operador ternario
 - [ ] **9.5.1** Ámbito de uso
@@ -448,3 +448,5 @@
 | 2026-11-16 | 9.3.4 | **Eliminada.** Decisión del equipo. |
 | 2026-11-16 | 9.3.2 | En corrección ✏️: su texto atribuye a Microsoft afirmaciones que la fuente no hace. |
 | 2026-11-16 | 9.3.2 | **Aprobada.** Motivo ajustado a lo que dice la fuente; cita verificada. |
+| 2026-11-16 | 9.4.1, 9.4.2, 9.4.4, 9.4.5 | **Aprobadas.** Citas verificadas; ejemplos corregidos (compilación, números mágicos, default). |
+| 2026-11-16 | 9.4.3 | En corrección ✏️. |

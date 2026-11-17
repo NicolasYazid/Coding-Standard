@@ -197,3 +197,27 @@
 
 - **Referencia:** Microsoft. (2026, 13 de abril). *Refactoring to convert between a for loop and a foreach statement*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/ide/reference/convert-for-loop-to-foreach
   **Qué respalda:** convertir un `for` a `foreach` es útil cuando no se necesita la variable del bucle como índice y se quiere simplificar el código.
+
+### 9.4.1 — Elección del switch
+**Cita en el texto:** (Microsoft, s.f.-a)
+
+- **Referencia:** Microsoft. (s.f.-a). *Convert if statement to switch statement or switch expression*. Microsoft Learn. Recuperado el 16 de noviembre de 2026, de https://learn.microsoft.com/en-us/visualstudio/ide/reference/convert-if-statement-to-switch-statement-or-switch-expression
+  **Qué respalda:** convertir un `if` en `switch` es útil cuando el `if` sería más claro como `switch`.
+
+### 9.4.2 — Uso de llaves en el cuerpo de un case
+**Cita en el texto:** (Microsoft, s.f.-b)
+
+- **Referencia:** Microsoft. (s.f.-b). *Statements (C# language specification)*. Microsoft Learn. Recuperado el 16 de noviembre de 2026, de https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/statements
+  **Qué respalda:** el ámbito de una variable local declarada en un bloque switch es todo el bloque switch.
+
+### 9.4.4 — Agrupación de etiquetas
+**Cita en el texto:** (Microsoft, 2026e)
+
+- **Referencia:** Microsoft. (2026, 20 de enero). *Selection statements - if, if-else, and switch*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
+  **Qué respalda:** aplicar varias etiquetas a una misma sección es una decisión de diseño deliberada para manejar de forma concisa varios casos con lógica compartida.
+
+### 9.4.5 — Cuerpo de la sección
+**Cita en el texto:** (McConnell, 2004)
+
+- **Referencia:** McConnell, S. (2004). *Code complete* (2.ª ed.). Microsoft Press.
+  **Qué respalda:** recomienda extraer a una rutina las acciones complicadas de un caso. Fuente del estándar base; texto exacto no disponible en línea.
