@@ -205,3 +205,49 @@ public void Test_CalculateScore_NormalFlow_Works()
 {
 }
 ```
+
+---
+
+## 2.10.1 — Sufijo obligatorio y nomenclatura completa
+
+**Motivo de eliminación:** se eliminó la subsección 2.10 completa porque el proyecto no usa controladores (patrón MVC).
+
+### Regla original
+Las clases que actúan como controladores principales de una entidad, sistema lógico o flujo del juego deben definirse en PascalCase y terminar obligatoriamente con el sufijo Controller. Queda prohibido el uso de abreviaturas como "Ctrl".
+
+**Con estándar**
+```csharp
+public class GameStateController
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameStateCtrl
+{
+}
+```
+
+---
+
+## 2.10.2 — Eliminación de prefijos tecnológicos
+
+**Motivo de eliminación:** se eliminó la subsección 2.10 completa porque el proyecto no usa controladores (patrón MVC).
+
+### Regla original
+El nombre del controlador debe comenzar directamente con el concepto del juego que administra. Queda estrictamente prohibido el uso de prefijos que denoten la tecnología subyacente, el motor de juego o su naturaleza de script (como Script, Unity, Godot, o similares).
+
+**Con estándar**
+```csharp
+public class PlayerController
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class ScriptPlayerController
+{
+}
+```

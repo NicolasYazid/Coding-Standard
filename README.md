@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 43 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 41 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -27,7 +27,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **50** | **134** |
+| | **Total** | **50** | **132** |
 
 ---
 
@@ -112,10 +112,6 @@
 - [ ] **2.9.2** Prohibición de prefijos especiales
 - [ ] **2.9.3** Acrónimo arquitectónico (`Dao`)
 - [ ] **2.9.4** Acrónimo arquitectónico (`Dto`)
-
-### 2.10 Clases controladoras
-- [ ] **2.10.1** Sufijo obligatorio y nomenclatura completa
-- [ ] **2.10.2** Eliminación de prefijos tecnológicos
 
 ### 2.11 Interfaces
 - [ ] **2.11.1** Prefijo obligatorio y convención base (PascalCase)
@@ -382,6 +378,7 @@
 - ~~**2.7.5** Límite de parámetros en eventos~~ — repetía el límite de tres parámetros que la regla 2.6.3 ya fija para todo método, incluidos los manejadores de eventos.
 - ~~**2.8.3** Cobertura de lógica central y flujos existentes~~ — no regulaba nombres y no se podía medir; la parte de nombres ya la cubren las reglas 2.8.1 y 2.8.2. La idea pasó como texto introductorio de la subsección 2.8.
 - ~~**Sección 3** Organización del proyecto (3.1 a 3.6, sin reglas)~~ — trataba la arquitectura del proyecto y el control de versiones, no la codificación; esos temas cambian y se documentan en otros artefactos. El número 3 no se reutiliza.
+- ~~**2.10** Clases controladoras (2.10.1 Sufijo obligatorio y nomenclatura completa; 2.10.2 Eliminación de prefijos tecnológicos)~~ — el proyecto no usa controladores (patrón MVC), así que la subsección no aplica.
 
 ---
 
@@ -456,3 +453,4 @@
 | 2026-11-17 | 2.8.3 | **Eliminada.** No medible y fuera del tema de nombrado; su idea pasa a un texto introductorio de la 2.8 escrito por el equipo. Subsección 2.8 completa. |
 | 2026-11-17 | Sección 3 | **Eliminada completa** (3.1 a 3.6, sin reglas). Arquitectura y control de versiones se documentan fuera del estándar de codificación. |
 | 2026-11-17 | 2.8.4 | Título cambiado a "Atributos de prueba". |
+| 2026-11-17 | 2.10.1, 2.10.2 | **Eliminada la subsección 2.10 completa.** El proyecto no usa controladores (patrón MVC). |
