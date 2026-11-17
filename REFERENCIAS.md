@@ -227,3 +227,15 @@
 
 - **Referencia:** Microsoft. (2026, 20 de enero). *Selection statements - if, if-else, and switch*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
   **Qué respalda:** si ninguna etiqueta coincide y no hay default, el control sale del switch sin ejecutar nada.
+
+### 9.5.1 — Ámbito de uso
+**Cita en el texto:** (Microsoft, 2026f)
+
+- **Referencia:** Microsoft. (2026, 24 de enero). *?: operator - the ternary conditional operator*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator
+  **Qué respalda:** el ternario evalúa una condición y devuelve el resultado de una de dos expresiones; conviene usarlo cuando se necesita calcular un valor de forma condicional.
+
+### 9.5.2 — Prohibición del ternario anidado
+**Cita en el texto:** (DeepSource, s.f.)
+
+- **Referencia:** DeepSource. (s.f.). *Avoid nested ternary expressions (CS-R1114)*. Recuperado el 17 de noviembre de 2026, de https://deepsource.com/directory/csharp/issues/CS-R1114
+  **Qué respalda:** regla de un analizador de código C#: el ternario anidado afecta la legibilidad y se recomienda no anidarlo. No existe una fuente de Microsoft que lo prohíba.

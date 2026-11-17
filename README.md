@@ -20,7 +20,7 @@
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
-| 9 | [Estructuras de control](#9-estructuras-de-control) | 19 | 23 |
+| 9 | [Estructuras de control](#9-estructuras-de-control) | 21 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **33** | **136** |
+| | **Total** | **35** | **136** |
 
 ---
 
@@ -303,10 +303,10 @@
 - [x] **9.4.5** Cuerpo de la sección
 
 ### 9.5 Uso del operador ternario
-- [ ] **9.5.1** Ámbito de uso
-- [ ] **9.5.2** Prohibición del ternario anidado
-- [ ] **9.5.3** Prohibición de literales booleanos
-- [ ] **9.5.4** Extensión del ternario
+- [x] **9.5.1** Ámbito de uso
+- [x] **9.5.2** Prohibición del ternario anidado
+- [ ] **9.5.3** Prohibición de literales booleanos ✏️
+- [ ] **9.5.4** Extensión del ternario ✏️
 
 ---
 
@@ -451,3 +451,6 @@
 | 2026-11-16 | 9.4.1, 9.4.2, 9.4.4, 9.4.5 | **Aprobadas.** Citas verificadas; ejemplos corregidos (compilación, números mágicos, default). |
 | 2026-11-16 | 9.4.3 | En corrección ✏️. |
 | 2026-11-16 | 9.4.3 | **Aprobada.** Define qué va dentro del default (acción para los valores sin case o solo `break;`); cita verificada. Subsección 9.4 cerrada. |
+| 2026-11-17 | 9.5.1 | **Aprobada.** Define "ejecutar acciones" como descartar el resultado con `_ =`; cita verificada; ejemplos compilables con tema Gin Rummy. |
+| 2026-11-17 | 9.5.2 | **Aprobada.** Agrega el motivo y qué hacer con más de dos valores (cada ternario en su propia variable); cita de DeepSource (C#). |
+| 2026-11-17 | 9.5.3, 9.5.4 | En corrección ✏️: se investiga en Microsoft la forma explícita `? true : false` y el ternario en varias líneas. |

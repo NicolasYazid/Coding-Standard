@@ -1394,3 +1394,126 @@ public class MessageDispatcher
     }
 }
 ```
+
+---
+
+## 9.5.1 — Ámbito de uso
+
+### Antes
+El operador ternario se usa únicamente para calcular un valor. Queda prohibido emplearlo para ejecutar acciones.
+
+**Con estándar**
+```csharp
+int appliedDamage = _isShieldActive ? 0 : _incomingDamage;
+```
+
+**Sin estándar**
+```csharp
+_ = _isShieldActive ? BlockDamage() : ApplyDamage();
+```
+
+### Después
+El operador ternario solo se usa para calcular un valor que el código utiliza (Microsoft, 2026f). Queda prohibido descartar su resultado con `_ =` para que solo se ejecute el método de la rama elegida.
+
+**Con estándar**
+```csharp
+public class RoundScorer
+{
+    private const int GinBonus = 25;
+    private bool _isGin;
+    private int _totalScore;
+
+    public void AddRoundPoints(int deadwoodDifference)
+    {
+        _totalScore += _isGin ? GinBonus : deadwoodDifference;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class RoundScorer
+{
+    private const int GinBonus = 25;
+    private bool _isGin;
+    private int _totalScore;
+
+    public void AddRoundPoints(int deadwoodDifference)
+    {
+        _ = _isGin ? AddGinBonus() : AddDeadwood(deadwoodDifference);
+    }
+
+    private int AddGinBonus()
+    {
+        _totalScore += GinBonus;
+
+        return _totalScore;
+    }
+
+    private int AddDeadwood(int deadwoodDifference)
+    {
+        _totalScore += deadwoodDifference;
+
+        return _totalScore;
+    }
+}
+```
+
+---
+
+## 9.5.2 — Prohibición del ternario anidado
+
+### Antes
+Queda prohibido anidar un operador ternario dentro de otro.
+
+**Con estándar**
+```csharp
+int bonusPoints = _isPerfectRun ? PerfectBonus : GetSecondaryBonus();
+```
+
+**Sin estándar**
+```csharp
+int bonusPoints = _isPerfectRun ? PerfectBonus : _hasAllCollectibles ? CollectibleBonus : 0;
+```
+
+### Después
+Queda prohibido escribir un ternario dentro de otro, porque dificulta saber qué valor resulta (DeepSource, s.f.). Si hay que elegir entre más de dos valores, cada ternario guarda su resultado en su propia variable.
+
+**Con estándar**
+```csharp
+public class GinBonusCalculator
+{
+    private const int BigGinBonus = 31;
+    private const int GinBonus = 25;
+    private const int NoBonus = 0;
+    private bool _isBigGin;
+    private bool _isGin;
+
+    public int CalculateBonus()
+    {
+        int ginBonus = _isGin ? GinBonus : NoBonus;
+        int bonusPoints = _isBigGin ? BigGinBonus : ginBonus;
+
+        return bonusPoints;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GinBonusCalculator
+{
+    private const int BigGinBonus = 31;
+    private const int GinBonus = 25;
+    private const int NoBonus = 0;
+    private bool _isBigGin;
+    private bool _isGin;
+
+    public int CalculateBonus()
+    {
+        int bonusPoints = _isBigGin ? BigGinBonus : _isGin ? GinBonus : NoBonus;
+
+        return bonusPoints;
+    }
+}
+```
