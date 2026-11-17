@@ -105,7 +105,7 @@
 
 - [x] **2.8.1** Estructura de nomenclatura (prefijo `Test`)
 - [x] **2.8.2** Nombres descriptivos vs. genéricos
-- [x] **2.8.4** Atributo de prueba y exenciones
+- [x] **2.8.4** Atributos de prueba
 
 ### 2.9 Clases
 - [ ] **2.9.1** Nomenclatura base (PascalCase)
@@ -455,3 +455,4 @@
 | 2026-11-17 | 2.8.4 | **Aprobada.** Se quita la exención de prefijos de eventos; el ejemplo "Sin estándar" ahora omite `[Test]`; cita de NUnit. |
 | 2026-11-17 | 2.8.3 | **Eliminada.** No medible y fuera del tema de nombrado; su idea pasa a un texto introductorio de la 2.8 escrito por el equipo. Subsección 2.8 completa. |
 | 2026-11-17 | Sección 3 | **Eliminada completa** (3.1 a 3.6, sin reglas). Arquitectura y control de versiones se documentan fuera del estándar de codificación. |
+| 2026-11-17 | 2.8.4 | Título cambiado a "Atributos de prueba". |

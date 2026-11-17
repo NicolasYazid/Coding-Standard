@@ -2253,7 +2253,7 @@ public class MeldFinderTests
 }
 ```
 
-## 2.8.4 — Atributo de prueba y exenciones
+## 2.8.4 — Atributos de prueba
 
 ### Antes
 Todo método de prueba debe estar marcado con el atributo correspondiente del framework (como [Test] en NUnit). Además, debido a su naturaleza analítica, estos métodos están exentos de utilizar los prefijos de eventos (On, Handle, Toggle).
