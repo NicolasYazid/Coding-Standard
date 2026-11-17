@@ -15,7 +15,7 @@
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 41 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
-| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
+| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 1 | 6 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
@@ -27,7 +27,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **50** | **132** |
+| | **Total** | **51** | **132** |
 
 ---
 
@@ -158,7 +158,7 @@
 ## 5. Prácticas de programación
 
 ### 5.1 Un único return
-- [ ] **5.1.1** Punto único de retorno en métodos con valor de retorno
+- [x] **5.1.1** Punto único de retorno en métodos con valor de retorno
 
 ### 5.2 Prevención de números mágicos
 - [ ] **5.2.1** Prevención de números mágicos
@@ -454,3 +454,4 @@
 | 2026-11-17 | Sección 3 | **Eliminada completa** (3.1 a 3.6, sin reglas). Arquitectura y control de versiones se documentan fuera del estándar de codificación. |
 | 2026-11-17 | 2.8.4 | Título cambiado a "Atributos de prueba". |
 | 2026-11-17 | 2.10.1, 2.10.2 | **Eliminada la subsección 2.10 completa.** El proyecto no usa controladores (patrón MVC). |
+| 2026-11-17 | 5.1.1 | **Aprobada.** Se agrega que es una regla del equipo (sin cita: no hay fuente oficial de C# que la exija). Ejemplos sin cambios. |

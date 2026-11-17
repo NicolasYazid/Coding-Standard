@@ -333,3 +333,8 @@
 
 - **Referencia:** NUnit Project. (s.f.). *Test attribute*. NUnit Docs. https://docs.nunit.org/articles/nunit/writing-tests/attributes/test.html
   **Qué respalda:** el atributo `Test` es lo que marca un método dentro de una clase de pruebas como prueba ("The Test attribute marks a method inside a test fixture as a test").
+
+### 5.1.1 — Punto único de retorno en métodos con valor de retorno
+**Cita en el texto:** ninguna.
+
+- **Sin referencia:** regla del equipo. No se encontró una fuente oficial de C# que exija un solo `return`; la regla S1142 de SonarSource solo existe para otros lenguajes y permite hasta tres.

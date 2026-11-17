@@ -2297,3 +2297,95 @@ public class MeldFinderTests
     }
 }
 ```
+
+## 5.1.1 — Punto único de retorno en métodos con valor de retorno
+
+### Antes
+Todo método que retorna un valor debe finalizar con una sola instrucción return al final del cuerpo, sin ningún otro return en el resto del método.
+
+**Con estándar**
+```csharp
+public class KnockScorer
+{
+    private const int UndercutBonus = 25;
+
+    public int CalculateScore(int knockerDeadwood, int opponentDeadwood)
+    {
+        int score;
+
+        if (opponentDeadwood > knockerDeadwood)
+        {
+            score = opponentDeadwood - knockerDeadwood;
+        }
+        else
+        {
+            score = UndercutBonus + knockerDeadwood - opponentDeadwood;
+        }
+
+        return score;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class KnockScorer
+{
+    private const int UndercutBonus = 25;
+
+    public int CalculateScore(int knockerDeadwood, int opponentDeadwood)
+    {
+        if (opponentDeadwood > knockerDeadwood)
+        {
+            return opponentDeadwood - knockerDeadwood;
+        }
+
+        return UndercutBonus + knockerDeadwood - opponentDeadwood;
+    }
+}
+```
+
+### Después
+Todo método que retorna un valor debe finalizar con una sola instrucción return al final del cuerpo, sin ningún otro return en el resto del método. Esta es una regla del equipo.
+
+**Con estándar**
+```csharp
+public class KnockScorer
+{
+    private const int UndercutBonus = 25;
+
+    public int CalculateScore(int knockerDeadwood, int opponentDeadwood)
+    {
+        int score;
+
+        if (opponentDeadwood > knockerDeadwood)
+        {
+            score = opponentDeadwood - knockerDeadwood;
+        }
+        else
+        {
+            score = UndercutBonus + knockerDeadwood - opponentDeadwood;
+        }
+
+        return score;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class KnockScorer
+{
+    private const int UndercutBonus = 25;
+
+    public int CalculateScore(int knockerDeadwood, int opponentDeadwood)
+    {
+        if (opponentDeadwood > knockerDeadwood)
+        {
+            return opponentDeadwood - knockerDeadwood;
+        }
+
+        return UndercutBonus + knockerDeadwood - opponentDeadwood;
+    }
+}
+```
