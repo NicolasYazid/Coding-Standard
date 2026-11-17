@@ -221,3 +221,9 @@
 
 - **Referencia:** McConnell, S. (2004). *Code complete* (2.ª ed.). Microsoft Press.
   **Qué respalda:** recomienda extraer a una rutina las acciones complicadas de un caso. Fuente del estándar base; texto exacto no disponible en línea.
+
+### 9.4.3 — Cláusula default obligatoria
+**Cita en el texto:** (Microsoft, 2026e)
+
+- **Referencia:** Microsoft. (2026, 20 de enero). *Selection statements - if, if-else, and switch*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
+  **Qué respalda:** si ninguna etiqueta coincide y no hay default, el control sale del switch sin ejecutar nada.

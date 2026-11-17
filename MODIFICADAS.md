@@ -1250,3 +1250,147 @@ public class TurnStateHandler
     }
 }
 ```
+
+---
+
+## 9.4.3 — Cláusula default obligatoria
+
+### Antes
+Todo switch incluye una cláusula default, ya que sin ella el control simplemente atraviesa la sentencia sin ejecutar nada cuando ningún caso coincide, dejando el valor no contemplado sin manejo alguno (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class MessageDispatcher
+{
+    public void Dispatch(NetworkMessageType messageType)
+    {
+        switch (messageType)
+        {
+            case NetworkMessageType.Draw:
+                ProcessDraw();
+                break;
+            case NetworkMessageType.Discard:
+                ProcessDiscard();
+                break;
+            default:
+                RejectMessage();
+                break;
+        }
+    }
+
+    private void ProcessDraw()
+    {
+    }
+
+    private void ProcessDiscard()
+    {
+    }
+
+    private void RejectMessage()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MessageDispatcher
+{
+    public void Dispatch(NetworkMessageType messageType)
+    {
+        switch (messageType)
+        {
+            case NetworkMessageType.Draw:
+                ProcessDraw();
+                break;
+            case NetworkMessageType.Discard:
+                ProcessDiscard();
+                break;
+        }
+    }
+
+    private void ProcessDraw()
+    {
+    }
+
+    private void ProcessDiscard()
+    {
+    }
+}
+```
+
+### Después
+Todo switch incluye una cláusula default, porque sin ella, cuando ningún caso coincide, el switch no hace nada (Microsoft, 2026e). El default se encarga de los valores que no tienen su propio case: si esos valores necesitan una acción, el default la ejecuta; si no necesitan ninguna, el default contiene solo `break;`.
+
+**Con estándar**
+```csharp
+public class MessageDispatcher
+{
+    public void Dispatch(NetworkMessageType messageType)
+    {
+        switch (messageType)
+        {
+            case NetworkMessageType.Draw:
+                ProcessDraw();
+                break;
+            case NetworkMessageType.Discard:
+                ProcessDiscard();
+                break;
+            default:
+                RejectMessage();
+                break;
+        }
+    }
+
+    public void DispatchTurnMessage(NetworkMessageType messageType)
+    {
+        switch (messageType)
+        {
+            case NetworkMessageType.Draw:
+                ProcessDraw();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void ProcessDraw()
+    {
+    }
+
+    private void ProcessDiscard()
+    {
+    }
+
+    private void RejectMessage()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MessageDispatcher
+{
+    public void Dispatch(NetworkMessageType messageType)
+    {
+        switch (messageType)
+        {
+            case NetworkMessageType.Draw:
+                ProcessDraw();
+                break;
+            case NetworkMessageType.Discard:
+                ProcessDiscard();
+                break;
+        }
+    }
+
+    private void ProcessDraw()
+    {
+    }
+
+    private void ProcessDiscard()
+    {
+    }
+}
+```
