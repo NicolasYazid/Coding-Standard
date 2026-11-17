@@ -1642,3 +1642,149 @@ public class TurnValidator
     }
 }
 ```
+
+---
+
+## 2.5.1 — Nomenclatura (PascalCase)
+
+### Antes
+Para asegurar la compatibilidad directa con las herramientas de análisis de código del ecosistema .NET, los nombres de todas las constantes deben definirse utilizando estrictamente el formato PascalCase. Queda obsoleto el formato UPPER_SNAKE_CASE utilizado en versiones anteriores.
+
+**Con estándar**
+```csharp
+public const int MaxPlayerLives = 3;
+```
+
+**Sin estándar**
+```csharp
+public const int MAX_PLAYER_LIVES = 3;
+```
+
+### Después
+Los nombres de las constantes (`const`) se escriben en PascalCase, tanto en los campos como en las constantes locales y con cualquier nivel de acceso (`public`, `private` o `internal`). Queda prohibido el formato UPPER_SNAKE_CASE (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class ScoreBoard
+{
+    private const int WinningScore = 100;
+
+    public int CalculateFinalScore(int playerScore)
+    {
+        const int GameBonus = 100;
+        int finalScore = playerScore;
+
+        if (playerScore >= WinningScore)
+        {
+            finalScore += GameBonus;
+        }
+
+        return finalScore;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ScoreBoard
+{
+    private const int WINNING_SCORE = 100;
+
+    public int CalculateFinalScore(int playerScore)
+    {
+        const int GAME_BONUS = 100;
+        int finalScore = playerScore;
+
+        if (playerScore >= WINNING_SCORE)
+        {
+            finalScore += GAME_BONUS;
+        }
+
+        return finalScore;
+    }
+}
+```
+
+---
+
+## 2.5.2 — Uso de const (antes: Inmutabilidad en tiempo de compilación)
+
+### Antes
+El modificador const se utilizará única y exclusivamente para valores estáticos que jamás cambiarán y que se conocen por completo en tiempo de compilación (como números base o nombres por defecto).
+
+**Con estándar**
+```csharp
+public const float BaseGravity = -9.81f;
+```
+
+**Sin estándar**
+```csharp
+public float BaseGravity = -9.81f;
+```
+
+### Después
+Un campo que recibe en su declaración un valor escrito directamente en el código (un número, un texto, un carácter, `true` o `false`) y al que nunca se le asigna otro valor se declara `const` (Microsoft, 2023; Microsoft, 2026g). Queda prohibido declararlo como campo modificable o como `static readonly`.
+
+**Con estándar**
+```csharp
+public class GameRules
+{
+    private const int MaxKnockDeadwood = 10;
+    private const string DefaultPlayerName = "Guest";
+    private const char CardSeparator = ',';
+    private const bool IsBigGinAllowed = true;
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameRules
+{
+    private int _maxKnockDeadwood = 10;
+    private string _defaultPlayerName = "Guest";
+    private static readonly char s_cardSeparator = ',';
+    private bool _isBigGinAllowed = true;
+}
+```
+
+---
+
+## 2.5.3 — Uso de static readonly (antes: Inmutabilidad en tiempo de ejecución)
+
+### Antes
+Cuando un valor no debe ser modificado tras su inicialización, pero requiere ser calculado en tiempo de ejecución o se trata de una instancia de un objeto complejo (tipos de referencia), se debe utilizar obligatoriamente static readonly.
+
+**Con estándar**
+```csharp
+public static readonly Vector2 DefaultRespawnPoint = new Vector2(0f, 5f);
+```
+
+**Sin estándar**
+```csharp
+public const Vector2 DefaultRespawnPoint = new Vector2(0f, 5f);
+```
+
+### Después
+Un campo `static` al que nunca se le asigna otro valor después de su declaración, y que no puede ser `const` porque su valor se calcula al ejecutar el programa o es un objeto creado con `new`, se declara `static readonly` (Microsoft, 2023; Microsoft, 2026g). Queda prohibido declararlo `static` sin `readonly`.
+
+**Con estándar**
+```csharp
+public class PlayerNameValidator
+{
+    private const int TurnTimeLimitSeconds = 30;
+    private const string UsernamePattern = "^[a-zA-Z0-9]+$";
+    private static readonly TimeSpan s_turnTimeLimit = TimeSpan.FromSeconds(TurnTimeLimitSeconds);
+    private static readonly Regex s_usernameRegex = new Regex(UsernamePattern);
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerNameValidator
+{
+    private const int TurnTimeLimitSeconds = 30;
+    private const string UsernamePattern = "^[a-zA-Z0-9]+$";
+    private static TimeSpan s_turnTimeLimit = TimeSpan.FromSeconds(TurnTimeLimitSeconds);
+    private static Regex s_usernameRegex = new Regex(UsernamePattern);
+}
+```

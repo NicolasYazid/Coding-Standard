@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 12 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 15 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **37** | **136** |
+| | **Total** | **40** | **136** |
 
 ---
 
@@ -86,9 +86,9 @@
 - 🕳️ Sin reglas
 
 ### 2.5 Constantes
-- [ ] **2.5.1** Nomenclatura (PascalCase)
-- [ ] **2.5.2** Inmutabilidad en tiempo de compilación (`const`)
-- [ ] **2.5.3** Inmutabilidad en tiempo de ejecución (`static readonly`)
+- [x] **2.5.1** Nomenclatura (PascalCase)
+- [x] **2.5.2** Uso de `const`
+- [x] **2.5.3** Uso de `static readonly`
 
 ### 2.6 Métodos
 - [ ] **2.6.1** Nomenclatura (PascalCase)
@@ -456,3 +456,6 @@
 | 2026-11-17 | 9.5.3, 9.5.4 | En corrección ✏️: se investiga en Microsoft la forma explícita `? true : false` y el ternario en varias líneas. |
 | 2026-11-17 | 9.5.4 | **Aprobada.** Invertida: el ternario que no cabe en 140 caracteres se parte en tres líneas, con `?` y `:` al inicio y 4 espacios más de sangría; cita IDE2005. |
 | 2026-11-17 | 9.5.3 | **Aprobada e invertida.** Título cambiado a "Ramas booleanas explícitas": exige escribir las ramas `true` y `false` del ternario y prohíbe dejar solo la condición; cita IDE0075. Subsección 9.5 cerrada; sección 9 completa. |
+| 2026-11-17 | 2.5.1 | **Aprobada.** Aplica a campos y constantes locales de cualquier acceso; UPPER_SNAKE_CASE prohibido; cita verificada. |
+| 2026-11-17 | 2.5.2 | **Aprobada.** Título cambiado a "Uso de `const`": obliga a declarar `const` todo campo con valor escrito en el código que nunca se reasigna; citas Field design y CA1802. |
+| 2026-11-17 | 2.5.3 | **Aprobada.** Título cambiado a "Uso de `static readonly`": un campo `static` que nunca se reasigna y no puede ser `const` lleva `readonly`. Subsección 2.5 cerrada. |

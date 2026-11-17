@@ -251,3 +251,25 @@
 
 - **Referencia:** Microsoft. (2022, 25 de junio). *Simplify conditional expression (IDE0075)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0075
   **Qué respalda:** con la opción `dotnet_style_prefer_simplified_boolean_expressions = false`, Microsoft muestra como forma válida el ternario `M1() && M2() ? true : false`. El `.editorconfig` debe incluir esa opción en `false`.
+
+### 2.5.1 — Nomenclatura (PascalCase)
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 14 de julio). *C# identifier naming rules and conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+  **Qué respalda:** usar PascalCase en los nombres de constantes, tanto campos como constantes locales, incluidas las `private` e `internal`.
+
+### 2.5.2 — Uso de const
+**Cita en el texto:** (Microsoft, 2023; Microsoft, 2026g)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Field design*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/field
+  **Qué respalda:** usar campos constantes para las constantes que nunca cambiarán.
+- **Referencia:** Microsoft. (2026, 2 de abril). *CA1802: Use literals where appropriate*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1802
+  **Qué respalda:** un campo `static readonly` cuyo valor se puede calcular al compilar debe cambiarse a `const`.
+
+### 2.5.3 — Uso de static readonly
+**Cita en el texto:** (Microsoft, 2023; Microsoft, 2026g)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Field design*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/field
+  **Qué respalda:** usar campos `static readonly` para las instancias de objetos predefinidas.
+- **Referencia:** Microsoft. (2026, 2 de abril). *CA1802: Use literals where appropriate*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1802
+  **Qué respalda:** el valor de un campo `static readonly` se calcula al ejecutar el programa; el de un `const`, al compilar.
