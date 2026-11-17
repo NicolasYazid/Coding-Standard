@@ -180,3 +180,28 @@ public void OnCollisionEnter(string hitTag, float impactForce, bool isCritical, 
 {
 }
 ```
+
+---
+
+## 2.8.3 — Cobertura de lógica central y flujos existentes
+
+**Motivo de eliminación:** no regulaba nombres (tema de la sección 2) y no se podía medir ("priorizar", "cobertura artificial"); la parte de nomenclatura ya la cubren las reglas 2.8.1 y 2.8.2. La idea pasó como texto introductorio, sin obligación, al inicio de la subsección 2.8.
+
+### Regla original
+Las pruebas unitarias deben priorizar obligatoriamente la capa de lógica pura del videojuego (como el cálculo de puntuación y las reglas de la partida), evitando forzar una cobertura absoluta artificial que genere fragilidad en el código (Microsoft, 2024). La nomenclatura de la prueba debe reflejar con exactitud el escenario evaluado (flujo principal, alterno o de excepción). Se evaluarán única y exclusivamente los flujos alternos que la arquitectura del método posea realmente.
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_CalculateScore_PlayerKnocks_AddsBonusPoints()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void Test_CalculateScore_NormalFlow_Works()
+{
+}
+```

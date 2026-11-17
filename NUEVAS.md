@@ -250,3 +250,11 @@ public class RankingBuilder
     }
 }
 ```
+
+---
+
+## 2.8 — Texto introductorio de Métodos de prueba unitaria
+
+**Origen:** escrito por el equipo al eliminar la regla 2.8.3. Es texto explicativo, no una regla: no se audita.
+
+La realización de pruebas unitarias priorizará la verificación de la capa lógica del videojuego, abarcando aspectos como el cálculo de puntuaciones y las reglas de la partida. De este modo, se evita forzar una cobertura del 100% que pueda volver frágil el código, ya que tratar de cubrir el 100% es imposible.
