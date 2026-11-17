@@ -157,3 +157,26 @@ public class ServerConnector
     }
 }
 ```
+
+---
+
+## 2.7.5 — Límite de parámetros en eventos
+
+**Motivo de eliminación:** repetía el límite de tres parámetros que la regla 2.6.3 ya fija para todo método o constructor, incluidos los manejadores de eventos.
+
+### Regla original
+Al igual que los métodos regulares, los manejadores de eventos no deben exceder el límite estricto de tres parámetros.
+
+**Con estándar**
+```csharp
+public void OnCollisionEnter(string hitTag, float impactForce)
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void OnCollisionEnter(string hitTag, float impactForce, bool isCritical, int damageAmount)
+{
+}
+```

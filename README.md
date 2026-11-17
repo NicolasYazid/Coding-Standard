@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 22 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 22 | 44 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **47** | **136** |
+| | **Total** | **47** | **135** |
 
 ---
 
@@ -100,7 +100,6 @@
 - [x] **2.7.2** Prefijo `Handle` (método que reacciona a un evento)
 - [x] **2.7.3** Prefijo `Toggle` (alternancia de estados booleanos)
 - [x] **2.7.4** Descriptores directos (sin prefijo)
-- [ ] **2.7.5** Límite de parámetros en eventos
 
 ### 2.8 Métodos de prueba unitaria
 - [ ] **2.8.1** Estructura de nomenclatura (prefijo `Test`)
@@ -402,6 +401,7 @@
 - ~~**9.3.4** Elección del `do-while`~~ — solo describía para qué sirve un `do-while`; no prevenía ningún defecto.
 - ~~**9.2.3** Cláusula de guarda~~ — eliminada por decisión del equipo; su redacción castigaba métodos `void` con un solo `if` y dependía de la regla 5.1.1.
 - ~~**2.1.9** Prevención de sombreado de datos~~ — en C# 7.3 el compilador ya impide el sombreado entre variables locales (CS0136), y las reglas 2.1.1, 2.1.2 y 2.1.11 impiden que una variable local se llame igual que un campo.
+- ~~**2.7.5** Límite de parámetros en eventos~~ — repetía el límite de tres parámetros que la regla 2.6.3 ya fija para todo método, incluidos los manejadores de eventos.
 
 ---
 
@@ -469,3 +469,4 @@
 | 2026-11-17 | 2.7.3 | **Aprobada.** `Toggle` solo en métodos que no hacen nada más que invertir un `bool`, y todo método así lo lleva; cita IToggleProvider.Toggle. |
 | 2026-11-17 | 2.7.2 | Texto ampliado: `Handle` no es exclusivo de los métodos que reaccionan a un evento; ejemplo con `HandleCardSelection`. |
 | 2026-11-17 | 2.7.4 | **Aprobada.** Método que no es `On`, `Handle` (de evento) ni `Toggle` empieza con un verbo de acción; ese verbo también puede ser `Handle` (2.7.2). |
+| 2026-11-17 | 2.7.5 | **Eliminada.** Duplicaba la regla 2.6.3. |
