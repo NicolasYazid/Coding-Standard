@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 21 | 45 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 22 | 45 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **46** | **136** |
+| | **Total** | **47** | **136** |
 
 ---
 
@@ -99,7 +99,7 @@
 - [x] **2.7.1** Prefijo `On` (método que lanza un evento)
 - [x] **2.7.2** Prefijo `Handle` (método que reacciona a un evento)
 - [x] **2.7.3** Prefijo `Toggle` (alternancia de estados booleanos)
-- [ ] **2.7.4** Descriptores directos (sin prefijo)
+- [x] **2.7.4** Descriptores directos (sin prefijo)
 - [ ] **2.7.5** Límite de parámetros en eventos
 
 ### 2.8 Métodos de prueba unitaria
@@ -468,3 +468,4 @@
 | 2026-11-17 | 2.7.2 | **Aprobada.** Cambia de significado: el método que reacciona a un evento empieza con `Handle`. |
 | 2026-11-17 | 2.7.3 | **Aprobada.** `Toggle` solo en métodos que no hacen nada más que invertir un `bool`, y todo método así lo lleva; cita IToggleProvider.Toggle. |
 | 2026-11-17 | 2.7.2 | Texto ampliado: `Handle` no es exclusivo de los métodos que reaccionan a un evento; ejemplo con `HandleCardSelection`. |
+| 2026-11-17 | 2.7.4 | **Aprobada.** Método que no es `On`, `Handle` (de evento) ni `Toggle` empieza con un verbo de acción; ese verbo también puede ser `Handle` (2.7.2). |

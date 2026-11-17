@@ -309,3 +309,9 @@
 
 - **Referencia:** Microsoft. (2025e). *IToggleProvider.Toggle method*. Microsoft Learn. Recuperado el 17 de noviembre de 2026, de https://learn.microsoft.com/en-us/dotnet/api/system.windows.automation.provider.itoggleprovider.toggle
   **Qué respalda:** en .NET, `Toggle` nombra la acción de pasar de un estado al otro ("Cycles through the toggle states of a control").
+
+### 2.7.4 — Descriptores directos (sin prefijo)
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of type members*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members
+  **Qué respalda:** pide dar a los métodos nombres que sean verbos o frases verbales ("DO give methods names that are verbs or verb phrases").

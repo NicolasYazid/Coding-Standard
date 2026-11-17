@@ -2106,3 +2106,53 @@ public class ChatSettings
     }
 }
 ```
+
+## 2.7.4 — Descriptores directos (sin prefijo)
+
+### Antes
+Si el evento ejecuta una acción compleja que no encaja en la reacción a sistemas (On), entradas (Handle) o alternancia (Toggle), debe omitir los prefijos y comenzar con un verbo de acción claro en PascalCase que describa directamente su funcionalidad final.
+
+**Con estándar**
+```csharp
+public void ValidateLevelRequirements()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void Requirements()
+{
+}
+```
+
+### Después
+Si un método no avisa de un evento (`On`), no reacciona a un evento (`Handle`) y no alterna un `bool` (`Toggle`), comienza con un verbo de acción claro en PascalCase que describa directamente su funcionalidad final. Ese verbo también puede ser `Handle`, como permite la regla 2.7.2 (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class MeldValidator
+{
+    public void ValidateMeldRequirements()
+    {
+    }
+
+    public void HandleRejectedMeld()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MeldValidator
+{
+    public void Requirements()
+    {
+    }
+
+    public void RejectedMeld()
+    {
+    }
+}
+```
