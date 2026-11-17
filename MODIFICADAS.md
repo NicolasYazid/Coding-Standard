@@ -1907,7 +1907,7 @@ public void MovePlayer(float speed, float directionX, bool isDashing, float jump
 ```
 
 ### Después
-Un método o constructor recibe como máximo tres parámetros, para que su firma sea clara (SonarSource, s.f.). Si necesita más datos, se agrupan en una clase y el método recibe esa clase. Quedan fuera los métodos que implementan una interfaz de .NET, porque su firma la define .NET.
+Un método o constructor recibe como máximo tres parámetros, para que su firma sea clara (SonarSource, s.f.). Si necesita más datos, se pueden agrupar en una clase y el método recibe esa clase. Quedan fuera los métodos que implementan una interfaz de .NET, porque su firma la define .NET.
 
 **Con estándar**
 ```csharp

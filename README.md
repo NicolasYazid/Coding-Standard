@@ -463,3 +463,4 @@
 | 2026-11-17 | 2.6.2 | **Aprobada.** El nombre empieza con el verbo; "sustantivos estáticos" pasa a "sustantivos"; constructores y `Main` quedan fuera; cita verificada. |
 | 2026-11-17 | 2.6.3 | En corrección ✏️: ejemplos más simples. |
 | 2026-11-17 | 2.6.3 | **Aprobada.** Aplica a métodos y constructores; si se necesitan más datos se agrupan en una clase; quedan fuera las interfaces de .NET; cita SonarSource (S107). Subsección 2.6 cerrada. |
+| 2026-11-17 | 2.6.3 | Texto ajustado a petición del equipo: "se agrupan" pasa a "se pueden agrupar" (deja abierta otra solución, como dividir el método). |
