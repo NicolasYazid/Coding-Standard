@@ -14,7 +14,6 @@
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 43 |
-| 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -129,28 +128,6 @@
 - [ ] **2.12.4** Validación de estados (`Validator`)
 - [ ] **2.12.5** Lógica auxiliar (`Common`)
 - [ ] **2.12.6** Excepciones personalizadas (sufijo `Exception`)
-
----
-
-## 3. Organización del proyecto
-
-### 3.1 Capa de acceso a datos / Persistencia
-- 🕳️ Sin reglas
-
-### 3.2 Contratos e implementaciones DAO
-- 🕳️ Sin reglas
-
-### 3.3 Capa lógica (Core del videojuego)
-- 🕳️ Sin reglas
-
-### 3.4 Capa GUI (Interfaz visual del juego)
-- 🕳️ Sin reglas
-
-### 3.5 Separación Vistas / Controladores
-- 🕳️ Sin reglas
-
-### 3.6 Control de versiones
-- 🕳️ Sin reglas
 
 ---
 
@@ -404,6 +381,7 @@
 - ~~**2.1.9** Prevención de sombreado de datos~~ — en C# 7.3 el compilador ya impide el sombreado entre variables locales (CS0136), y las reglas 2.1.1, 2.1.2 y 2.1.11 impiden que una variable local se llame igual que un campo.
 - ~~**2.7.5** Límite de parámetros en eventos~~ — repetía el límite de tres parámetros que la regla 2.6.3 ya fija para todo método, incluidos los manejadores de eventos.
 - ~~**2.8.3** Cobertura de lógica central y flujos existentes~~ — no regulaba nombres y no se podía medir; la parte de nombres ya la cubren las reglas 2.8.1 y 2.8.2. La idea pasó como texto introductorio de la subsección 2.8.
+- ~~**Sección 3** Organización del proyecto (3.1 a 3.6, sin reglas)~~ — trataba la arquitectura del proyecto y el control de versiones, no la codificación; esos temas cambian y se documentan en otros artefactos. El número 3 no se reutiliza.
 
 ---
 
@@ -476,3 +454,4 @@
 | 2026-11-17 | 2.8.2 | **Aprobada.** Descripción del equipo con cita; el ejemplo "Sin estándar" cumple la 2.8.1 pero usa un escenario numerado y un resultado genérico. |
 | 2026-11-17 | 2.8.4 | **Aprobada.** Se quita la exención de prefijos de eventos; el ejemplo "Sin estándar" ahora omite `[Test]`; cita de NUnit. |
 | 2026-11-17 | 2.8.3 | **Eliminada.** No medible y fuera del tema de nombrado; su idea pasa a un texto introductorio de la 2.8 escrito por el equipo. Subsección 2.8 completa. |
+| 2026-11-17 | Sección 3 | **Eliminada completa** (3.1 a 3.6, sin reglas). Arquitectura y control de versiones se documentan fuera del estándar de codificación. |
