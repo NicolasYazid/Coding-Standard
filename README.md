@@ -456,3 +456,4 @@
 | 2026-11-17 | 2.10.1, 2.10.2 | **Eliminada la subsección 2.10 completa.** El proyecto no usa controladores (patrón MVC). |
 | 2026-11-17 | 5.1.1 | **Aprobada.** Se agrega que es una regla del equipo (sin cita: no hay fuente oficial de C# que la exija). Ejemplos sin cambios. |
 | 2026-11-17 | 5.2.1 | **Aprobada sin cambios.** El equipo conserva su texto (solo números con significado dentro del contexto del juego). |
+| 2026-11-17 | 5.2.1 | Se retira la cita "(Microsoft, s.f.)"; queda sin cita. |
