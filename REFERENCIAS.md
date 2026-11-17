@@ -321,3 +321,9 @@
 
 - **Referencia:** Microsoft. (2026i, 6 de noviembre). *Unit testing best practices for .NET*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices
   **Qué respalda:** el nombre de una prueba tiene tres partes: el método que se prueba, el escenario y el comportamiento esperado (ejemplo `Add_SingleNumber_ReturnsSameNumber`). El prefijo `Test` es decisión del equipo.
+
+### 2.8.2 — Nombres descriptivos vs. genéricos
+**Cita en el texto:** (Microsoft, 2026i)
+
+- **Referencia:** Microsoft. (2026i, 6 de noviembre). *Unit testing best practices for .NET*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices
+  **Qué respalda:** el nombre de la prueba debe tener el método, el escenario y el comportamiento esperado; en su ejemplo de código cambia el nombre genérico `Test_Single` por `Add_SingleNumber_ReturnsSameNumber`.

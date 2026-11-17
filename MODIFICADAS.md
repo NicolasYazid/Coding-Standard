@@ -2206,3 +2206,49 @@ public class MeldFinderTests
     }
 }
 ```
+
+## 2.8.2 — Nombres descriptivos vs. genéricos
+
+### Antes
+Queda estrictamente prohibido utilizar nombres genéricos o numerados para las pruebas. El nombre debe documentar por completo la intención de la evaluación.
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_SpawnEnemy_InvalidType_ThrowsException()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void Test_SpawnEnemy_2()
+{
+}
+```
+
+### Después
+Queda prohibido utilizar nombres genéricos o numerados para las pruebas. El nombre debe documentar por completo la intención de la evaluación (Microsoft, 2026i).
+
+**Con estándar**
+```csharp
+public class MeldFinderTests
+{
+    [Test]
+    public void Test_FindMelds_ThreeKings_ReturnsOneMeld()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MeldFinderTests
+{
+    [Test]
+    public void Test_FindMelds_Case2_Works()
+    {
+    }
+}
+```
