@@ -1932,3 +1932,107 @@ public class MatchHistory
     }
 }
 ```
+
+---
+
+## 2.7.1 — Prefijo On (antes: reacción a eventos del sistema; ahora: método que lanza un evento)
+
+### Antes
+El prefijo On debe utilizarse obligatoriamente cuando el método reacciona a un evento emitido por el sistema. Implica que la acción ya sucedió y el objeto está reaccionando a ella.
+
+**Con estándar**
+```csharp
+public void OnPlayerDeath(int finalScore)
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void HandlePlayerDeath(int finalScore)
+{
+}
+```
+
+### Después
+El método que solo se encarga de avisar que ocurrió un evento se llama `On` seguido del nombre del evento, por ejemplo `OnOpponentDisconnected` (Microsoft, 2026h). Este nombre no empieza con un verbo, y es el único método al que se le permite, a diferencia de lo que pide la regla 2.6.2.
+
+**Con estándar**
+```csharp
+public class GameTable
+{
+    public event EventHandler OpponentDisconnected;
+
+    protected virtual void OnOpponentDisconnected()
+    {
+        OpponentDisconnected?.Invoke(this, EventArgs.Empty);
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameTable
+{
+    public event EventHandler OpponentDisconnected;
+
+    protected virtual void NotifyOpponentDisconnected()
+    {
+        OpponentDisconnected?.Invoke(this, EventArgs.Empty);
+    }
+}
+```
+
+---
+
+## 2.7.2 — Prefijo Handle (antes: procesamiento de entradas; ahora: método que reacciona a un evento)
+
+### Antes
+El prefijo Handle debe utilizarse cuando el método procesa directamente una entrada (input) del jugador o un comando lógico que requiere evaluación inmediata en el juego.
+
+**Con estándar**
+```csharp
+public void HandleJump(float jumpForce)
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public void Jump(float jumpForce)
+{
+}
+```
+
+### Después
+El método que reacciona cuando otro método avisa que ocurrió un evento empieza con `Handle`, por ejemplo `HandleOpponentDisconnected` (Microsoft, 2021).
+
+**Con estándar**
+```csharp
+public class GameTableViewModel
+{
+    public GameTableViewModel(GameTable gameTable)
+    {
+        gameTable.OpponentDisconnected += HandleOpponentDisconnected;
+    }
+
+    private void HandleOpponentDisconnected(object sender, EventArgs e)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameTableViewModel
+{
+    public GameTableViewModel(GameTable gameTable)
+    {
+        gameTable.OpponentDisconnected += OnOpponentDisconnected;
+    }
+
+    private void OnOpponentDisconnected(object sender, EventArgs e)
+    {
+    }
+}
+```

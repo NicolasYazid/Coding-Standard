@@ -291,3 +291,15 @@
 
 - **Referencia:** SonarSource. (s.f.). *Methods should not have too many parameters (S107)*. Recuperado el 17 de noviembre de 2026, de https://rules.sonarsource.com/csharp/tag/brain-overload/RSPEC-107
   **Qué respalda:** regla de análisis de código para C# que marca los métodos con más parámetros que el límite configurado (el del equipo es tres).
+
+### 2.7.1 — Prefijo On (método que lanza un evento)
+**Cita en el texto:** (Microsoft, 2026h)
+
+- **Referencia:** Microsoft. (2026, 23 de marzo). *Handling and raising events*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/events/
+  **Qué respalda:** el método que lanza un evento se nombra `On<EventName>`, por ejemplo `OnDataReceived`.
+
+### 2.7.2 — Prefijo Handle (método que reacciona a un evento)
+**Cita en el texto:** (Microsoft, 2021)
+
+- **Referencia:** Microsoft. (2021, 12 de octubre). *How to subscribe to and unsubscribe from events*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events
+  **Qué respalda:** su ejemplo nombra `HandleCustomEvent` al método que reacciona a un evento (ejemplo de código, no indicación escrita).
