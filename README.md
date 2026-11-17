@@ -467,3 +467,4 @@
 | 2026-11-17 | 2.7.1 | **Aprobada.** Cambia de significado para seguir a Microsoft: `On` + nombre del evento es el método que solo avisa que ocurrió el evento; única excepción a la 2.6.2. |
 | 2026-11-17 | 2.7.2 | **Aprobada.** Cambia de significado: el método que reacciona a un evento empieza con `Handle`. |
 | 2026-11-17 | 2.7.3 | **Aprobada.** `Toggle` solo en métodos que no hacen nada más que invertir un `bool`, y todo método así lo lleva; cita IToggleProvider.Toggle. |
+| 2026-11-17 | 2.7.2 | Texto ampliado: `Handle` no es exclusivo de los métodos que reaccionan a un evento; ejemplo con `HandleCardSelection`. |

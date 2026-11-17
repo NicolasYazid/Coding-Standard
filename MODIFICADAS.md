@@ -2005,7 +2005,7 @@ public void Jump(float jumpForce)
 ```
 
 ### Después
-El método que reacciona cuando otro método avisa que ocurrió un evento empieza con `Handle`, por ejemplo `HandleOpponentDisconnected` (Microsoft, 2021).
+El método que reacciona cuando otro método avisa que ocurrió un evento empieza con `Handle`, por ejemplo `HandleOpponentDisconnected` (Microsoft, 2021). El prefijo `Handle` no es exclusivo de estos métodos: cualquier otro método puede usarlo si describe lo que hace.
 
 **Con estándar**
 ```csharp
@@ -2017,6 +2017,10 @@ public class GameTableViewModel
     }
 
     private void HandleOpponentDisconnected(object sender, EventArgs e)
+    {
+    }
+
+    private void HandleCardSelection(Card selectedCard)
     {
     }
 }
