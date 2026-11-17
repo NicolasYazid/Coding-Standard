@@ -2252,3 +2252,48 @@ public class MeldFinderTests
     }
 }
 ```
+
+## 2.8.4 — Atributo de prueba y exenciones
+
+### Antes
+Todo método de prueba debe estar marcado con el atributo correspondiente del framework (como [Test] en NUnit). Además, debido a su naturaleza analítica, estos métodos están exentos de utilizar los prefijos de eventos (On, Handle, Toggle).
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_MovePlayer_InputIsZero_RemainsStationary()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void HandleMovePlayerTest()
+{
+}
+```
+
+### Después
+Todo método de prueba debe estar marcado con el atributo correspondiente del framework que se utilice, por ejemplo, [Test] en NUnit (NUnit Project, s.f.).
+
+**Con estándar**
+```csharp
+public class MeldFinderTests
+{
+    [Test]
+    public void Test_FindMelds_ThreeKings_ReturnsOneMeld()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MeldFinderTests
+{
+    public void Test_FindMelds_ThreeKings_ReturnsOneMeld()
+    {
+    }
+}
+```

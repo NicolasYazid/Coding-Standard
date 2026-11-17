@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 24 | 44 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 44 |
 | 3 | [Organización del proyecto](#3-organización-del-proyecto) | 0 | 0 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 0 | 6 |
@@ -28,7 +28,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **49** | **135** |
+| | **Total** | **50** | **135** |
 
 ---
 
@@ -105,7 +105,7 @@
 - [x] **2.8.1** Estructura de nomenclatura (prefijo `Test`)
 - [x] **2.8.2** Nombres descriptivos vs. genéricos
 - [ ] **2.8.3** Cobertura de lógica central y flujos existentes
-- [ ] **2.8.4** Atributo de prueba y exenciones
+- [x] **2.8.4** Atributo de prueba y exenciones
 
 ### 2.9 Clases
 - [ ] **2.9.1** Nomenclatura base (PascalCase)
@@ -472,3 +472,4 @@
 | 2026-11-17 | 2.7.5 | **Eliminada.** Duplicaba la regla 2.6.3. |
 | 2026-11-17 | 2.8.1 | **Aprobada.** Descripción del equipo con cita; ejemplos dentro de clase y del dominio Gin Rummy. |
 | 2026-11-17 | 2.8.2 | **Aprobada.** Descripción del equipo con cita; el ejemplo "Sin estándar" cumple la 2.8.1 pero usa un escenario numerado y un resultado genérico. |
+| 2026-11-17 | 2.8.4 | **Aprobada.** Se quita la exención de prefijos de eventos; el ejemplo "Sin estándar" ahora omite `[Test]`; cita de NUnit. |

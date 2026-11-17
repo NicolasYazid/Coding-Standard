@@ -327,3 +327,9 @@
 
 - **Referencia:** Microsoft. (2026i, 6 de noviembre). *Unit testing best practices for .NET*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices
   **Qué respalda:** el nombre de la prueba debe tener el método, el escenario y el comportamiento esperado; en su ejemplo de código cambia el nombre genérico `Test_Single` por `Add_SingleNumber_ReturnsSameNumber`.
+
+### 2.8.4 — Atributo de prueba y exenciones
+**Cita en el texto:** (NUnit Project, s.f.)
+
+- **Referencia:** NUnit Project. (s.f.). *Test attribute*. NUnit Docs. https://docs.nunit.org/articles/nunit/writing-tests/attributes/test.html
+  **Qué respalda:** el atributo `Test` es lo que marca un método dentro de una clase de pruebas como prueba ("The Test attribute marks a method inside a test fixture as a test").
