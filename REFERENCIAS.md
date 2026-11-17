@@ -343,3 +343,8 @@
 **Cita en el texto:** ninguna.
 
 - **Sin referencia:** el equipo retiró la cita "(Microsoft, s.f.)" porque no apuntaba a una página concreta.
+
+### 5.3.1 — Número máximo de operaciones en expresiones
+**Cita en el texto:** ninguna.
+
+- **Sin referencia:** regla del equipo (límite de tres operadores fijado por el equipo).

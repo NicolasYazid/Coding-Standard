@@ -2445,3 +2445,101 @@ public class KnockService
     }
 }
 ```
+
+## 5.3.1 — Número máximo de operaciones en expresiones
+
+### Antes
+Una condición puede tener como máximo tres operadores lógicos o de comparación. Si necesita más, cada parte se guarda en una variable booleana con nombre y la condición usa esas variables.
+
+**Con estándar**
+```csharp
+public class PlayerTurnValidator
+{
+    private const int MinDeadwood = 0;
+    private const int MaxDeadwood = 10;
+
+    public void PlayTurn(bool isConnected, bool isPlayerTurn, int deadwoodScore)
+    {
+        bool isDeadwoodInRange = (deadwoodScore >= MinDeadwood) && (deadwoodScore <= MaxDeadwood);
+        bool canPlay = isConnected && isPlayerTurn && isDeadwoodInRange;
+
+        if (canPlay)
+        {
+            DrawCard();
+        }
+    }
+
+    private void DrawCard()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerTurnValidator
+{
+    private const int MinDeadwood = 0;
+    private const int MaxDeadwood = 10;
+
+    public void PlayTurn(bool isConnected, bool isPlayerTurn, int deadwoodScore)
+    {
+        if (isConnected && isPlayerTurn && (deadwoodScore >= MinDeadwood) && (deadwoodScore <= MaxDeadwood))
+        {
+            DrawCard();
+        }
+    }
+
+    private void DrawCard()
+    {
+    }
+}
+```
+
+### Después
+Una condición puede tener como máximo tres operadores lógicos o de comparación. Si necesita más, cada parte se guarda en una variable booleana con nombre y la condición usa esas variables.
+
+**Con estándar**
+```csharp
+public class PlayerTurnValidator
+{
+    private const int MinDeadwood = 0;
+    private const int MaxDeadwood = 10;
+
+    public void PlayTurn(bool isConnected, bool isPlayerTurn, int deadwoodScore)
+    {
+        bool isDeadwoodInRange = (deadwoodScore >= MinDeadwood) && (deadwoodScore <= MaxDeadwood) ? true : false;
+        bool canPlay = isConnected && isPlayerTurn && isDeadwoodInRange ? true : false;
+
+        if (canPlay)
+        {
+            DrawCard();
+        }
+    }
+
+    private void DrawCard()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerTurnValidator
+{
+    private const int MinDeadwood = 0;
+    private const int MaxDeadwood = 10;
+
+    public void PlayTurn(bool isConnected, bool isPlayerTurn, int deadwoodScore)
+    {
+        if (isConnected && isPlayerTurn && (deadwoodScore >= MinDeadwood) && (deadwoodScore <= MaxDeadwood))
+        {
+            DrawCard();
+        }
+    }
+
+    private void DrawCard()
+    {
+    }
+}
+```
