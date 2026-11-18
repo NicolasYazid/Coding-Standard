@@ -348,3 +348,9 @@
 **Cita en el texto:** ninguna.
 
 - **Sin referencia:** regla del equipo (límite de tres operadores fijado por el equipo).
+
+### 5.4.1 — Complejidad ciclomática
+**Cita en el texto:** (Microsoft, s.f.)
+
+- **Referencia:** Microsoft. (s.f.). *Code metrics - Cyclomatic complexity*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-cyclomatic-complexity
+  **Qué respalda:** recomienda 10 como límite de complejidad ciclomática (citando a NIST 500-235) y reserva los límites mayores a 10 para casos justificados.

@@ -2543,3 +2543,349 @@ public class PlayerTurnValidator
     }
 }
 ```
+
+## 5.4.1 — Complejidad ciclomática
+
+### Antes
+La complejidad ciclomática de un método no debe superar el umbral de 10, permitiendo un máximo excepcional de 12 en casos justificados. Al superar este límite, el método debe refactorizarse extrayendo su lógica en métodos más pequeños.
+
+**Con estándar**
+```csharp
+public class KnockValidator
+{
+    public List<KnockError> Validate(KnockRequest request)
+    {
+        List<KnockError> errors = new List<KnockError>();
+
+        ValidatePlayerState(request, errors);
+        ValidateMatchState(request, errors);
+        ValidateHand(request, errors);
+
+        return errors;
+    }
+
+    private void ValidatePlayerState(KnockRequest request, List<KnockError> errors)
+    {
+        if (!request.IsPlayerConnected)
+        {
+            errors.Add(KnockError.PlayerDisconnected);
+        }
+
+        if (!request.IsPlayerTurn)
+        {
+            errors.Add(KnockError.NotPlayerTurn);
+        }
+
+        if (!request.HasDrawnCard)
+        {
+            errors.Add(KnockError.CardNotDrawn);
+        }
+
+        if (!request.HasDiscardedCard)
+        {
+            errors.Add(KnockError.CardNotDiscarded);
+        }
+    }
+
+    private void ValidateMatchState(KnockRequest request, List<KnockError> errors)
+    {
+        if (!request.IsMatchActive)
+        {
+            errors.Add(KnockError.MatchNotActive);
+        }
+
+        if (request.IsMatchPaused)
+        {
+            errors.Add(KnockError.MatchPaused);
+        }
+
+        if (request.IsStockEmpty)
+        {
+            errors.Add(KnockError.StockEmpty);
+        }
+
+        if (request.IsRoundFinished)
+        {
+            errors.Add(KnockError.RoundFinished);
+        }
+    }
+
+    private void ValidateHand(KnockRequest request, List<KnockError> errors)
+    {
+        if (!request.HasValidMelds)
+        {
+            errors.Add(KnockError.InvalidMelds);
+        }
+
+        if (request.HasUnassignedCards)
+        {
+            errors.Add(KnockError.UnassignedCards);
+        }
+
+        if (request.IsDeadwoodAboveLimit)
+        {
+            errors.Add(KnockError.DeadwoodTooHigh);
+        }
+
+        if (!request.HasValidHandSize)
+        {
+            errors.Add(KnockError.InvalidHandSize);
+        }
+
+        if (request.IsKnockAlreadyDeclared)
+        {
+            errors.Add(KnockError.KnockAlreadyDeclared);
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class KnockValidator
+{
+    public List<KnockError> Validate(KnockRequest request)
+    {
+        List<KnockError> errors = new List<KnockError>();
+
+        if (!request.IsPlayerConnected)
+        {
+            errors.Add(KnockError.PlayerDisconnected);
+        }
+
+        if (!request.IsPlayerTurn)
+        {
+            errors.Add(KnockError.NotPlayerTurn);
+        }
+
+        if (!request.HasDrawnCard)
+        {
+            errors.Add(KnockError.CardNotDrawn);
+        }
+
+        if (!request.HasDiscardedCard)
+        {
+            errors.Add(KnockError.CardNotDiscarded);
+        }
+
+        if (!request.IsMatchActive)
+        {
+            errors.Add(KnockError.MatchNotActive);
+        }
+
+        if (request.IsMatchPaused)
+        {
+            errors.Add(KnockError.MatchPaused);
+        }
+
+        if (request.IsStockEmpty)
+        {
+            errors.Add(KnockError.StockEmpty);
+        }
+
+        if (request.IsRoundFinished)
+        {
+            errors.Add(KnockError.RoundFinished);
+        }
+
+        if (!request.HasValidMelds)
+        {
+            errors.Add(KnockError.InvalidMelds);
+        }
+
+        if (request.HasUnassignedCards)
+        {
+            errors.Add(KnockError.UnassignedCards);
+        }
+
+        if (request.IsDeadwoodAboveLimit)
+        {
+            errors.Add(KnockError.DeadwoodTooHigh);
+        }
+
+        if (!request.HasValidHandSize)
+        {
+            errors.Add(KnockError.InvalidHandSize);
+        }
+
+        if (request.IsKnockAlreadyDeclared)
+        {
+            errors.Add(KnockError.KnockAlreadyDeclared);
+        }
+
+        return errors;
+    }
+}
+```
+
+### Después
+La complejidad ciclomática de un método no debe superar el umbral de 10. Al superar este límite, el método debe refactorizarse extrayendo su lógica en métodos más pequeños. Existe un umbral máximo excepcional y corresponde al nivel 12, sin embargo, estos casos deben justificarse (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class KnockValidator
+{
+    public List<KnockError> ValidateKnock(KnockRequest request)
+    {
+        List<KnockError> errors = new List<KnockError>();
+
+        ValidatePlayerState(request, errors);
+        ValidateMatchState(request, errors);
+        ValidateHand(request, errors);
+
+        return errors;
+    }
+
+    private void ValidatePlayerState(KnockRequest request, List<KnockError> errors)
+    {
+        if (!request.IsPlayerConnected)
+        {
+            errors.Add(KnockError.PlayerDisconnected);
+        }
+
+        if (!request.IsPlayerTurn)
+        {
+            errors.Add(KnockError.NotPlayerTurn);
+        }
+
+        if (!request.HasDrawnCard)
+        {
+            errors.Add(KnockError.CardNotDrawn);
+        }
+
+        if (!request.HasDiscardedCard)
+        {
+            errors.Add(KnockError.CardNotDiscarded);
+        }
+    }
+
+    private void ValidateMatchState(KnockRequest request, List<KnockError> errors)
+    {
+        if (!request.IsMatchActive)
+        {
+            errors.Add(KnockError.MatchNotActive);
+        }
+
+        if (request.IsMatchPaused)
+        {
+            errors.Add(KnockError.MatchPaused);
+        }
+
+        if (request.IsStockEmpty)
+        {
+            errors.Add(KnockError.StockEmpty);
+        }
+
+        if (request.IsRoundFinished)
+        {
+            errors.Add(KnockError.RoundFinished);
+        }
+    }
+
+    private void ValidateHand(KnockRequest request, List<KnockError> errors)
+    {
+        if (!request.HasValidMelds)
+        {
+            errors.Add(KnockError.InvalidMelds);
+        }
+
+        if (request.HasUnassignedCards)
+        {
+            errors.Add(KnockError.UnassignedCards);
+        }
+
+        if (request.IsDeadwoodAboveLimit)
+        {
+            errors.Add(KnockError.DeadwoodTooHigh);
+        }
+
+        if (!request.HasValidHandSize)
+        {
+            errors.Add(KnockError.InvalidHandSize);
+        }
+
+        if (request.IsKnockAlreadyDeclared)
+        {
+            errors.Add(KnockError.KnockAlreadyDeclared);
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class KnockValidator
+{
+    public List<KnockError> ValidateKnock(KnockRequest request)
+    {
+        List<KnockError> errors = new List<KnockError>();
+
+        if (!request.IsPlayerConnected)
+        {
+            errors.Add(KnockError.PlayerDisconnected);
+        }
+
+        if (!request.IsPlayerTurn)
+        {
+            errors.Add(KnockError.NotPlayerTurn);
+        }
+
+        if (!request.HasDrawnCard)
+        {
+            errors.Add(KnockError.CardNotDrawn);
+        }
+
+        if (!request.HasDiscardedCard)
+        {
+            errors.Add(KnockError.CardNotDiscarded);
+        }
+
+        if (!request.IsMatchActive)
+        {
+            errors.Add(KnockError.MatchNotActive);
+        }
+
+        if (request.IsMatchPaused)
+        {
+            errors.Add(KnockError.MatchPaused);
+        }
+
+        if (request.IsStockEmpty)
+        {
+            errors.Add(KnockError.StockEmpty);
+        }
+
+        if (request.IsRoundFinished)
+        {
+            errors.Add(KnockError.RoundFinished);
+        }
+
+        if (!request.HasValidMelds)
+        {
+            errors.Add(KnockError.InvalidMelds);
+        }
+
+        if (request.HasUnassignedCards)
+        {
+            errors.Add(KnockError.UnassignedCards);
+        }
+
+        if (request.IsDeadwoodAboveLimit)
+        {
+            errors.Add(KnockError.DeadwoodTooHigh);
+        }
+
+        if (!request.HasValidHandSize)
+        {
+            errors.Add(KnockError.InvalidHandSize);
+        }
+
+        if (request.IsKnockAlreadyDeclared)
+        {
+            errors.Add(KnockError.KnockAlreadyDeclared);
+        }
+
+        return errors;
+    }
+}
+```

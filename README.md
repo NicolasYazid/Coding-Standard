@@ -15,7 +15,7 @@
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 25 | 41 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
-| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 3 | 6 |
+| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 4 | 6 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 0 | 12 |
@@ -27,7 +27,7 @@
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
 | 16 | [Dependencias externas y de seguridad](#16-dependencias-externas-y-de-seguridad) | 0 | 0 |
-| | **Total** | **53** | **132** |
+| | **Total** | **54** | **132** |
 
 ---
 
@@ -167,7 +167,7 @@
 - [x] **5.3.1** Número máximo de operaciones en expresiones
 
 ### 5.4 Complejidad ciclomática
-- [ ] **5.4.1** Complejidad ciclomática
+- [x] **5.4.1** Complejidad ciclomática
 
 ### 5.5 Manejo de nulos
 - [ ] **5.5.1** Prohibición de retorno nulo en colecciones
@@ -458,3 +458,4 @@
 | 2026-11-17 | 5.2.1 | **Aprobada sin cambios.** El equipo conserva su texto (solo números con significado dentro del contexto del juego). |
 | 2026-11-17 | 5.2.1 | Se retira la cita "(Microsoft, s.f.)"; queda sin cita. |
 | 2026-11-17 | 5.3.1 | **Aprobada.** Descripción del equipo sin cambios; el ejemplo "Con estándar" agrega `? true : false` para cumplir la 9.5.3. |
+| 2026-11-17 | 5.4.1 | **Aprobada.** Redacción del equipo (10 como límite; 12 excepcional y justificado) con cita de Microsoft; el método de los ejemplos pasa de `Validate` a `ValidateKnock`. |
