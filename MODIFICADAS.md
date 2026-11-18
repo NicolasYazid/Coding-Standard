@@ -2889,3 +2889,91 @@ public class KnockValidator
     }
 }
 ```
+
+## 5.5.1 — Prohibición de retorno nulo en colecciones
+
+### Antes
+Un miembro que devuelve una colección no devuelve null. Cuando no hay elementos, debe devolver una colección vacía.
+
+**Con estándar**
+```csharp
+public class LobbyService
+{
+    private readonly List<Player> _connectedPlayers = new List<Player>();
+
+    public IReadOnlyList<Player> GetConnectedPlayers(bool isLobbyOpen)
+    {
+        IReadOnlyList<Player> players = Array.Empty<Player>();
+
+        if (isLobbyOpen)
+        {
+            players = _connectedPlayers;
+        }
+
+        return players;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class LobbyService
+{
+    private readonly List<Player> _connectedPlayers = new List<Player>();
+
+    public IReadOnlyList<Player> GetConnectedPlayers(bool isLobbyOpen)
+    {
+        IReadOnlyList<Player> players = null;
+
+        if (isLobbyOpen)
+        {
+            players = _connectedPlayers;
+        }
+
+        return players;
+    }
+}
+```
+
+### Después
+Un miembro que devuelve una colección no devuelve null. Cuando no hay elementos, debe devolver una colección vacía (Microsoft, 2021).
+
+**Con estándar**
+```csharp
+public class LobbyService
+{
+    private readonly List<Player> _connectedPlayers = new List<Player>();
+
+    public IReadOnlyList<Player> GetConnectedPlayers(bool isLobbyOpen)
+    {
+        IReadOnlyList<Player> players = Array.Empty<Player>();
+
+        if (isLobbyOpen)
+        {
+            players = _connectedPlayers;
+        }
+
+        return players;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class LobbyService
+{
+    private readonly List<Player> _connectedPlayers = new List<Player>();
+
+    public IReadOnlyList<Player> GetConnectedPlayers(bool isLobbyOpen)
+    {
+        IReadOnlyList<Player> players = null;
+
+        if (isLobbyOpen)
+        {
+            players = _connectedPlayers;
+        }
+
+        return players;
+    }
+}
+```

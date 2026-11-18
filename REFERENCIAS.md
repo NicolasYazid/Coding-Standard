@@ -354,3 +354,9 @@
 
 - **Referencia:** Microsoft. (s.f.). *Code metrics - Cyclomatic complexity*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-cyclomatic-complexity
   **Qué respalda:** recomienda 10 como límite de complejidad ciclomática (citando a NIST 500-235) y reserva los límites mayores a 10 para casos justificados.
+
+### 5.5.1 — Prohibición de retorno nulo en colecciones
+**Cita en el texto:** (Microsoft, 2021)
+
+- **Referencia:** Microsoft. (2021, 15 de septiembre). *Guidelines for collections*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/guidelines-for-collections
+  **Qué respalda:** "DO NOT return null values from collection properties or from methods returning collections. Return an empty collection or an empty array instead."
