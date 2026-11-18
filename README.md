@@ -460,3 +460,4 @@
 | 2026-11-17 | 5.3.1 | **Aprobada.** Descripción del equipo sin cambios; el ejemplo "Con estándar" agrega `? true : false` para cumplir la 9.5.3. |
 | 2026-11-17 | 5.4.1 | **Aprobada.** Redacción del equipo (10 como límite; 12 excepcional y justificado) con cita de Microsoft; el método de los ejemplos pasa de `Validate` a `ValidateKnock`. |
 | 2026-11-17 | 5.5.1 | **Aprobada.** Descripción y ejemplos sin cambios; se agrega la cita de las guías de colecciones de Microsoft. |
+| 2026-11-17 | 2.1.4 | Se permite el singular en sustantivos colectivos; ejemplos con `_meld` (permitido) y `_meldCard` (prohibido). |

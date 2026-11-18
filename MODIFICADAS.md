@@ -291,17 +291,23 @@ List<string> collectedItem;
 ```
 
 ### Después
-Toda variable, parámetro, campo o propiedad que guarde una colección se nombra en plural, describiendo los elementos que contiene. Queda prohibido nombrarla en singular o tener los sufijos "List" o "Collection". En caso de sustantivos incontables o sin plural, se deben usar términos colectivos descriptivos (Microsoft, 2023).
+Toda variable, parámetro, campo o propiedad que guarde una colección se nombra en plural, describiendo los elementos que contiene. Queda prohibido nombrarla en singular o tener los sufijos "List" o "Collection". Se permite el singular solo cuando el nombre es un sustantivo colectivo, es decir, una palabra que por sí misma nombra un grupo de elementos. En caso de sustantivos incontables o sin plural, se deben usar términos colectivos descriptivos (Microsoft, 2023).
 
 **Con estándar**
 ```csharp
 public class PlayerHand
 {
     private readonly List<Card> _heldCards = new List<Card>();
+    private readonly List<Card> _meld = new List<Card>();
 
     public void AddDrawnCard(Card drawnCard)
     {
         _heldCards.Add(drawnCard);
+    }
+
+    public void AddCardToMeld(Card meldCard)
+    {
+        _meld.Add(meldCard);
     }
 }
 ```
@@ -311,10 +317,16 @@ public class PlayerHand
 public class PlayerHand
 {
     private readonly List<Card> _heldCardList = new List<Card>();
+    private readonly List<Card> _meldCard = new List<Card>();
 
     public void AddDrawnCard(Card drawnCard)
     {
         _heldCardList.Add(drawnCard);
+    }
+
+    public void AddCardToMeld(Card meldCard)
+    {
+        _meldCard.Add(meldCard);
     }
 }
 ```
