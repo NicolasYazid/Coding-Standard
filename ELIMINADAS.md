@@ -406,3 +406,40 @@ public class MatchValidator
     }
 }
 ```
+
+---
+
+## 2.2.4 — Declaración correcta de propiedades
+
+**Motivo de eliminación:** la regla repite temas que ya cubren otras: la 2.2.1 pide PascalCase en las propiedades, la 2.2.2 pide que los métodos que solo devuelven o asignan un campo sean propiedades y la 2.2.6 pide el `set` restringido. Lo que esas reglas no cubren, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio: alcanzaría a métodos normales como `SetCulture`.
+
+### Regla original
+Queda estrictamente prohibido utilizar métodos tradicionales explícitos (como GetValue() o SetValue()) para obtener o modificar el estado de un objeto. En su lugar, se debe utilizar la sintaxis nativa de propiedades declaradas obligatoriamente en formato PascalCase. Se deben emplear auto-propiedades con el descriptor de acceso set restringido (como private set o protected set) para proteger el encapsulamiento de los datos, a menos que la lógica requiera exponer su modificación externa.
+
+**Con estándar**
+```csharp
+public class CharacterStats
+{
+    public int CurrentScore { get; private set; }
+
+    public bool IsInvincible { get; protected set; }
+}
+```
+
+**Sin estándar**
+```csharp
+public class CharacterStats
+{
+    private int _currentScore;
+
+    public int GetCurrentScore()
+    {
+        return _currentScore;
+    }
+
+    public void SetCurrentScore(int value)
+    {
+        _currentScore = value;
+    }
+}
+```

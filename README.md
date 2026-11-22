@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 39 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 38 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **71** | **129** |
+| | **Total** | **71** | **128** |
 
 ---
 
@@ -72,7 +72,6 @@
 - [x] **2.2.1** Nomenclatura de propiedades
 - [x] **2.2.2** Propiedades en lugar de métodos de acceso
 - [x] **2.2.3** Propiedades simples
-- [ ] **2.2.4** Declaración correcta de propiedades
 - [ ] **2.2.5** Modificación de valor en propiedades
 - [x] **2.2.6** Set restringido 🆕
 
@@ -361,6 +360,7 @@
 - ~~**8.1.4** Prohibición de comentarios redundantes~~ — la regla 8.1.3 ya pide que el comentario no repita lo que dice la línea de código que comenta, y el "Sin estándar" de la 8.1.4 ya violaba la 8.1.3.
 - ~~**8.1.5** Documentación XML (`///`): cuándo se usa~~ — dependía de qué proyectos y clases existen en el sistema ("capa de servicios", "mecánicas de bajo nivel"), que cambian; Microsoft solo recomienda documentar los miembros públicos y advierte que documentar los privados expone el funcionamiento interno, no lo prohíbe. La documentación XML queda opcional y las reglas 8.1.6 y 8.1.7 aplican a los bloques que se escriban.
 - ~~**8.1.12** Balance y densidad de comentarios~~ — repetía lo que ya piden la 8.1.3 (el comentario `//` solo dice lo que el código no expresa) y la 2.8.2 (nombres descriptivos), y no definía un umbral para "balance estricto" ni para "sobre-comentar", por lo que no se podía comprobar.
+- ~~**2.2.4** Declaración correcta de propiedades~~ — repetía lo que ya piden la 2.2.1 (PascalCase en propiedades), la 2.2.2 (los métodos que solo devuelven o asignan un campo son propiedades) y la 2.2.6 (`set` restringido); lo demás, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio.
 
 ---
 
@@ -470,3 +470,4 @@
 | 2026-11-22 | 2.2.2 | **Aprobada.** El README la tenía como plantilla vacía, pero el PDF de la última versión trae el texto; título "Propiedades en lugar de métodos de acceso"; redactada como "un método cuya única instrucción sea devolver o asignar un campo debe escribirse como propiedad"; se quitó "queda prohibido" y la oración explicativa; se agregó una excepción general para los métodos que el lenguaje o un framework exigen (interfaz o clase base, propiedades adjuntas de WPF); cita Microsoft (2026) y Microsoft (2025). |
 | 2026-11-22 | 2.2.3 | Título actualizado de "Plantilla vacía" a "Propiedades simples", porque el PDF de la última versión trae el texto. Sigue pendiente de evaluar. |
 | 2026-11-22 | 2.2.3 | **Aprobada.** Redactada por responsabilidades: el `get` solo devuelve el dato y las acciones (archivos, base de datos, red, `throw`) van en un método, sin lista cerrada; se quitó la oración de la categoría de "entrada y salida" y la mención de indexadores; cita Microsoft (2026) y Microsoft (2023); el ejemplo "Sin estándar" con el `get` en una línea (9.1.4). |
+| 2026-11-22 | 2.2.4 | **Eliminada.** Repetía las reglas 2.2.1, 2.2.2 y 2.2.6; la parte que no cubrían era demasiado amplia. |
