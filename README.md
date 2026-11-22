@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 28 | 41 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 28 | 40 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **58** | **134** |
+| | **Total** | **58** | **133** |
 
 ---
 
@@ -109,7 +109,6 @@
 - [x] **2.9.1** Nomenclatura base (PascalCase)
 - [x] **2.9.2** Nombre de clase sin prefijo
 - [x] **2.9.3** Acrónimos en el nombre de una clase
-- [ ] **2.9.4** Acrónimo arquitectónico (`Dto`)
 
 ### 2.11 Interfaces
 - [ ] **2.11.1** Prefijo obligatorio y convención base (PascalCase)
@@ -361,6 +360,7 @@
 - ~~**2.10** Clases controladoras (2.10.1 Sufijo obligatorio y nomenclatura completa; 2.10.2 Eliminación de prefijos tecnológicos)~~ — el proyecto no usa controladores (patrón MVC), así que la subsección no aplica.
 - ~~**Sección 16** Dependencias externas y de seguridad (16.1 Vulnerabilidades conocidas, sin reglas)~~ — el equipo decidió no abarcar este tema en el estándar de codificación. El número 16 no se reutiliza.
 - ~~**Sección 12** Validación de entrada y seguridad (12.1 Centralización de validaciones, 12.2 Almacenamiento de contraseñas, 12.3 Gestión de sesión; sin reglas)~~ — el equipo decidió no abarcar este tema en el estándar de codificación. El número 12 no se reutiliza.
+- ~~**2.9.4** Acrónimo arquitectónico (`Dto`)~~ — la regla 2.9.3 ya cubre cualquier acrónimo de tres o más letras en el nombre de una clase, incluido `Dto`; además, el proyecto no usa DTO.
 
 ---
 
@@ -449,3 +449,4 @@
 | 2026-11-21 | 2.9.1 | **Aprobada.** Descripción del equipo con cita; ejemplos de Gin Rummy que muestran PascalCase y sustantivo contra verbo. |
 | 2026-11-21 | 2.9.2 | **Aprobada.** Título cambiado a "Nombre de clase sin prefijo"; redactada como regla, sin la parte de guiones bajos (ya la cubre la 2.9.1); con cita; ejemplos `PlayerHand` y `CPlayerHand`. |
 | 2026-11-22 | 2.9.3 | **Aprobada.** Título cambiado a "Acrónimos en el nombre de una clase"; ya no depende de `Dao` (el proyecto no usa DAO); cubre todo acrónimo de tres o más letras; ejemplos `SmtpSettings` y `SMTPSettings`. |
+| 2026-11-22 | 2.9.4 | **Eliminada.** Repetía la 2.9.3. Subsección 2.9 completa. |

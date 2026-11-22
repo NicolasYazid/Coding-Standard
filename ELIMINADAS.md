@@ -251,3 +251,26 @@ public class ScriptPlayerController
 {
 }
 ```
+
+---
+
+## 2.9.4 — Acrónimo arquitectónico (Dto)
+
+**Motivo de eliminación:** la regla 2.9.3 ya cubre cualquier acrónimo de tres o más letras en el nombre de una clase, incluido `Dto`; además, el proyecto no usa DTO.
+
+### Regla original
+De igual manera, el sufijo para los objetos de transferencia de datos debe escribirse siempre en PascalCase (Dto). El uso de mayúsculas sostenidas en acrónimos largos rompe la convención estructural de las clases en C# y genera advertencias en las herramientas de análisis de código estático (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class MatchStateDto
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchStateDTO
+{
+}
+```
