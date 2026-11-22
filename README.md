@@ -21,11 +21,11 @@
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
-| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
+| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 6 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **71** | **127** |
+| | **Total** | **71** | **126** |
 
 ---
 
@@ -295,7 +295,6 @@
 ## 11. Pruebas unitarias
 
 ### 11.1 Ubicación y nomenclatura
-- [ ] **11.1.1** Ubicación lógica (namespaces)
 - [ ] **11.1.2** Nomenclatura de la clase de prueba
 
 ### 11.2 Estructura de un test
@@ -356,6 +355,7 @@
 - ~~**2.2.4** Declaración correcta de propiedades~~ — repetía lo que ya piden la 2.2.1 (PascalCase en propiedades), la 2.2.2 (los métodos que solo devuelven o asignan un campo son propiedades) y la 2.2.6 (`set` restringido); lo demás, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio.
 - ~~**2.2.5** Modificación de valor en propiedades~~ — su único contenido comprobable, que una propiedad no se lea ni se asigne a sí misma, es un error que hace caer el juego en cuanto se ejecuta esa línea (`StackOverflowException`), así que el propio programa lo muestra; el resto ya lo cubren la 2.2.2 y la 2.2.3.
 - ~~**2.3** Componentes de interfaz gráfica y **2.4** Identificadores de interfaz (sin reglas)~~ — el equipo decidió quitar estas dos subsecciones porque, por ahora, no tienen reglas ni propósito en el estándar. Los números 2.3 y 2.4 no se reutilizan.
+- ~~**11.1.1** Ubicación lógica (namespaces)~~ — se acoplaba a la estructura del código de producción (`Entities`, `UseCases`, `Ports`) y a la organización de los proyectos de pruebas; lo único comprobable, que el namespace lleve `.Tests`, ya lo cumple el nombre de los proyectos de pruebas.
 
 ---
 
@@ -468,3 +468,4 @@
 | 2026-11-22 | 2.2.4 | **Eliminada.** Repetía las reglas 2.2.1, 2.2.2 y 2.2.6; la parte que no cubrían era demasiado amplia. |
 | 2026-11-22 | 2.2.5 | **Eliminada.** Solo prohibía que una propiedad se leyera o asignara a sí misma, un error que el juego muestra de inmediato al ejecutarse; el resto lo cubren las reglas 2.2.2 y 2.2.3. |
 | 2026-11-22 | 2.3, 2.4 | **Eliminadas las subsecciones 2.3 y 2.4 completas** (sin reglas). Si se necesitan de nuevo, se recuperan del historial de versiones. |
+| 2026-11-22 | 11.1.1 | **Eliminada.** Se acoplaba a decisiones de diseño sobre la estructura del código y de los proyectos de pruebas. |

@@ -484,3 +484,26 @@ public class PlayerStats
     }
 }
 ```
+
+---
+
+## 11.1.1 — Ubicación lógica (namespaces)
+
+**Motivo de eliminación:** la regla se acoplaba a decisiones de diseño sobre la estructura: pedía que el namespace de las pruebas replicara el del código de producción (con carpetas como `Entities`, `UseCases` o `Ports`, que pueden cambiar) y que terminara en `.Tests`. Lo único comprobable, que el namespace lleve `.Tests`, ya lo cumple el nombre de los proyectos de pruebas, así que no hace falta una regla.
+
+### Regla original
+Las clases de pruebas unitarias deben estar lógicamente separadas del código de producción. Deben ubicarse dentro de un espacio de nombres (namespace) que replique la estructura original del componente a evaluar, añadiendo obligatoriamente el sufijo .Tests al final.
+
+**Con estándar**
+```csharp
+namespace VideoGame.Combat.Tests
+{
+}
+```
+
+**Sin estándar**
+```csharp
+namespace VideoGame.Pruebas.Combat
+{
+}
+```
