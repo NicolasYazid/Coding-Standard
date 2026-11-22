@@ -3886,3 +3886,70 @@ public class PlayerScore
     }
 }
 ```
+
+## 2.2.3 — Propiedades simples (antes: Plantilla vacía sin título ni contenido)
+
+### Antes
+El get de una propiedad no lee archivos, no consulta la base de datos, no usa la red y no contiene la instrucción throw. Si obtener el valor requiere alguna de esas operaciones, se escribe como método (Microsoft, 2023b).
+
+**Con estándar**
+```csharp
+public class PlayerSettings
+{
+    private const string SettingsFilePath = "settings.txt";
+
+    public string LoadSavedUsername()
+    {
+        string savedUsername = File.ReadAllText(SettingsFilePath);
+
+        return savedUsername;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerSettings
+{
+    private const string SettingsFilePath = "settings.txt";
+
+    public string SavedUsername
+    {
+        get
+        {
+            return File.ReadAllText(SettingsFilePath);
+        }
+    }
+}
+```
+
+### Después
+El `get` de una propiedad solo debe devolver el dato que la propiedad representa; no debe encargarse de acciones como leer archivos, consultar la base de datos, usar la red o lanzar excepciones con `throw`. Si para obtener el valor hace falta una acción así, debe escribirse como método (Microsoft, 2026; Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class PlayerSettings
+{
+    private const string SettingsFilePath = "settings.txt";
+
+    public string LoadSavedUsername()
+    {
+        string savedUsername = File.ReadAllText(SettingsFilePath);
+
+        return savedUsername;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerSettings
+{
+    private const string SettingsFilePath = "settings.txt";
+
+    public string SavedUsername
+    {
+        get { return File.ReadAllText(SettingsFilePath); }
+    }
+}
+```

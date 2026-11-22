@@ -451,3 +451,11 @@
   **Qué respalda:** que un método que no recibe argumentos y devuelve el estado del objeto, o que recibe un solo argumento para establecerlo, debe ser una propiedad. Es una recomendación de la categoría de diseño y está desactivada por defecto en .NET 10; que sea obligatoria es decisión del equipo.
 - **Referencia:** Microsoft. (2025, 7 de mayo). *How to register an attached property (WPF .NET)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/how-to-register-an-attached-property
   **Qué respalda:** que la clase proveedora de una propiedad adjunta de WPF debe ofrecer métodos estáticos `Get` y `Set` con esa convención de nombres. Que una interfaz o clase base obligue a escribir un método es una restricción del compilador, no una decisión del equipo.
+
+### 2.2.3 — Propiedades simples
+**Cita en el texto:** (Microsoft, 2026; Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2026, 13 de noviembre). *CA1024: Use properties where appropriate*. Microsoft Learn. https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1024
+  **Qué respalda:** que en la mayoría de los casos las propiedades representan datos y los métodos realizan acciones. Que archivos, base de datos, red y `throw` sean los ejemplos de acción es decisión del equipo: la página no los nombra.
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Property design*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/property
+  **Qué respalda:** que los getters deben ser operaciones simples sin precondiciones y que un getter que puede lanzar una excepción conviene rediseñarlo como método. La página indica que su contenido es de la 2.ª edición (2008) y puede estar desactualizado.

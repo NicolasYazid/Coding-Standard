@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 31 | 39 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 39 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **70** | **129** |
+| | **Total** | **71** | **129** |
 
 ---
 
@@ -71,7 +71,7 @@
 ### 2.2 Propiedades
 - [x] **2.2.1** Nomenclatura de propiedades
 - [x] **2.2.2** Propiedades en lugar de métodos de acceso
-- [ ] **2.2.3** Propiedades simples
+- [x] **2.2.3** Propiedades simples
 - [ ] **2.2.4** Declaración correcta de propiedades
 - [ ] **2.2.5** Modificación de valor en propiedades
 - [x] **2.2.6** Set restringido 🆕
@@ -469,3 +469,4 @@
 | 2026-11-22 | 8.1.12 | **Eliminada.** Repetía las reglas 8.1.3 y 2.8.2 y no se podía medir. |
 | 2026-11-22 | 2.2.2 | **Aprobada.** El README la tenía como plantilla vacía, pero el PDF de la última versión trae el texto; título "Propiedades en lugar de métodos de acceso"; redactada como "un método cuya única instrucción sea devolver o asignar un campo debe escribirse como propiedad"; se quitó "queda prohibido" y la oración explicativa; se agregó una excepción general para los métodos que el lenguaje o un framework exigen (interfaz o clase base, propiedades adjuntas de WPF); cita Microsoft (2026) y Microsoft (2025). |
 | 2026-11-22 | 2.2.3 | Título actualizado de "Plantilla vacía" a "Propiedades simples", porque el PDF de la última versión trae el texto. Sigue pendiente de evaluar. |
+| 2026-11-22 | 2.2.3 | **Aprobada.** Redactada por responsabilidades: el `get` solo devuelve el dato y las acciones (archivos, base de datos, red, `throw`) van en un método, sin lista cerrada; se quitó la oración de la categoría de "entrada y salida" y la mención de indexadores; cita Microsoft (2026) y Microsoft (2023); el ejemplo "Sin estándar" con el `get` en una línea (9.1.4). |
