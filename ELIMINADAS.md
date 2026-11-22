@@ -443,3 +443,44 @@ public class CharacterStats
     }
 }
 ```
+
+---
+
+## 2.2.5 — Modificación de valor en propiedades
+
+**Motivo de eliminación:** lo único que la regla pedía que se pudiera comprobar era que una propiedad no se lea ni se asigne a sí misma. Ese error hace que el juego se caiga con `StackOverflowException` apenas se ejecuta la línea, así que no puede pasar desapercibido. El campo de respaldo para la lógica del `set` ya queda cubierto por las reglas 2.2.2 y 2.2.3, y el texto original chocaba con las propiedades de dependencia de WPF, que no usan campo de respaldo.
+
+### Regla original
+Si la asignación de una propiedad requiere validación o cálculos lógicos, debe declararse un campo privado de respaldo (backing field). La lógica debe ejecutarse dentro del bloque set, evaluando la palabra clave value y asignando el resultado únicamente al campo de respaldo. Queda estrictamente prohibido que una propiedad se referencie o asigne a sí misma, ya que esto provocará un ciclo infinito.
+
+**Con estándar**
+```csharp
+public class PlayerStats
+{
+    private int _currentHealth;
+
+    public int CurrentHealth
+    {
+        get { return _currentHealth; }
+        private set
+        {
+            _currentHealth = Math.Max(0, value);
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerStats
+{
+    public int CurrentHealth
+    {
+        get { return CurrentHealth; }
+        private set
+        {
+            CurrentHealth = Math.Max(0, value);
+        }
+    }
+}
+```
