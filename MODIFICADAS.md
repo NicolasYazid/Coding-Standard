@@ -3580,3 +3580,55 @@ public class GameTable
     }
 }
 ```
+
+## 8.1.8 — Uso y formato del comentario especial `TODO` (antes: Comentario especial TODO — formato y propósito)
+
+### Antes
+Para marcar trabajo pendiente de implementación, se debe utilizar el prefijo // TODO: (en mayúsculas, seguido de dos puntos y un espacio) antes de la descripción. Este formato permite que Visual Studio agrupe la tarea de forma nativa en su Task List, facilitando el rastreo de pendientes sin configuración adicional (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class TcpMatchmaker
+{
+    public void AcceptClient()
+    {
+        // TODO: Implement token authentication before admitting the TCP client.
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TcpMatchmaker
+{
+    public void AcceptClient()
+    {
+        // todo - check if the client token is valid here
+    }
+}
+```
+
+### Después
+Los comentarios que marcan trabajo pendiente de implementación deben iniciar con el prefijo `// TODO: ` (`TODO` en mayúsculas, seguido de dos puntos y un espacio) y continuar con la descripción del pendiente (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class TcpMatchmaker
+{
+    public void AcceptClient()
+    {
+        // TODO: Implement token authentication before admitting the TCP client.
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TcpMatchmaker
+{
+    public void AcceptClient()
+    {
+        // todo - Implement token authentication before admitting the TCP client.
+    }
+}
+```

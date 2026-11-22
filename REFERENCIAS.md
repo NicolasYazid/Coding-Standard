@@ -420,3 +420,9 @@
 
 - **Referencia:** Microsoft. (2026, 10 de septiembre). *Recommended XML tags for C# documentation comments*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/codedoc
   **Qué respalda:** Que los comentarios de documentación deben ser XML bien formado y que, si no lo son, el compilador genera una advertencia.
+
+### 8.1.8 — Uso y formato del comentario especial `TODO`
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 17 de noviembre). *Use the Task List*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/ide/using-the-task-list
+  **Qué respalda:** Que el ejemplo de comentario de tarea en C# de Microsoft usa el formato `// TODO: `. Que sea en mayúsculas y con dos puntos es decisión del equipo: la página no lo exige.
