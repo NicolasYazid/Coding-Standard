@@ -459,3 +459,8 @@
   **Qué respalda:** que en la mayoría de los casos las propiedades representan datos y los métodos realizan acciones. Que archivos, base de datos, red y `throw` sean los ejemplos de acción es decisión del equipo: la página no los nombra.
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Property design*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/property
   **Qué respalda:** que los getters deben ser operaciones simples sin precondiciones y que un getter que puede lanzar una excepción conviene rediseñarlo como método. La página indica que su contenido es de la 2.ª edición (2008) y puede estar desactualizado.
+
+### 11.1.2 — Nomenclatura de la clase de prueba
+**Cita en el texto:** ninguna (decisión del equipo)
+
+- **Referencia:** ninguna. El estándar base no traía cita y no se encontró una fuente de Microsoft que respalde el sufijo `Tests` en el nombre de la clase de pruebas: la guía de Microsoft sobre pruebas unitarias trata los nombres de las pruebas, no los de las clases.

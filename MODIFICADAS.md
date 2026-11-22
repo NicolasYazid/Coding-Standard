@@ -3953,3 +3953,41 @@ public class PlayerSettings
     }
 }
 ```
+
+---
+
+## 11.1.2 — Nomenclatura de la clase de prueba
+
+### Antes
+El nombre de la clase que contiene las pruebas unitarias debe coincidir exactamente con el nombre de la clase original que se está evaluando, concatenando el sufijo Tests al final. Debe respetar estrictamente el formato PascalCase (Regla 2.8.1).
+
+**Con estándar**
+```csharp
+public class CollisionHandlerTests
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class TestCollisionHandler
+{
+}
+```
+
+### Después
+El nombre de una clase que contiene pruebas unitarias debe ser el nombre de la clase que prueba seguido del sufijo `Tests`.
+
+**Con estándar**
+```csharp
+public class MeldFinderTests
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class TestMeldFinder
+{
+}
+```

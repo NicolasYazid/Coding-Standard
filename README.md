@@ -21,11 +21,11 @@
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
-| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 6 |
+| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 1 | 6 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **71** | **126** |
+| | **Total** | **72** | **126** |
 
 ---
 
@@ -295,7 +295,7 @@
 ## 11. Pruebas unitarias
 
 ### 11.1 Ubicación y nomenclatura
-- [ ] **11.1.2** Nomenclatura de la clase de prueba
+- [x] **11.1.2** Nomenclatura de la clase de prueba
 
 ### 11.2 Estructura de un test
 - [ ] **11.2.1** Patrón lógico (Arrange, Act, Assert) sin comentarios
@@ -469,3 +469,4 @@
 | 2026-11-22 | 2.2.5 | **Eliminada.** Solo prohibía que una propiedad se leyera o asignara a sí misma, un error que el juego muestra de inmediato al ejecutarse; el resto lo cubren las reglas 2.2.2 y 2.2.3. |
 | 2026-11-22 | 2.3, 2.4 | **Eliminadas las subsecciones 2.3 y 2.4 completas** (sin reglas). Si se necesitan de nuevo, se recuperan del historial de versiones. |
 | 2026-11-22 | 11.1.1 | **Eliminada.** Se acoplaba a decisiones de diseño sobre la estructura del código y de los proyectos de pruebas. |
+| 2026-11-22 | 11.1.2 | **Aprobada.** Redactada como "el nombre de una clase que contiene pruebas unitarias debe ser el nombre de la clase que prueba seguido de `Tests`"; se quitó la oración del PascalCase, que repetía la 2.9.1 y citaba mal la 2.8.1 (esa regla trata los métodos de prueba); el ejemplo pasa de `CollisionHandler` (sufijo `Handler`, regla 2.12.3 pendiente) a `MeldFinder`; sin cita, decisión del equipo. |
