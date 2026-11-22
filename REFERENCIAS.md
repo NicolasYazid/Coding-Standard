@@ -432,3 +432,8 @@
 
 - **Referencia de contexto:** Microsoft. (2025, 17 de noviembre). *Use the Task List*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/ide/using-the-task-list
   **Qué respalda:** Solo da contexto: muestra que `FIXME` no es una etiqueta predefinida de Visual Studio. El formato `// FIXME: ` es decisión del equipo y ninguna fuente lo exige.
+
+### 8.1.10 — Ciclo de vida de `TODO` y `FIXME`
+**Cita en el texto:** ninguna (decisión del equipo)
+
+- **Referencia:** ninguna. El estándar base la respaldaba con Bass et al. (2013), pero esa fuente no trata comentarios `TODO` ni `FIXME`: la 4.ª edición del libro trata la deuda de arquitectura con el historial de cambios y los reportes de errores. La 3.ª edición (2013) no se pudo revisar.

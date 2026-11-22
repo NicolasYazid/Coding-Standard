@@ -3684,3 +3684,73 @@ public class ScoringSystem
     }
 }
 ```
+
+## 8.1.10 — Ciclo de vida de `TODO` y `FIXME` (antes: Ciclo de vida de TODO y FIXME (cuándo deben eliminarse))
+
+### Antes
+Los marcadores TODO y FIXME son temporales por definición. Deben eliminarse antes de cualquier entrega formal: el trabajo pendiente debe resolverse en el código, o documentarse por separado si no se alcanza a completar, para evitar que se acumule como deuda técnica invisible en el proyecto (Bass et al., 2013).
+
+**Con estándar**
+```csharp
+public class TcpLobby
+{
+    public void StartLobby()
+    {
+        ListenForClients();
+    }
+
+    private void ListenForClients()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TcpLobby
+{
+    public void StartLobby()
+    {
+        // TODO: Add proper logging before merge.
+        ListenForClients();
+    }
+
+    private void ListenForClients()
+    {
+    }
+}
+```
+
+### Después
+Los comentarios `TODO` y `FIXME` son temporales y el código que se entrega no debe contenerlos. El trabajo pendiente o el defecto debe resolverse en el código, o registrarse fuera de los archivos de código si no se alcanza a completar, y en ambos casos el comentario se elimina.
+
+**Con estándar**
+```csharp
+public class TcpLobby
+{
+    public void StartLobby()
+    {
+        ListenForClients();
+    }
+
+    private void ListenForClients()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TcpLobby
+{
+    public void StartLobby()
+    {
+        // TODO: Add proper logging for the lobby startup.
+        ListenForClients();
+    }
+
+    private void ListenForClients()
+    {
+    }
+}
+```
