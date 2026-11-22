@@ -390,3 +390,9 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Names of classes, structs, and interfaces*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
   **Qué respalda:** "DO ensure that the names differ only by the "I" prefix on the interface name when you are defining a class–interface pair where the class is a standard implementation of the interface."
+
+### 8.1.1 — Comentarios de una línea (`//`): formato y ubicación
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 18 de enero). *Common C# code conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+  **Qué respalda:** Las indicaciones de la sección "Comment style": poner el comentario en una línea aparte y no al final de una línea de código, dejar un espacio entre `//` y el texto, empezar con mayúscula y terminar con punto.

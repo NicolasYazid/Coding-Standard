@@ -3177,3 +3177,83 @@ public interface IDrawableInterface
 {
 }
 ```
+
+## 8.1.1 — Comentarios de una línea (`//`): formato y ubicación (antes: Comentarios de una línea (`//`) — formato y ubicación)
+
+### Antes
+Los comentarios de una sola línea deben escribirse en su propia línea, pero no deben quedar colocados al final de una línea de código ejecutable. Además, deben iniciar con un espacio en blanco después de las barras //, comenzar con letra mayúscula y finalizar con un punto, garantizando la consistencia visual y de formato en todo el proyecto (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class MatchScorer
+{
+    private const int GinDeadwoodThreshold = 0;
+    private int _bonusPoints;
+
+    public void CalculateKnock(int deadwoodScore)
+    {
+        // The knock bonus only applies if the deadwood is exactly zero.
+        if (deadwoodScore == GinDeadwoodThreshold)
+        {
+            _bonusPoints += 25;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchScorer
+{
+    private const int GinDeadwoodThreshold = 0;
+    private int _bonusPoints;
+
+    public void CalculateKnock(int deadwoodScore)
+    {
+        if (deadwoodScore == GinDeadwoodThreshold)
+        {
+            _bonusPoints += 25; //the knock bonus is applied
+        }
+    }
+}
+```
+
+### Después
+Los comentarios de una sola línea deben escribirse en su propia línea, no al final de una línea de código ejecutable. Deben iniciar con un espacio en blanco después de las barras `//`, comenzar con letra mayúscula y finalizar con un punto (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class MatchScorer
+{
+    private const int GinDeadwoodThreshold = 0;
+    private const int KnockBonusPoints = 25;
+    private int _bonusPoints;
+
+    public void CalculateKnock(int deadwoodScore)
+    {
+        // The knock bonus only applies if the deadwood is exactly zero.
+        if (deadwoodScore == GinDeadwoodThreshold)
+        {
+            _bonusPoints += KnockBonusPoints;
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchScorer
+{
+    private const int GinDeadwoodThreshold = 0;
+    private const int KnockBonusPoints = 25;
+    private int _bonusPoints;
+
+    public void CalculateKnock(int deadwoodScore)
+    {
+        if (deadwoodScore == GinDeadwoodThreshold)
+        {
+            _bonusPoints += KnockBonusPoints; //the knock bonus is applied
+        }
+    }
+}
+```
