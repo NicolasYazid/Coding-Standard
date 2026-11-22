@@ -378,9 +378,3 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Capitalization conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
   **Qué respalda:** PascalCasing pone en mayúscula la primera letra de cada palabra, "including acronyms over two letters in length".
-
-### 2.11.1 — Prefijo obligatorio y convención base (PascalCase)
-**Cita en el texto:** (Microsoft, 2023)
-
-- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of classes, structs, and interfaces*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
-  **Qué respalda:** "DO name interfaces with adjective phrases, or occasionally with nouns or noun phrases" y "DO prefix interface names with the letter I, to indicate that the type is an interface."
