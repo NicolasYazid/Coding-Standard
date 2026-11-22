@@ -373,3 +373,36 @@ public class MatchService
     }
 }
 ```
+
+---
+
+## 8.1.12 — Balance y densidad de comentarios (evitar sobre-comentar)
+
+**Motivo de eliminación:** la regla repite lo que ya piden otras: la 8.1.3 limita el comentario `//` a lo que el código no expresa y la 2.8.2 pide nombres descriptivos. No define un umbral para "balance estricto" ni para "sobre-comentar", así que no se puede comprobar, y su ejemplo "Sin estándar" ya violaba la 8.1.3.
+
+### Regla original
+Se debe mantener un balance estricto en la densidad de comentarios, reservando su uso exclusivamente para explicar código cuya intención no sea evidente. Queda prohibido sobre-comentar; los nombres de clases, métodos y variables deben ser lo suficientemente explícitos por sí mismos (código auto-documentado), mitigando así el riesgo crítico de conservar comentarios que se desactualizan cuando el código evoluciona (Martin, 2008).
+
+**Con estándar**
+```csharp
+public class MatchValidator
+{
+    public bool IsValidGin(int deadwoodPoints)
+    {
+        return deadwoodPoints == GinDeadwoodThreshold;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchValidator
+{
+    // Method that validates if the player has Gin.
+    public bool IsValidGin(int deadwoodPoints)
+    {
+        // Returns true if the deadwood points are exactly zero.
+        return deadwoodPoints == GinDeadwoodThreshold;
+    }
+}
+```

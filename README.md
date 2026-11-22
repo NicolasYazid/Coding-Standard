@@ -18,14 +18,14 @@
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
-| 8 | [Comentarios](#8-comentarios) | 9 | 10 |
+| 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **69** | **130** |
+| | **Total** | **69** | **129** |
 
 ---
 
@@ -238,7 +238,6 @@
 - [x] **8.1.9** Uso y formato del comentario especial `FIXME`
 - [x] **8.1.10** Ciclo de vida de `TODO` y `FIXME`
 - [x] **8.1.11** Prohibición de código comentado
-- [ ] **8.1.12** Balance y densidad de comentarios
 
 ---
 
@@ -361,6 +360,7 @@
 - ~~**2.12.1** Acceso a datos (`Dao`)~~ — el proyecto no usa DAO (decisión de la versión 9: repositorios y unidad de trabajo); la regla obligaba a un patrón que no se usa.
 - ~~**8.1.4** Prohibición de comentarios redundantes~~ — la regla 8.1.3 ya pide que el comentario no repita lo que dice la línea de código que comenta, y el "Sin estándar" de la 8.1.4 ya violaba la 8.1.3.
 - ~~**8.1.5** Documentación XML (`///`): cuándo se usa~~ — dependía de qué proyectos y clases existen en el sistema ("capa de servicios", "mecánicas de bajo nivel"), que cambian; Microsoft solo recomienda documentar los miembros públicos y advierte que documentar los privados expone el funcionamiento interno, no lo prohíbe. La documentación XML queda opcional y las reglas 8.1.6 y 8.1.7 aplican a los bloques que se escriban.
+- ~~**8.1.12** Balance y densidad de comentarios~~ — repetía lo que ya piden la 8.1.3 (el comentario `//` solo dice lo que el código no expresa) y la 2.8.2 (nombres descriptivos), y no definía un umbral para "balance estricto" ni para "sobre-comentar", por lo que no se podía comprobar.
 
 ---
 
@@ -466,3 +466,4 @@
 | 2026-11-22 | 8.1.9 | **Aprobada.** Renombrada a "Uso y formato del comentario especial `FIXME`"; se quitó la oración sobre agregar la etiqueta a la configuración de Visual Studio (no se puede auditar en el código) y la cita de Microsoft, que ya no respaldaba nada; el ejemplo "Sin estándar" ahora solo rompe esta regla. |
 | 2026-11-22 | 8.1.10 | **Aprobada.** Se quitó la cita de Bass et al. (2013), que no respalda la regla; ahora es decisión del equipo; el criterio es que el código entregado no contenga `TODO` ni `FIXME` (antes "antes de cualquier entrega formal"); el ejemplo "Sin estándar" ya no depende del flujo de trabajo con Git ("before merge"). |
 | 2026-11-22 | 8.1.11 | **Aprobada.** Renombrada a "Prohibición de código comentado" ("código muerto" en C# suele significar código inalcanzable); se quitó "Git como único mecanismo oficial" y se dejó el control de versiones en general; se agregó que los ejemplos de código en la documentación `///` no cuentan; el ejemplo "Sin estándar" ya no tiene número suelto ni llaves en una sola línea. |
+| 2026-11-22 | 8.1.12 | **Eliminada.** Repetía las reglas 8.1.3 y 2.8.2 y no se podía medir. |
