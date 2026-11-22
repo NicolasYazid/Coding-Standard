@@ -395,4 +395,10 @@
 **Cita en el texto:** (Microsoft, 2025)
 
 - **Referencia:** Microsoft. (2025, 18 de enero). *Common C# code conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
-  **Qué respalda:** Las indicaciones de la sección "Comment style": poner el comentario en una línea aparte y no al final de una línea de código, dejar un espacio entre `//` y el texto, empezar con mayúscula y terminar con punto.
+  **Qué respalda:** Las indicaciones de la sección "Comment style": poner el comentario en una línea aparte y no al final de una línea de código, dejar un espacio entre `//` y el texto, empezar con mayúscula y terminar con punto el texto del comentario.
+
+### 8.1.2 — Comentarios en bloque (`/* */`)
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 18 de enero). *Common C# code conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
+  **Qué respalda:** La indicación de la sección "Comment style": evitar los comentarios de varias líneas (`/* */`) para explicaciones largas.

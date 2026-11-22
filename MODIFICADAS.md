@@ -3261,3 +3261,75 @@ public class MatchScorer
     }
 }
 ```
+
+## 8.1.2 — Comentarios en bloque (`/* */`)
+
+### Antes
+Se debe preferir el uso de comentarios de una sola línea (//) sobre comentarios en bloque (/* */) para explicaciones extensas dentro del código, ya que Microsoft recomienda esta práctica para mantener la consistencia y legibilidad del código fuente (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class NetworkLobby
+{
+    private int _timeoutTimer;
+
+    public void ValidatePlayerConnection()
+    {
+        // Disconnect timeouts are validated here.
+        // Each check increments the timer until the threshold is reached.
+        _timeoutTimer += 1;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class NetworkLobby
+{
+    private int _timeoutTimer;
+
+    public void ValidatePlayerConnection()
+    {
+        /*
+         * Disconnect timeouts are validated here.
+         * Each check increments the timer until the threshold is reached.
+         */
+        _timeoutTimer += 1;
+    }
+}
+```
+
+### Después
+Las explicaciones que ocupan varias líneas deben escribirse con una línea `//` por cada línea y no con un comentario en bloque `/* */` (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class NetworkLobby
+{
+    private int _timeoutTimer;
+
+    public void ValidatePlayerConnection()
+    {
+        // Disconnect timeouts are validated here.
+        // Each check increments the timer until the threshold is reached.
+        _timeoutTimer++;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class NetworkLobby
+{
+    private int _timeoutTimer;
+
+    public void ValidatePlayerConnection()
+    {
+        /*
+         * Disconnect timeouts are validated here.
+         * Each check increments the timer until the threshold is reached.
+         */
+        _timeoutTimer++;
+    }
+}
+```

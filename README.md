@@ -455,3 +455,5 @@
 | 2026-11-22 | 2.11.2 | **Aprobada.** Título cambiado a "Nombre de interfaz sin la palabra \"Interface\""; redactada como regla; con cita; ejemplos `IDrawable` y `IDrawableInterface`. Subsección 2.11 completa. |
 | 2026-11-22 | 2.12.1 | **Eliminada.** El proyecto no usa DAO. |
 | 2026-11-22 | 8.1.1 | **Aprobada.** Título sin raya larga (`:` en su lugar); descripción sin la oración final sobre consistencia; cita (Microsoft, 2025); ejemplos con la constante `KnockBonusPoints` en vez del número `25`. |
+| 2026-11-22 | 8.1.1 | Se agregó la oración sobre comentarios de varias líneas (mayúscula en la primera línea y punto en la última) y un comentario de dos líneas en los ejemplos. |
+| 2026-11-22 | 8.1.2 | **Aprobada.** Redactada con "deben" y sin la explicación sobre Microsoft; "extensas" pasa a "ocupan varias líneas"; cita (Microsoft, 2025); ejemplos con `_timeoutTimer++` en vez de `+= 1`. |
