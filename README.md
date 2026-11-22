@@ -22,7 +22,6 @@
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
-| 12 | [Validación de entrada y seguridad](#12-validación-de-entrada-y-seguridad) | 0 | 0 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
@@ -323,19 +322,6 @@
 
 ---
 
-## 12. Validación de entrada y seguridad
-
-### 12.1 Centralización de validaciones
-- 🕳️ Sin reglas
-
-### 12.2 Almacenamiento de contraseñas
-- 🕳️ Sin reglas
-
-### 12.3 Gestión de sesión
-- 🕳️ Sin reglas
-
----
-
 ## 13. DTOs y modelos de dominio
 
 ### 13.1 Estructura de un DTO
@@ -374,6 +360,7 @@
 - ~~**Sección 3** Organización del proyecto (3.1 a 3.6, sin reglas)~~ — trataba la arquitectura del proyecto y el control de versiones, no la codificación; esos temas cambian y se documentan en otros artefactos. El número 3 no se reutiliza.
 - ~~**2.10** Clases controladoras (2.10.1 Sufijo obligatorio y nomenclatura completa; 2.10.2 Eliminación de prefijos tecnológicos)~~ — el proyecto no usa controladores (patrón MVC), así que la subsección no aplica.
 - ~~**Sección 16** Dependencias externas y de seguridad (16.1 Vulnerabilidades conocidas, sin reglas)~~ — el equipo decidió no abarcar este tema en el estándar de codificación. El número 16 no se reutiliza.
+- ~~**Sección 12** Validación de entrada y seguridad (12.1 Centralización de validaciones, 12.2 Almacenamiento de contraseñas, 12.3 Gestión de sesión; sin reglas)~~ — el equipo decidió no abarcar este tema en el estándar de codificación. El número 12 no se reutiliza.
 
 ---
 
@@ -458,3 +445,4 @@
 | 2026-11-17 | 2.1.4 | Se permite el singular en sustantivos colectivos; ejemplos con `_meld` (permitido) y `_meldCard` (prohibido). |
 | 2026-11-17 | 5.6.1, 5.6.2, 5.6.3 | La plantilla vacía 5.6.1 se separa en tres reglas sobre cómo escribir lambdas (tipo de los parámetros, paréntesis y cuerpo). Quedan como **Regla pendiente de revisión**. |
 | 2026-11-21 | Sección 16 | **Eliminada completa** (16.1, sin reglas). El tema ya no se abarca en el estándar. |
+| 2026-11-21 | Sección 12 | **Eliminada completa** (12.1 a 12.3, sin reglas). El tema ya no se abarca en el estándar. |
