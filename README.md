@@ -451,3 +451,4 @@
 | 2026-11-22 | 2.9.3 | **Aprobada.** Título cambiado a "Acrónimos en el nombre de una clase"; ya no depende de `Dao` (el proyecto no usa DAO); cubre todo acrónimo de tres o más letras; ejemplos `SmtpSettings` y `SMTPSettings`. |
 | 2026-11-22 | 2.9.4 | **Eliminada.** Repetía la 2.9.3. Subsección 2.9 completa. |
 | 2026-11-22 | 2.11.1 | **Aprobada.** Solo regula el prefijo `I` y el PascalCase (se quitó la oración sobre adjetivo o sustantivo); con cita; ejemplo `IDrawable`. |
+| 2026-11-22 | 2.9.3 | Ejemplo cambiado de `SmtpSettings`/`SMTPSettings` (nombre tomado del repositorio) a `TcpConnection`/`TCPConnection`; en la descripción, `Smtp`/`SMTP` pasa a `Tcp`/`TCP`. |

@@ -3090,18 +3090,18 @@ public class PlayerProfileDAO
 ```
 
 ### Después
-Un acrónimo de tres o más letras dentro del nombre de una clase se escribe como una palabra normal en PascalCase: solo su primera letra va en mayúscula, por ejemplo `Smtp` y no `SMTP`. Así el nombre se lee igual que el resto de sus palabras (Microsoft, 2023).
+Un acrónimo de tres o más letras dentro del nombre de una clase se escribe como una palabra normal en PascalCase: solo su primera letra va en mayúscula, por ejemplo `Tcp` y no `TCP`. Así el nombre se lee igual que el resto de sus palabras (Microsoft, 2023).
 
 **Con estándar**
 ```csharp
-public class SmtpSettings
+public class TcpConnection
 {
 }
 ```
 
 **Sin estándar**
 ```csharp
-public class SMTPSettings
+public class TCPConnection
 {
 }
 ```
