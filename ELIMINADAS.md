@@ -274,3 +274,26 @@ public class MatchStateDTO
 {
 }
 ```
+
+---
+
+## 2.12.1 — Acceso a datos (Dao)
+
+**Motivo de eliminación:** el proyecto no usa DAO (en la versión 9 del estándar se decidió trabajar con repositorios y unidad de trabajo); la regla obligaba a un patrón que no se usa. Además, el texto decía "nombre del método" cuando hablaba de clases.
+
+### Regla original
+Las clases destinadas exclusivamente al acceso a bases de datos o persistencia de archivos locales deben llevar obligatoriamente el sufijo Dao al final del nombre del método (Data Access Object).
+
+**Con estándar**
+```csharp
+public class PlayerProgressDao
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerProgressDatabase
+{
+}
+```
