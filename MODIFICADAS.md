@@ -3520,3 +3520,63 @@ public class CardDealer
     }
 }
 ```
+
+## 8.1.7 — Comentarios de documentación XML: formato válido (antes: Comentarios de documentación XML — formato válido)
+
+### Antes
+El contenido dentro de las etiquetas de documentación /// debe ser XML bien formado. Un error de formato, como una etiqueta abierta sin su correspondiente cierre, genera la advertencia del compilador CS1570 (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class DeckService
+{
+    /// <summary>
+    /// Resets the main <c>Deck</c> state.
+    /// </summary>
+    public void ResetDeck()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class DeckService
+{
+    /// <summary>
+    /// Resets the main <c>Deck state.
+    /// </summary>
+    public void ResetDeck()
+    {
+    }
+}
+```
+
+### Después
+El contenido dentro de las etiquetas de documentación `///` debe ser XML bien formado, de modo que cada etiqueta abierta tenga su correspondiente cierre (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class GameTable
+{
+    /// <summary>
+    /// Resets the main <c>Deck</c> state.
+    /// </summary>
+    public void ResetDeck()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameTable
+{
+    /// <summary>
+    /// Resets the main <c>Deck state.
+    /// </summary>
+    public void ResetDeck()
+    {
+    }
+}
+```

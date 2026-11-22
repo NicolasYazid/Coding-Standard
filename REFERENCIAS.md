@@ -414,3 +414,9 @@
 
 - **Referencia:** Microsoft. (2026, 10 de septiembre). *Recommended XML tags for C# documentation comments*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/codedoc
   **Qué respalda:** `<summary>` como mínimo para tipos y miembros; la advertencia del compilador cuando algún parámetro no tiene `<param>`; el uso de `<returns>` para describir el valor de retorno y de `<exception>` para indicar qué excepciones puede lanzar un miembro. Que `<returns>` y `<exception>` sean obligatorias es decisión del equipo: la página no lo dice.
+
+### 8.1.7 — Comentarios de documentación XML: formato válido
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 10 de septiembre). *Recommended XML tags for C# documentation comments*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/codedoc
+  **Qué respalda:** Que los comentarios de documentación deben ser XML bien formado y que, si no lo son, el compilador genera una advertencia.
