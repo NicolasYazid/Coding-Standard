@@ -338,3 +338,38 @@ public class TcpMessageSender
     }
 }
 ```
+
+---
+
+## 8.1.5 — Documentación XML (`///`): cuándo se usa
+
+**Motivo de eliminación:** la regla dependía de la estructura del sistema ("capa de servicios", "mecánicas de bajo nivel"), que cambia con el tiempo, y obligaba a documentar cientos de miembros públicos (unos 170 en `GinRummy.Services` o unos 290 en `GinRummy.Contracts`), donde un solo olvido la violaría. Microsoft solo recomienda documentar los tipos y miembros públicos, y advierte que documentar los privados expone el funcionamiento interno, pero no lo prohíbe. La documentación XML queda opcional; las reglas 8.1.6 y 8.1.7 aplican a los bloques que se escriban.
+
+### Regla original
+La documentación formal mediante comentarios XML (///) es obligatoria exclusivamente para los tipos y miembros públicos que residen dentro de la capa de servicios del proyecto. Queda explícitamente prohibido el uso de comentarios XML en clases internas, métodos privados o mecánicas de bajo nivel, manteniendo el autocompletado del entorno (IntelliSense) enfocado únicamente en las interfaces de red o mecánicas principales expuestas (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class MatchService
+{
+    /// <summary>
+    /// Starts a new network match and resets the scores.
+    /// </summary>
+    public void StartMatch()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchService
+{
+    /// <summary>
+    /// Randomizes the card arrangement in the deck array.
+    /// </summary>
+    private void ShuffleDeck()
+    {
+    }
+}
+```

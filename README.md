@@ -18,14 +18,14 @@
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
-| 8 | [Comentarios](#8-comentarios) | 3 | 11 |
+| 8 | [Comentarios](#8-comentarios) | 3 | 10 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **63** | **131** |
+| | **Total** | **63** | **130** |
 
 ---
 
@@ -232,7 +232,6 @@
 - [x] **8.1.1** Comentarios de una línea (`//`): formato y ubicación
 - [x] **8.1.2** Comentarios en bloque (`/* */`)
 - [x] **8.1.3** Justificación lógica del comentario (el "por qué", no el "qué")
-- [ ] **8.1.5** Documentación XML (`///`): cuándo se usa
 - [ ] **8.1.6** Documentación XML (`///`): etiquetas obligatorias
 - [ ] **8.1.7** Documentación XML: formato válido
 - [ ] **8.1.8** Comentario especial `TODO`
@@ -361,6 +360,7 @@
 - ~~**2.9.4** Acrónimo arquitectónico (`Dto`)~~ — la regla 2.9.3 ya cubre cualquier acrónimo de tres o más letras en el nombre de una clase, incluido `Dto`; además, el proyecto no usa DTO.
 - ~~**2.12.1** Acceso a datos (`Dao`)~~ — el proyecto no usa DAO (decisión de la versión 9: repositorios y unidad de trabajo); la regla obligaba a un patrón que no se usa.
 - ~~**8.1.4** Prohibición de comentarios redundantes~~ — la regla 8.1.3 ya pide que el comentario no repita lo que dice la línea de código que comenta, y el "Sin estándar" de la 8.1.4 ya violaba la 8.1.3.
+- ~~**8.1.5** Documentación XML (`///`): cuándo se usa~~ — dependía de qué proyectos y clases existen en el sistema ("capa de servicios", "mecánicas de bajo nivel"), que cambian; Microsoft solo recomienda documentar los miembros públicos y advierte que documentar los privados expone el funcionamiento interno, no lo prohíbe. La documentación XML queda opcional y las reglas 8.1.6 y 8.1.7 aplican a los bloques que se escriban.
 
 ---
 
@@ -459,3 +459,4 @@
 | 2026-11-22 | 8.1.2 | **Aprobada.** Redactada con "deben" y sin la explicación sobre Microsoft; "extensas" pasa a "ocupan varias líneas"; cita (Microsoft, 2025); ejemplos con `_timeoutTimer++` en vez de `+= 1`. |
 | 2026-11-22 | 8.1.3 | **Aprobada.** Aplica a los comentarios `//` que explican código; redactada como regla y sin la oración cortada; cita Microsoft (2025) en lugar de Martin (2008); ejemplos con `PlayerTurn` y un `if` en vez de guardar un `&&` en un `bool`. |
 | 2026-11-22 | 8.1.4 | **Eliminada.** Repetía la 8.1.3. |
+| 2026-11-22 | 8.1.5 | **Eliminada.** Se acoplaba a la estructura del sistema y obligaba a documentar cientos de miembros. |
