@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 29 | 40 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 30 | 40 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **59** | **133** |
+| | **Total** | **60** | **133** |
 
 ---
 
@@ -112,7 +112,7 @@
 
 ### 2.11 Interfaces
 - [x] **2.11.1** Prefijo obligatorio y convención base (PascalCase)
-- [ ] **2.11.2** Prohibición de redundancias
+- [x] **2.11.2** Nombre de interfaz sin la palabra "Interface"
 
 ### 2.12 Sufijos por responsabilidad
 - [ ] **2.12.1** Acceso a datos (`Dao`)
@@ -452,3 +452,4 @@
 | 2026-11-22 | 2.9.4 | **Eliminada.** Repetía la 2.9.3. Subsección 2.9 completa. |
 | 2026-11-22 | 2.11.1 | **Aprobada.** Solo regula el prefijo `I` y el PascalCase (se quitó la oración sobre adjetivo o sustantivo); con cita; ejemplo `IDrawable`. |
 | 2026-11-22 | 2.9.3 | Ejemplo cambiado de `SmtpSettings`/`SMTPSettings` (nombre tomado del repositorio) a `TcpConnection`/`TCPConnection`; en la descripción, `Smtp`/`SMTP` pasa a `Tcp`/`TCP`. |
+| 2026-11-22 | 2.11.2 | **Aprobada.** Título cambiado a "Nombre de interfaz sin la palabra \"Interface\""; redactada como regla; con cita; ejemplos `IDrawable` y `IDrawableInterface`. Subsección 2.11 completa. |

@@ -3141,3 +3141,39 @@ public interface Drawable
 {
 }
 ```
+
+## 2.11.2 — Nombre de interfaz sin la palabra "Interface" (antes: Prohibición de redundancias)
+
+### Antes
+Queda estrictamente prohibido utilizar la palabra "Interface" como parte del nombre de la interfaz, ya que el prefijo I asume universalmente esa connotación semántica en el lenguaje C#.
+
+**Con estándar**
+```csharp
+public interface IInteractable
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public interface InteractableInterface
+{
+}
+```
+
+### Después
+Una interfaz declarada en el código debe identificarse como interfaz únicamente mediante el prefijo I, sin incluir la palabra "Interface" en su nombre (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public interface IDrawable
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public interface IDrawableInterface
+{
+}
+```
