@@ -3105,3 +3105,39 @@ public class SMTPSettings
 {
 }
 ```
+
+## 2.11.1 — Prefijo obligatorio y convención base (PascalCase)
+
+### Antes
+Toda interfaz declarada en el código debe llevar obligatoriamente el prefijo I (letra i mayúscula), seguido inmediatamente por el nombre de la entidad o el comportamiento estructurado en formato PascalCase. El identificador suele ser un adjetivo (como IDamageable) o un sustantivo, dependiendo del contrato que defina.
+
+**Con estándar**
+```csharp
+public interface IDamageable
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public interface Damageable
+{
+}
+```
+
+### Después
+Toda interfaz declarada en el código debe llevar obligatoriamente el prefijo I (letra i mayúscula), seguido inmediatamente por su nombre en formato PascalCase. Ese nombre es un adjetivo o un sustantivo que describe lo que la interfaz define (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public interface IDrawable
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public interface Drawable
+{
+}
+```
