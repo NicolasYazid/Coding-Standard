@@ -3754,3 +3754,75 @@ public class TcpLobby
     }
 }
 ```
+
+## 8.1.11 — Prohibición de código comentado (antes: Prohibición de código muerto comentado)
+
+### Antes
+Queda estrictamente prohibido dejar bloques o líneas de código muerto comentado dentro de los archivos, ya que genera confusión sobre si el fragmento es basura permanente o lógica temporalmente desactivada. Si una porción de código es descartada, debe ser eliminada por completo del archivo, confiando en el sistema de control de versiones (Git) como el único mecanismo oficial para recuperar historial si fuera necesario (Ingeno, 2018).
+
+**Con estándar**
+```csharp
+public class PlayerHand
+{
+    public void DiscardCard(int cardId)
+    {
+        RemoveFromDeck(cardId);
+    }
+
+    private void RemoveFromDeck(int cardId)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerHand
+{
+    public void DiscardCard(int cardId)
+    {
+        // int index = FindIndex(cardId);
+        // if (index != -1) { RemoveIndex(index); }
+        RemoveFromDeck(cardId);
+    }
+
+    private void RemoveFromDeck(int cardId)
+    {
+    }
+}
+```
+
+### Después
+Los comentarios `//` no deben contener código desactivado, es decir, instrucciones o declaraciones que antes formaban parte del programa. Si una porción de código se descarta, debe eliminarse del archivo y, si hace falta recuperarla, se obtiene del historial del control de versiones (Ingeno, 2018). Los ejemplos de código dentro de la documentación XML (`///`) no se consideran código comentado.
+
+**Con estándar**
+```csharp
+public class PlayerHand
+{
+    public void DiscardCard(int cardId)
+    {
+        RemoveFromDeck(cardId);
+    }
+
+    private void RemoveFromDeck(int cardId)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerHand
+{
+    public void DiscardCard(int cardId)
+    {
+        // int cardIndex = FindCardIndex(cardId);
+        // RemoveCardAt(cardIndex);
+        RemoveFromDeck(cardId);
+    }
+
+    private void RemoveFromDeck(int cardId)
+    {
+    }
+}
+```

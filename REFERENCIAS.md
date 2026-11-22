@@ -437,3 +437,9 @@
 **Cita en el texto:** ninguna (decisión del equipo)
 
 - **Referencia:** ninguna. El estándar base la respaldaba con Bass et al. (2013), pero esa fuente no trata comentarios `TODO` ni `FIXME`: la 4.ª edición del libro trata la deuda de arquitectura con el historial de cambios y los reportes de errores. La 3.ª edición (2013) no se pudo revisar.
+
+### 8.1.11 — Prohibición de código comentado
+**Cita en el texto:** (Ingeno, 2018)
+
+- **Referencia:** Ingeno, J. (2018). *Software architect's handbook*. Packt Publishing. https://www.oreilly.com/library/view/software-architects-handbook/9781788624060/dbcce818-65d4-4182-90d9-ab2ce42cc1ff.xhtml
+  **Qué respalda:** Que el código comentado se queda como código en desuso, que el historial de cambios es función del control de versiones y que dejarlo aumenta el tamaño del código y reduce su legibilidad. La excepción para los ejemplos de código en la documentación `///` es decisión del equipo.
