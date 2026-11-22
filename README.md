@@ -18,14 +18,14 @@
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
-| 8 | [Comentarios](#8-comentarios) | 8 | 10 |
+| 8 | [Comentarios](#8-comentarios) | 9 | 10 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **68** | **130** |
+| | **Total** | **69** | **130** |
 
 ---
 
@@ -237,7 +237,7 @@
 - [x] **8.1.8** Uso y formato del comentario especial `TODO`
 - [x] **8.1.9** Uso y formato del comentario especial `FIXME`
 - [x] **8.1.10** Ciclo de vida de `TODO` y `FIXME`
-- [ ] **8.1.11** Prohibición de código muerto comentado
+- [x] **8.1.11** Prohibición de código comentado
 - [ ] **8.1.12** Balance y densidad de comentarios
 
 ---
@@ -465,3 +465,4 @@
 | 2026-11-22 | 8.1.8 | **Aprobada.** Renombrada a "Uso y formato del comentario especial `TODO`"; se quitó la oración que afirmaba que el formato es lo que activa la Task List de Visual Studio (la etiqueta no distingue mayúsculas); el ejemplo "Sin estándar" ahora solo rompe esta regla; cita Microsoft (2025). |
 | 2026-11-22 | 8.1.9 | **Aprobada.** Renombrada a "Uso y formato del comentario especial `FIXME`"; se quitó la oración sobre agregar la etiqueta a la configuración de Visual Studio (no se puede auditar en el código) y la cita de Microsoft, que ya no respaldaba nada; el ejemplo "Sin estándar" ahora solo rompe esta regla. |
 | 2026-11-22 | 8.1.10 | **Aprobada.** Se quitó la cita de Bass et al. (2013), que no respalda la regla; ahora es decisión del equipo; el criterio es que el código entregado no contenga `TODO` ni `FIXME` (antes "antes de cualquier entrega formal"); el ejemplo "Sin estándar" ya no depende del flujo de trabajo con Git ("before merge"). |
+| 2026-11-22 | 8.1.11 | **Aprobada.** Renombrada a "Prohibición de código comentado" ("código muerto" en C# suele significar código inalcanzable); se quitó "Git como único mecanismo oficial" y se dejó el control de versiones en general; se agregó que los ejemplos de código en la documentación `///` no cuentan; el ejemplo "Sin estándar" ya no tiene número suelto ni llaves en una sola línea. |
