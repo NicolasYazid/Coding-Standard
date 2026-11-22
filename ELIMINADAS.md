@@ -297,3 +297,44 @@ public class PlayerProgressDatabase
 {
 }
 ```
+
+---
+
+## 8.1.4 — Prohibición de comentarios redundantes
+
+**Motivo de eliminación:** la regla 8.1.3 ya pide que el comentario `//` no repita con otras palabras lo que dice la línea de código que comenta; el "Sin estándar" de la 8.1.4 ya violaba la 8.1.3. Además, al hablar de "comentarios" en general alcanzaba a los `///`, que las reglas 8.1.5 y 8.1.6 exigen con `<summary>`.
+
+### Regla original
+Queda estrictamente prohibido escribir comentarios redundantes que simplemente repitan la lógica o el nombre del método de la línea inmediatamente inferior sin aportar valor. Si un comentario no dice nada nuevo que el código no exprese ya claramente por sí mismo, debe ser eliminado para evitar ruido visual y problemas de desactualización futura (Martin, 2008).
+
+**Con estándar**
+```csharp
+public class TcpMessageSender
+{
+    public void SendPlayerDisconnectAlert()
+    {
+        DisconnectClient();
+    }
+
+    private void DisconnectClient()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class TcpMessageSender
+{
+    // Sends the player disconnect alert.
+    public void SendPlayerDisconnectAlert()
+    {
+        // Disconnects the client.
+        DisconnectClient();
+    }
+
+    private void DisconnectClient()
+    {
+    }
+}
+```
