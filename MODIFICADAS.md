@@ -3333,3 +3333,87 @@ public class NetworkLobby
     }
 }
 ```
+
+## 8.1.3 — Justificación lógica del comentario (el "por qué", no el "qué")
+
+### Antes
+Si se decide escribir un comentario este debe explicar el
+
+Todo comentario debe explicar exclusivamente la intención arquitectónica, el contexto del negocio o la razón detrás de una decisión de código (el "por qué"). Traducir el código a lenguaje natural está estrictamente prohibido; el "qué" hace el código debe ser evidente mediante la correcta elección de nombres para variables y métodos (Martin, 2008).
+
+**Con estándar**
+```csharp
+public class MatchTurnManager
+{
+    private bool _isFirstTurn;
+
+    public bool CanDrawFromDiscardPile(bool isDealer)
+    {
+        // The non-dealer cannot draw from the discard pile on the absolute first turn.
+        bool canDraw = !(_isFirstTurn && !isDealer);
+
+        return canDraw;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchTurnManager
+{
+    private bool _isFirstTurn;
+
+    public bool CanDrawFromDiscardPile(bool isDealer)
+    {
+        // Checks if the boolean is true and the dealer boolean is false.
+        bool canDraw = !(_isFirstTurn && !isDealer);
+
+        return canDraw;
+    }
+}
+```
+
+### Después
+Los comentarios `//` que explican código deben aportar la razón de una decisión o el contexto del problema que el código no expresa, y no repetir con otras palabras lo que ya dice la línea de código que comentan (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class PlayerTurn
+{
+    private bool _isFirstTurn;
+
+    public bool CanDrawFromDiscardPile(bool isDealer)
+    {
+        bool canDraw = true;
+
+        // The non-dealer cannot draw from the discard pile on the absolute first turn.
+        if (_isFirstTurn && !isDealer)
+        {
+            canDraw = false;
+        }
+
+        return canDraw;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerTurn
+{
+    private bool _isFirstTurn;
+
+    public bool CanDrawFromDiscardPile(bool isDealer)
+    {
+        bool canDraw = true;
+
+        // Checks if it is the first turn and the player is not the dealer.
+        if (_isFirstTurn && !isDealer)
+        {
+            canDraw = false;
+        }
+
+        return canDraw;
+    }
+}
+```

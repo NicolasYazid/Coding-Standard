@@ -402,3 +402,9 @@
 
 - **Referencia:** Microsoft. (2025, 18 de enero). *Common C# code conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
   **Qué respalda:** La indicación de la sección "Comment style": evitar los comentarios de varias líneas (`/* */`) para explicaciones largas.
+
+### 8.1.3 — Justificación lógica del comentario (el "por qué", no el "qué")
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 15 de diciembre). *Exercise - Create effective code comments*. Microsoft Learn. https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/3-exercise-comment-code
+  **Qué respalda:** Los comentarios deben decir lo que el código no puede y no explicar cómo funciona cada línea; se consideran de baja calidad los que explican lo obvio de las líneas o no dan contexto del problema que resuelve el código.
