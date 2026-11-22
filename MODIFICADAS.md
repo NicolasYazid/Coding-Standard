@@ -3069,3 +3069,39 @@ public class CPlayerHand
 {
 }
 ```
+
+## 2.9.3 — Acrónimos en el nombre de una clase (antes: Acrónimo arquitectónico (Dao))
+
+### Antes
+Siguiendo las directrices oficiales de diseño de .NET, los acrónimos de tres o más letras no deben escribirse en mayúsculas sostenidas. El sufijo utilizado para los objetos de acceso a datos debe escribirse estrictamente en formato PascalCase (como Dao), tratándose como una palabra regular dentro del identificador de la clase para facilitar su lectura (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class PlayerProfileDao
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerProfileDAO
+{
+}
+```
+
+### Después
+Un acrónimo de tres o más letras dentro del nombre de una clase se escribe como una palabra normal en PascalCase: solo su primera letra va en mayúscula, por ejemplo `Smtp` y no `SMTP`. Así el nombre se lee igual que el resto de sus palabras (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class SmtpSettings
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class SMTPSettings
+{
+}
+```

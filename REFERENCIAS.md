@@ -372,3 +372,9 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Names of classes, structs, and interfaces*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
   **Qué respalda:** "DO NOT give class names a prefix (e.g., "C")."
+
+### 2.9.3 — Acrónimos en el nombre de una clase
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Capitalization conventions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
+  **Qué respalda:** PascalCasing pone en mayúscula la primera letra de cada palabra, "including acronyms over two letters in length".
