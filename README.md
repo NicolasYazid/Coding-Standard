@@ -18,14 +18,14 @@
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
-| 8 | [Comentarios](#8-comentarios) | 1 | 12 |
+| 8 | [Comentarios](#8-comentarios) | 2 | 12 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **61** | **132** |
+| | **Total** | **62** | **132** |
 
 ---
 
@@ -230,7 +230,7 @@
 
 ### 8.1 Reglas individuales para los comentarios
 - [x] **8.1.1** Comentarios de una línea (`//`): formato y ubicación
-- [ ] **8.1.2** Comentarios en bloque (`/* */`)
+- [x] **8.1.2** Comentarios en bloque (`/* */`)
 - [ ] **8.1.3** Justificación lógica del comentario (el "por qué", no el "qué")
 - [ ] **8.1.4** Prohibición de comentarios redundantes
 - [ ] **8.1.5** Documentación XML (`///`): cuándo se usa

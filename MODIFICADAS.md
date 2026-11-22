@@ -3219,7 +3219,7 @@ public class MatchScorer
 ```
 
 ### Después
-Los comentarios de una sola línea deben escribirse en su propia línea, no al final de una línea de código ejecutable. Deben iniciar con un espacio en blanco después de las barras `//`, comenzar con letra mayúscula y finalizar con un punto (Microsoft, 2025).
+Los comentarios de una sola línea deben escribirse en su propia línea, no al final de una línea de código ejecutable. Deben iniciar con un espacio en blanco después de las barras `//`, comenzar con letra mayúscula y finalizar con un punto. Cuando una explicación ocupa varias líneas `//` seguidas, la mayúscula va en la primera línea y el punto en la última (Microsoft, 2025).
 
 **Con estándar**
 ```csharp
@@ -3234,6 +3234,8 @@ public class MatchScorer
         // The knock bonus only applies if the deadwood is exactly zero.
         if (deadwoodScore == GinDeadwoodThreshold)
         {
+            // The bonus is added only here because a knock with
+            // deadwood does not earn it.
             _bonusPoints += KnockBonusPoints;
         }
     }
@@ -3252,6 +3254,8 @@ public class MatchScorer
     {
         if (deadwoodScore == GinDeadwoodThreshold)
         {
+            // the bonus is added only here because a knock with
+            // deadwood does not earn it
             _bonusPoints += KnockBonusPoints; //the knock bonus is applied
         }
     }
