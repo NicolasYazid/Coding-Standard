@@ -2989,3 +2989,47 @@ public class LobbyService
     }
 }
 ```
+
+## 2.9.1 — Nomenclatura base (PascalCase)
+
+### Antes
+El nombre de las clases debe definirse obligatoriamente utilizando el formato PascalCase (la primera letra de cada palabra en mayúscula). Los identificadores deben ser sustantivos o frases nominales descriptivas que representen claramente la entidad o componente dentro del videojuego.
+
+**Con estándar**
+```csharp
+public class PlayerInventory
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class player_inventory
+{
+}
+```
+
+### Después
+El nombrado de clases debe seguir la convención PascalCase (inicial de cada palabra en mayúscula). Los identificadores deben ser sustantivos o frases nominales claras y descriptivas que representen la entidad o responsabilidad principal de la clase (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class PlayerHand
+{
+}
+
+public class CardDealer
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class player_hand
+{
+}
+
+public class DealCards
+{
+}
+```

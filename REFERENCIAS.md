@@ -360,3 +360,9 @@
 
 - **Referencia:** Microsoft. (2021, 15 de septiembre). *Guidelines for collections*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/guidelines-for-collections
   **Qué respalda:** "DO NOT return null values from collection properties or from methods returning collections. Return an empty collection or an empty array instead."
+
+### 2.9.1 — Nomenclatura base (PascalCase)
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of classes, structs, and interfaces*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
+  **Qué respalda:** "DO name classes and structs with nouns or noun phrases, using PascalCasing", para distinguir los nombres de tipos de los métodos, que se nombran con frases verbales.
