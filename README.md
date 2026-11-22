@@ -18,14 +18,14 @@
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
-| 8 | [Comentarios](#8-comentarios) | 3 | 10 |
+| 8 | [Comentarios](#8-comentarios) | 4 | 10 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 0 | 7 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **63** | **130** |
+| | **Total** | **64** | **130** |
 
 ---
 
@@ -232,7 +232,7 @@
 - [x] **8.1.1** Comentarios de una línea (`//`): formato y ubicación
 - [x] **8.1.2** Comentarios en bloque (`/* */`)
 - [x] **8.1.3** Justificación lógica del comentario (el "por qué", no el "qué")
-- [ ] **8.1.6** Documentación XML (`///`): etiquetas obligatorias
+- [x] **8.1.6** Documentación XML (`///`): etiquetas obligatorias
 - [ ] **8.1.7** Documentación XML: formato válido
 - [ ] **8.1.8** Comentario especial `TODO`
 - [ ] **8.1.9** Comentario especial `FIXME`
@@ -460,3 +460,4 @@
 | 2026-11-22 | 8.1.3 | **Aprobada.** Aplica a los comentarios `//` que explican código; redactada como regla y sin la oración cortada; cita Microsoft (2025) en lugar de Martin (2008); ejemplos con `PlayerTurn` y un `if` en vez de guardar un `&&` en un `bool`. |
 | 2026-11-22 | 8.1.4 | **Eliminada.** Repetía la 8.1.3. |
 | 2026-11-22 | 8.1.5 | **Eliminada.** Se acoplaba a la estructura del sistema y obligaba a documentar cientos de miembros. |
+| 2026-11-22 | 8.1.6 | **Aprobada.** `<exception>` por cada tipo de excepción que el método lanza con `throw` en su propio cuerpo (antes "de forma documentada"); cita Microsoft (2026); ejemplos con `CardDealer`, un método con `<returns>` y constantes en vez de números sueltos. |

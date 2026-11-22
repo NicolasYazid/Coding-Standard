@@ -3417,3 +3417,106 @@ public class PlayerTurn
     }
 }
 ```
+
+## 8.1.6 — Comentarios de documentación XML (`///`): etiquetas obligatorias (antes: Comentarios de documentación XML (///) — etiquetas obligatorias)
+
+### Antes
+El bloque XML debe incluir <summary> describiendo el propósito del miembro, <param> por cada parámetro que reciba, <returns> si el método retorna un valor, y <exception> por cada excepción que pueda lanzar de forma documentada (Microsoft, s.f.).
+
+**Con estándar**
+```csharp
+public class CardDealingService
+{
+    /// <summary>
+    /// Deals the initial hand to a connected network player.
+    /// </summary>
+    /// <param name="playerId">The identifier of the player receiving the cards.</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when the player identifier is negative.</exception>
+    public void DealInitialHand(int playerId)
+    {
+        if (playerId < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(playerId));
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class CardDealingService
+{
+    /// <summary>
+    /// Deals the initial hand to a connected network player.
+    /// </summary>
+    public void DealInitialHand(int playerId)
+    {
+        if (playerId < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(playerId));
+        }
+    }
+}
+```
+
+### Después
+El bloque XML debe incluir `<summary>` describiendo el propósito del miembro, `<param>` por cada parámetro que reciba, `<returns>` si el método retorna un valor, y `<exception>` por cada tipo de excepción que el método lanza con `throw` en su propio cuerpo (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class CardDealer
+{
+    private const int MinimumPlayerId = 0;
+    private const int HandSize = 10;
+
+    /// <summary>
+    /// Deals the initial hand to a connected network player.
+    /// </summary>
+    /// <param name="playerId">The identifier of the player receiving the cards.</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when the player identifier is negative.</exception>
+    public void DealInitialHand(int playerId)
+    {
+        if (playerId < MinimumPlayerId)
+        {
+            throw new ArgumentOutOfRangeException(nameof(playerId));
+        }
+    }
+
+    /// <summary>
+    /// Gets the number of cards in a full hand.
+    /// </summary>
+    /// <returns>The number of cards in a hand.</returns>
+    public int GetHandSize()
+    {
+        return HandSize;
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class CardDealer
+{
+    private const int MinimumPlayerId = 0;
+    private const int HandSize = 10;
+
+    /// <summary>
+    /// Deals the initial hand to a connected network player.
+    /// </summary>
+    public void DealInitialHand(int playerId)
+    {
+        if (playerId < MinimumPlayerId)
+        {
+            throw new ArgumentOutOfRangeException(nameof(playerId));
+        }
+    }
+
+    /// <summary>
+    /// Gets the number of cards in a full hand.
+    /// </summary>
+    public int GetHandSize()
+    {
+        return HandSize;
+    }
+}
+```
