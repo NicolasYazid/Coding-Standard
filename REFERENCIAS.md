@@ -443,3 +443,11 @@
 
 - **Referencia:** Ingeno, J. (2018). *Software architect's handbook*. Packt Publishing. https://www.oreilly.com/library/view/software-architects-handbook/9781788624060/dbcce818-65d4-4182-90d9-ab2ce42cc1ff.xhtml
   **Qué respalda:** Que el código comentado se queda como código en desuso, que el historial de cambios es función del control de versiones y que dejarlo aumenta el tamaño del código y reduce su legibilidad. La excepción para los ejemplos de código en la documentación `///` es decisión del equipo.
+
+### 2.2.2 — Propiedades en lugar de métodos de acceso
+**Cita en el texto:** (Microsoft, 2026; Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2026, 13 de noviembre). *CA1024: Use properties where appropriate*. Microsoft Learn. https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1024
+  **Qué respalda:** que un método que no recibe argumentos y devuelve el estado del objeto, o que recibe un solo argumento para establecerlo, debe ser una propiedad. Es una recomendación de la categoría de diseño y está desactivada por defecto en .NET 10; que sea obligatoria es decisión del equipo.
+- **Referencia:** Microsoft. (2025, 7 de mayo). *How to register an attached property (WPF .NET)*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/how-to-register-an-attached-property
+  **Qué respalda:** que la clase proveedora de una propiedad adjunta de WPF debe ofrecer métodos estáticos `Get` y `Set` con esa convención de nombres. Que una interfaz o clase base obligue a escribir un método es una restricción del compilador, no una decisión del equipo.

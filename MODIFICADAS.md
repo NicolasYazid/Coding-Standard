@@ -3826,3 +3826,63 @@ public class PlayerHand
     }
 }
 ```
+
+## 2.2.2 — Propiedades en lugar de métodos de acceso (antes: Plantilla vacía sin título ni contenido)
+
+### Antes
+Para leer o asignar el valor de un campo se usa una propiedad. Queda prohibido escribir métodos cuya única tarea sea devolver o asignar un campo. Las propiedades exponen la lectura y escritura de un valor mientras ocultan cómo se guarda (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class PlayerScore
+{
+    public int TotalScore { get; private set; }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerScore
+{
+    private int _totalScore;
+
+    public int GetTotalScore()
+    {
+        return _totalScore;
+    }
+
+    public void SetTotalScore(int totalScore)
+    {
+        _totalScore = totalScore;
+    }
+}
+```
+
+### Después
+Un método cuya única instrucción sea devolver un campo o asignarlo, como `GetTotalScore()` o `SetTotalScore()`, debe escribirse como propiedad. Se exceptúan los métodos que el lenguaje o un framework exigen que sean métodos, por ejemplo los que implementan o sobrescriben un miembro declarado por una interfaz o una clase base, y los `Get` y `Set` de las propiedades adjuntas de WPF (Microsoft, 2026; Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class PlayerScore
+{
+    public int TotalScore { get; private set; }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerScore
+{
+    private int _totalScore;
+
+    public int GetTotalScore()
+    {
+        return _totalScore;
+    }
+
+    public void SetTotalScore(int totalScore)
+    {
+        _totalScore = totalScore;
+    }
+}
+```
