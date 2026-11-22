@@ -13,7 +13,7 @@
 | # | Sección | Aprobadas | Total |
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
-| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 26 | 41 |
+| 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 27 | 41 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **56** | **134** |
+| | **Total** | **57** | **134** |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ### 2.9 Clases
 - [x] **2.9.1** Nomenclatura base (PascalCase)
-- [ ] **2.9.2** Prohibición de prefijos especiales
+- [x] **2.9.2** Nombre de clase sin prefijo
 - [ ] **2.9.3** Acrónimo arquitectónico (`Dao`)
 - [ ] **2.9.4** Acrónimo arquitectónico (`Dto`)
 
@@ -447,3 +447,4 @@
 | 2026-11-21 | Sección 16 | **Eliminada completa** (16.1, sin reglas). El tema ya no se abarca en el estándar. |
 | 2026-11-21 | Sección 12 | **Eliminada completa** (12.1 a 12.3, sin reglas). El tema ya no se abarca en el estándar. |
 | 2026-11-21 | 2.9.1 | **Aprobada.** Descripción del equipo con cita; ejemplos de Gin Rummy que muestran PascalCase y sustantivo contra verbo. |
+| 2026-11-21 | 2.9.2 | **Aprobada.** Título cambiado a "Nombre de clase sin prefijo"; redactada como regla, sin la parte de guiones bajos (ya la cubre la 2.9.1); con cita; ejemplos `PlayerHand` y `CPlayerHand`. |

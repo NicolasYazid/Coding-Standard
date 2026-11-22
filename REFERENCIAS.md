@@ -366,3 +366,9 @@
 
 - **Referencia:** Microsoft. (2023, 3 de octubre). *Names of classes, structs, and interfaces*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
   **Qué respalda:** "DO name classes and structs with nouns or noun phrases, using PascalCasing", para distinguir los nombres de tipos de los métodos, que se nombran con frases verbales.
+
+### 2.9.2 — Nombre de clase sin prefijo
+**Cita en el texto:** (Microsoft, 2023)
+
+- **Referencia:** Microsoft. (2023, 3 de octubre). *Names of classes, structs, and interfaces*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
+  **Qué respalda:** "DO NOT give class names a prefix (e.g., "C")."

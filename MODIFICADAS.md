@@ -3033,3 +3033,39 @@ public class DealCards
 {
 }
 ```
+
+## 2.9.2 — Nombre de clase sin prefijo (antes: Prohibición de prefijos especiales)
+
+### Antes
+Queda estrictamente prohibido el uso de prefijos especiales heredados de otros lenguajes (como la letra "C" inicial) o el uso de guiones bajos al principio o en medio del nombre de la declaración de la clase.
+
+**Con estándar**
+```csharp
+public class LevelManager
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class CLevelManager
+{
+}
+```
+
+### Después
+El nombre de una clase empieza directamente con la palabra que describe lo que representa, sin una letra o abreviatura de prefijo, como la "C" que se usa en otros lenguajes (Microsoft, 2023).
+
+**Con estándar**
+```csharp
+public class PlayerHand
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public class CPlayerHand
+{
+}
+```
