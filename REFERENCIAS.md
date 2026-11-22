@@ -426,3 +426,9 @@
 
 - **Referencia:** Microsoft. (2025, 17 de noviembre). *Use the Task List*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/ide/using-the-task-list
   **Qué respalda:** Que el ejemplo de comentario de tarea en C# de Microsoft usa el formato `// TODO: `. Que sea en mayúsculas y con dos puntos es decisión del equipo: la página no lo exige.
+
+### 8.1.9 — Uso y formato del comentario especial `FIXME`
+**Cita en el texto:** ninguna (el formato es decisión del equipo)
+
+- **Referencia de contexto:** Microsoft. (2025, 17 de noviembre). *Use the Task List*. Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/ide/using-the-task-list
+  **Qué respalda:** Solo da contexto: muestra que `FIXME` no es una etiqueta predefinida de Visual Studio. El formato `// FIXME: ` es decisión del equipo y ninguna fuente lo exige.

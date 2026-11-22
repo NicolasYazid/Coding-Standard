@@ -3632,3 +3632,55 @@ public class TcpMatchmaker
     }
 }
 ```
+
+## 8.1.9 — Uso y formato del comentario especial `FIXME` (antes: Comentario especial FIXME — formato y propósito)
+
+### Antes
+Para marcar defectos conocidos que ya están presentes en el código (a diferencia del trabajo pendiente etiquetado con TODO), se debe utilizar obligatoriamente el marcador exacto // FIXME: (en mayúsculas, seguido de dos puntos y un espacio en blanco). Dado que Visual Studio no reconoce este marcador por defecto en su Task List (Lista de tareas), el equipo debe agregarlo manualmente en la configuración de etiquetas del entorno para garantizar su correcto rastreo (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class ScoringSystem
+{
+    public void CalculateDeadwood(int unmeldedCardsSum)
+    {
+        // FIXME: The sum incorrectly includes the knocked card points.
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ScoringSystem
+{
+    public void CalculateDeadwood(int unmeldedCardsSum)
+    {
+        // fixme - opponent card included by mistake
+    }
+}
+```
+
+### Después
+Los comentarios que marcan un defecto conocido que ya está presente en el código (a diferencia del trabajo pendiente, que se marca con `TODO`) deben iniciar con el prefijo `// FIXME: ` (`FIXME` en mayúsculas, seguido de dos puntos y un espacio) y continuar con la descripción del defecto.
+
+**Con estándar**
+```csharp
+public class ScoringSystem
+{
+    public void CalculateDeadwood(int unmeldedCardsSum)
+    {
+        // FIXME: The sum incorrectly includes the knocked card points.
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ScoringSystem
+{
+    public void CalculateDeadwood(int unmeldedCardsSum)
+    {
+        // fixme - The sum incorrectly includes the knocked card points.
+    }
+}
+```
