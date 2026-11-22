@@ -74,12 +74,6 @@
 - [x] **2.2.3** Propiedades simples
 - [x] **2.2.6** Set restringido 🆕
 
-### 2.3 Componentes de interfaz gráfica
-- 🕳️ Sin reglas
-
-### 2.4 Identificadores de interfaz
-- 🕳️ Sin reglas
-
 ### 2.5 Constantes
 - [x] **2.5.1** Nomenclatura (PascalCase)
 - [x] **2.5.2** Uso de `const`
@@ -361,6 +355,7 @@
 - ~~**8.1.12** Balance y densidad de comentarios~~ — repetía lo que ya piden la 8.1.3 (el comentario `//` solo dice lo que el código no expresa) y la 2.8.2 (nombres descriptivos), y no definía un umbral para "balance estricto" ni para "sobre-comentar", por lo que no se podía comprobar.
 - ~~**2.2.4** Declaración correcta de propiedades~~ — repetía lo que ya piden la 2.2.1 (PascalCase en propiedades), la 2.2.2 (los métodos que solo devuelven o asignan un campo son propiedades) y la 2.2.6 (`set` restringido); lo demás, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio.
 - ~~**2.2.5** Modificación de valor en propiedades~~ — su único contenido comprobable, que una propiedad no se lea ni se asigne a sí misma, es un error que hace caer el juego en cuanto se ejecuta esa línea (`StackOverflowException`), así que el propio programa lo muestra; el resto ya lo cubren la 2.2.2 y la 2.2.3.
+- ~~**2.3** Componentes de interfaz gráfica y **2.4** Identificadores de interfaz (sin reglas)~~ — el equipo decidió quitar estas dos subsecciones porque, por ahora, no tienen reglas ni propósito en el estándar. Los números 2.3 y 2.4 no se reutilizan.
 
 ---
 
@@ -472,3 +467,4 @@
 | 2026-11-22 | 2.2.3 | **Aprobada.** Redactada por responsabilidades: el `get` solo devuelve el dato y las acciones (archivos, base de datos, red, `throw`) van en un método, sin lista cerrada; se quitó la oración de la categoría de "entrada y salida" y la mención de indexadores; cita Microsoft (2026) y Microsoft (2023); el ejemplo "Sin estándar" con el `get` en una línea (9.1.4). |
 | 2026-11-22 | 2.2.4 | **Eliminada.** Repetía las reglas 2.2.1, 2.2.2 y 2.2.6; la parte que no cubrían era demasiado amplia. |
 | 2026-11-22 | 2.2.5 | **Eliminada.** Solo prohibía que una propiedad se leyera o asignara a sí misma, un error que el juego muestra de inmediato al ejecutarse; el resto lo cubren las reglas 2.2.2 y 2.2.3. |
+| 2026-11-22 | 2.3, 2.4 | **Eliminadas las subsecciones 2.3 y 2.4 completas** (sin reglas). Si se necesitan de nuevo, se recuperan del historial de versiones. |
