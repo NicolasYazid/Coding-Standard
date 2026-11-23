@@ -14,7 +14,7 @@
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
-| 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
+| 4 | [Estilo de código](#4-estilo-de-código) | 1 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 5 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 8 | 8 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
@@ -118,7 +118,7 @@
 ## 4. Estilo de código
 
 ### 4.1 Formato y estructura general
-- [ ] **4.1.1** Indentación base (4 espacios)
+- [x] **4.1.1** Indentación base (4 espacios)
 - [ ] **4.1.2** Límite de columna (140 caracteres) y ruptura de línea
 - [ ] **4.1.3** Indentación en líneas continuadas
 
@@ -493,3 +493,4 @@
 | 2026-11-22 | 13.1.2, 13.1.3 | Reglas nuevas propuestas para los DTOs (solo propiedades; sin herencia). Quedan como **Regla pendiente de revisión**. |
 | 2026-11-22 | 13.1.2 | **Eliminada.** Regla nueva propuesta que el equipo no aprobó. |
 | 2026-11-22 | 13.1.3 | **Eliminada.** Regla nueva propuesta que el equipo no aprobó. |
+| 2026-11-22 | 4.1.1 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
