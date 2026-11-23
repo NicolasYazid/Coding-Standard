@@ -16,7 +16,7 @@
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
-| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 3 | 12 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 3 | 11 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **77** | **122** |
+| | **Total** | **77** | **121** |
 
 ---
 
@@ -175,7 +175,6 @@
 
 ### 6.2 Orden jerárquico en los bloques catch
 - [x] **6.2.1** Orden de los bloques `catch` por especificidad
-- [ ] **6.2.2** Jerarquía con excepciones personalizadas
 
 ### 6.3 Propagación y empaquetamiento de excepciones
 - [ ] **6.3.1** Propagación directa (`throw;`)
@@ -349,6 +348,7 @@
 - ~~**2.2.4** Declaración correcta de propiedades~~ — repetía lo que ya piden la 2.2.1 (PascalCase en propiedades), la 2.2.2 (los métodos que solo devuelven o asignan un campo son propiedades) y la 2.2.6 (`set` restringido); lo demás, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio.
 - ~~**2.2.5** Modificación de valor en propiedades~~ — su único contenido comprobable, que una propiedad no se lea ni se asigne a sí misma, es un error que hace caer el juego en cuanto se ejecuta esa línea (`StackOverflowException`), así que el propio programa lo muestra; el resto ya lo cubren la 2.2.2 y la 2.2.3.
 - ~~**2.3** Componentes de interfaz gráfica y **2.4** Identificadores de interfaz (sin reglas)~~ — el equipo decidió quitar estas dos subsecciones porque, por ahora, no tienen reglas ni propósito en el estándar. Los números 2.3 y 2.4 no se reutilizan.
+- ~~**6.2.2** Jerarquía con excepciones personalizadas~~ — era la 6.2.1 aplicada a las excepciones propias del juego, sin ningún criterio nuevo que se pudiera revisar; ponerlas en el orden contrario tampoco compila (error CS0160). Usaba `GameSystemException` como excepción base, pero el juego y la 6.4.1 usan `GameCoreException`. Su contenido quedó dentro de la 6.2.1, que ahora dice "incluidas las excepciones propias del juego".
 - ~~**6.1.3** Priorización de excepciones del sistema~~ — repetía la 6.4.2 con casi las mismas palabras (solo cambiaban los ejemplos y el año de la cita); la regla trata de qué excepción lanzar o crear, no de cómo capturar, así que encaja en la subsección 6.4, donde se evalúa.
 - ~~**11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto (subsección 11.3 completa)~~ — el límite de tres parámetros ya lo pide la regla 2.6.3 para todos los métodos; el resto dependía de los conceptos "método builder" y "objeto complejo" de la 11.3.1, eliminada, y de "valores más críticos", que no se puede medir.
 - ~~**11.3.1** Nomenclatura y visibilidad (métodos *builder* en pruebas)~~ — el prefijo `Builder` no tiene respaldo en ninguna fuente (en las fuentes, "Builder" es una clase y va al final del nombre) y choca con la regla 2.6.2 (nombres de métodos con verbo); "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado, es una recomendación que no se puede volver regla sin inventar un límite arbitrario.
@@ -479,3 +479,4 @@
 | 2026-11-22 | 6.2.1 | **Aprobada.** Se conserva por decisión del equipo aunque el compilador ya la exige (error CS0160: un `catch` general antes de uno específico no compila), así que no se puede violar. Renombrada a "Orden de los bloques `catch` por especificidad"; se quitó "obligatoriamente"; se agregó la cita Microsoft (2025), que el texto base no traía; los ejemplos van dentro de una clase y un método, con tema de partidas guardadas en lugar de niveles y sin la variable `ex`, que no se usaba. El ejemplo "Sin estándar" no compila, a propósito. |
 | 2026-11-22 | 6.1.1 | **Ejemplos corregidos.** Ahora van dentro de una clase y un método, con los métodos auxiliares definidos, igual que en la 6.2.1; el texto de la regla no cambió. |
 | 2026-11-22 | 6.2.1 | **Descripción modificada.** Se agregó "incluidas las excepciones propias del juego" para que cubra lo que decía la 6.2.2 (eliminada); el título, la cita y los ejemplos no cambian. |
+| 2026-11-22 | 6.2.2 | **Eliminada.** Era la 6.2.1 aplicada a las excepciones propias; su contenido quedó dentro de la 6.2.1. |

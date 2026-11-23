@@ -625,3 +625,42 @@ public class ScoreValidator
     }
 }
 ```
+
+## 6.2.2 — Jerarquía con excepciones personalizadas
+
+**Motivo de eliminación:** decía que se aplicara "la misma regla jerárquica" de la 6.2.1 a las excepciones propias del juego, sin ningún criterio nuevo que se pudiera revisar; ponerlas en el orden contrario tampoco compila (error CS0160). Usaba `GameSystemException` como excepción base, pero el juego y la regla 6.4.1 usan `GameCoreException`. Su contenido quedó dentro de la 6.2.1, que ahora dice "incluidas las excepciones propias del juego".
+
+### Regla original
+Si el sistema implementa excepciones personalizadas para el dominio del videojuego (que heredan de una excepción base propia), se debe aplicar la misma regla jerárquica: la excepción derivada específica del error va primero, y la excepción base del juego se coloca después para capturar cualquier otro error no contemplado del mismo dominio.
+
+**Con estándar**
+```csharp
+try
+{
+    ParsePlayerData();
+}
+catch (SaveFileCorruptedException ex)
+{
+    RestoreBackup();
+}
+catch (GameSystemException ex)
+{
+    NotifyPlayerError();
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+    ParsePlayerData();
+}
+catch (GameSystemException ex)
+{
+    NotifyPlayerError();
+}
+catch (SaveFileCorruptedException ex)
+{
+    RestoreBackup();
+}
+```
