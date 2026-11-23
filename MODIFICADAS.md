@@ -4398,3 +4398,93 @@ public class SavedMatchLoader
     }
 }
 ```
+
+---
+
+## 6.3.1 — Propagación directa (`throw;`)
+
+### Antes
+Cuando se necesite capturar una excepción para realizar una acción de mitigación (como revertir un estado) y luego volver a lanzarla para que una capa superior la maneje, se debe utilizar obligatoriamente la instrucción throw;. Queda estrictamente prohibido utilizar throw ex; (donde ex es la variable capturada), ya que esto reinicia la traza de la pila (stack trace) y destruye la información sobre el origen real del error.
+
+**Con estándar**
+```csharp
+try
+{
+    ApplyUpgradesToWeapon(weaponId);
+}
+catch (InvalidOperationException ex)
+{
+    RevertWeaponState(weaponId);
+    throw;
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+    ApplyUpgradesToWeapon(weaponId);
+}
+catch (InvalidOperationException ex)
+{
+    RevertWeaponState(weaponId);
+    throw ex;
+}
+```
+
+### Después
+Para volver a lanzar una excepción capturada se debe utilizar la instrucción `throw;`. No se debe utilizar `throw ex;` (donde `ex` es la variable capturada), ya que esto reinicia la traza de la pila (stack trace) y destruye la información sobre el origen real del error (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+public class HandUpdater
+{
+    public void ApplyMeld(string playerId)
+    {
+        try
+        {
+            AddMeldToTable(playerId);
+        }
+        catch (InvalidOperationException)
+        {
+            RevertHandState(playerId);
+            throw;
+        }
+    }
+
+    private void AddMeldToTable(string playerId)
+    {
+    }
+
+    private void RevertHandState(string playerId)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class HandUpdater
+{
+    public void ApplyMeld(string playerId)
+    {
+        try
+        {
+            AddMeldToTable(playerId);
+        }
+        catch (InvalidOperationException ex)
+        {
+            RevertHandState(playerId);
+            throw ex;
+        }
+    }
+
+    private void AddMeldToTable(string playerId)
+    {
+    }
+
+    private void RevertHandState(string playerId)
+    {
+    }
+}
+```

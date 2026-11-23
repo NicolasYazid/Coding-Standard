@@ -494,3 +494,9 @@
   **Qué respalda:** que en los bloques `catch` se ordenan las excepciones de la más derivada a la menos derivada.
 - **Referencia complementaria (no citada en el texto):** Microsoft. (s.f.). *Compiler Error CS0160*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0160
   **Qué respalda:** que un `catch` general antes de uno más derivado es un error de compilación, que es lo que dice la parte "evitando así errores de compilación por enmascaramiento". La página no muestra fecha.
+
+### 6.3.1 — Propagación directa (`throw;`)
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 2 de abril). *CA2200: Rethrow to preserve stack details*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2200
+  **Qué respalda:** que volver a lanzar una excepción nombrándola en el `throw` reinicia la traza de la pila en el método actual y pierde la lista de llamadas intermedias, y que se corrige volviendo a lanzarla sin especificar la excepción (`throw;`).
