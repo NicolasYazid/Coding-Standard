@@ -4159,25 +4159,53 @@ Al implementar un bloque `try-catch`, se debe capturar la excepción más espec�
 
 **Con estándar**
 ```csharp
-try
+public class PlayerProgressLoader
 {
-    LoadPlayerProgress(saveFileId);
-}
-catch (FileNotFoundException)
-{
-    CreateNewSaveFile();
+    public void LoadProgress(string saveFileId)
+    {
+        try
+        {
+            ReadProgressFile(saveFileId);
+        }
+        catch (FileNotFoundException)
+        {
+            CreateNewSaveFile();
+        }
+    }
+
+    private void ReadProgressFile(string saveFileId)
+    {
+    }
+
+    private void CreateNewSaveFile()
+    {
+    }
 }
 ```
 
 **Sin estándar**
 ```csharp
-try
+public class PlayerProgressLoader
 {
-    LoadPlayerProgress(saveFileId);
-}
-catch (Exception)
-{
-    CreateNewSaveFile();
+    public void LoadProgress(string saveFileId)
+    {
+        try
+        {
+            ReadProgressFile(saveFileId);
+        }
+        catch (Exception)
+        {
+            CreateNewSaveFile();
+        }
+    }
+
+    private void ReadProgressFile(string saveFileId)
+    {
+    }
+
+    private void CreateNewSaveFile()
+    {
+    }
 }
 ```
 
