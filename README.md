@@ -14,7 +14,7 @@
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
-| 4 | [Estilo de código](#4-estilo-de-código) | 2 | 16 |
+| 4 | [Estilo de código](#4-estilo-de-código) | 3 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 5 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 8 | 8 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 1 | 1 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **84** | **116** |
+| | **Total** | **85** | **116** |
 
 ---
 
@@ -120,7 +120,7 @@
 ### 4.1 Formato y estructura general
 - [x] **4.1.1** Indentación base (4 espacios)
 - [x] **4.1.2** Límite de columna (140 caracteres) y ruptura de línea
-- [ ] **4.1.3** Indentación en líneas continuadas
+- [x] **4.1.3** Indentación en líneas continuadas
 
 ### 4.2 Uso de espacios en blanco
 - [ ] **4.2.1** Separación vertical entre métodos y constructores
@@ -495,3 +495,4 @@
 | 2026-11-22 | 13.1.3 | **Eliminada.** Regla nueva propuesta que el equipo no aprobó. |
 | 2026-11-22 | 4.1.1 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
 | 2026-11-22 | 4.1.2 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
+| 2026-11-22 | 4.1.3 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
