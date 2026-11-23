@@ -21,11 +21,11 @@
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
-| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 2 | 6 |
+| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 3 | 6 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **73** | **126** |
+| | **Total** | **74** | **126** |
 
 ---
 
@@ -299,7 +299,7 @@
 
 ### 11.2 Estructura de un test
 - [x] **11.2.1** Estructura de las pruebas (Arrange, Act, Assert)
-- [ ] **11.2.2** Límite de aserciones
+- [x] **11.2.2** Límite de aserciones por método
 - [ ] **11.2.3** Configuración inicial compartida
 
 ### 11.3 Métodos builders en pruebas
@@ -471,3 +471,4 @@
 | 2026-11-22 | 11.1.1 | **Eliminada.** Se acoplaba a decisiones de diseño sobre la estructura del código y de los proyectos de pruebas. |
 | 2026-11-22 | 11.1.2 | **Aprobada.** Redactada como "el nombre de una clase que contiene pruebas unitarias debe ser el nombre de la clase que prueba seguido de `Tests`"; se quitó la oración del PascalCase, que repetía la 2.9.1 y citaba mal la 2.8.1 (esa regla trata los métodos de prueba); el ejemplo pasa de `CollisionHandler` (sufijo `Handler`, regla 2.12.3 pendiente) a `MeldFinder`; sin cita, decisión del equipo. |
 | 2026-11-22 | 11.2.1 | **Aprobada.** Renombrada a "Estructura de las pruebas (Arrange, Act, Assert)"; se agregó "en las fases que tenga" (12 pruebas del juego no tienen las tres fases: 10 sin preparación y 2 que actúan y afirman en la misma línea); se quitó "queda estrictamente prohibido"; los ejemplos usan una prueba del juego y constantes en lugar de `50` y `0` (5.2.1), y el "Sin estándar" lleva los comentarios `// Arrange`, `// Act` y `// Assert`; cita Microsoft (2026). Pendiente en el código: quitar la línea en blanco antes de `round.DrawFromStock(...)` en `GameRoundTests`. |
+| 2026-11-22 | 11.2.2 | **Aprobada.** Renombrada a "Límite de aserciones por método"; el límite de una aserción es impuesto por el profesor y no cambia; se aclaró que cuenta cualquier aserción de la biblioteca de pruebas (`Assert` o cualquier otra clase de aserciones), porque `CollectionAssert` podía no contarse; los ejemplos usan constantes en lugar de `20`, `15` y `35` (5.2.1); sin cita, decisión del profesor. Pendiente en el código: `Test_SplitIntoNeighbors_CardApart_StartsNewStretch` en `HandOrderTests` tiene tres aserciones y debe dividirse en tres pruebas. |

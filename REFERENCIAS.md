@@ -470,3 +470,8 @@
 
 - **Referencia:** Microsoft. (2026, 5 de noviembre). *Unit testing best practices for .NET*. Microsoft Learn. https://learn.microsoft.com/dotnet/core/testing/unit-testing-best-practices
   **Qué respalda:** que el patrón Arrange, Act, Assert son tres pasos (preparar los objetos, actuar sobre uno y afirmar el resultado) y que separarlos resalta lo que se necesita para llamar al código, cómo se llama y qué se afirma. La línea en blanco exacta entre fases, no marcarlas con comentarios (el ejemplo de la página sí usa `// Arrange`, `// Act` y `// Assert`) y "en las fases que tenga" son decisión del equipo: la página no dice si una prueba puede no tener la fase Arrange.
+
+### 11.2.2 — Límite de aserciones por método
+**Cita en el texto:** ninguna (el límite lo impone el profesor de la materia)
+
+- **Referencia:** ninguna. El límite de una aserción por método es un requisito del profesor y no se respalda con una fuente.

@@ -4056,3 +4056,69 @@ public void Test_CountDeadwood_NoMelds_ReturnsSumOfCards()
     Assert.AreEqual(ExpectedDeadwood, deadwood);
 }
 ```
+
+---
+
+## 11.2.2 — Límite de aserciones por método (antes: Límite de aserciones)
+
+### Antes
+Cada método de prueba unitaria debe contener como máximo una aserción (Assert) al final de su ejecución. Si se requiere validar múltiples resultados de una misma acción, se deben crear métodos de prueba independientes para cada validación esperada.
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_ApplyHealing_HealthIsLow_IncreasesHealth()
+{
+    int initialHealth = 20;
+    PlayerEntity player = new PlayerEntity(initialHealth);
+
+    player.ApplyHealing(15);
+
+    Assert.AreEqual(35, player.CurrentHealth);
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void Test_ApplyHealing_HealthIsLow_IncreasesHealth()
+{
+    int initialHealth = 20;
+    PlayerEntity player = new PlayerEntity(initialHealth);
+
+    player.ApplyHealing(15);
+
+    Assert.AreEqual(35, player.CurrentHealth);
+    Assert.IsTrue(player.IsAlive);
+}
+```
+
+### Después
+Cada método de prueba unitaria debe contener como máximo una aserción, sea con `Assert` o con cualquier otra clase de aserciones de la biblioteca de pruebas, al final de su ejecución. Si se requiere validar múltiples resultados de una misma acción, se deben crear métodos de prueba independientes para cada validación esperada.
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_ApplyHealing_HealthIsLow_IncreasesHealth()
+{
+    PlayerEntity player = new PlayerEntity(InitialHealth);
+
+    player.ApplyHealing(HealingAmount);
+
+    Assert.AreEqual(ExpectedHealth, player.CurrentHealth);
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void Test_ApplyHealing_HealthIsLow_IncreasesHealth()
+{
+    PlayerEntity player = new PlayerEntity(InitialHealth);
+
+    player.ApplyHealing(HealingAmount);
+
+    Assert.AreEqual(ExpectedHealth, player.CurrentHealth);
+    Assert.IsTrue(player.IsAlive);
+}
+```
