@@ -16,7 +16,7 @@
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
-| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 4 | 11 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 5 | 11 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **78** | **121** |
+| | **Total** | **79** | **121** |
 
 ---
 
@@ -178,7 +178,7 @@
 
 ### 6.3 Propagación y empaquetamiento de excepciones
 - [x] **6.3.1** Propagación directa (Preservación del Stack Trace)
-- [ ] **6.3.2** Empaquetamiento de excepciones (`InnerException`)
+- [x] **6.3.2** Empaquetamiento de excepciones (`InnerException`)
 
 ### 6.4 Jerarquía de excepciones personalizadas del videojuego
 - [ ] **6.4.1** Creación de la excepción base del dominio
@@ -481,3 +481,4 @@
 | 2026-11-22 | 6.2.1 | **Descripción modificada.** Se agregó "incluidas las excepciones propias del juego" para que cubra lo que decía la 6.2.2 (eliminada); el título, la cita y los ejemplos no cambian. |
 | 2026-11-22 | 6.2.2 | **Eliminada.** Era la 6.2.1 aplicada a las excepciones propias; su contenido quedó dentro de la 6.2.1. |
 | 2026-11-22 | 6.3.1 | **Aprobada.** Se simplificó la redacción: "para volver a lanzar una excepción capturada se debe utilizar `throw;`" (se quitó la parte de la "acción de mitigación", que confundía); "obligatoriamente" y "queda estrictamente prohibido" pasan a "se debe" y "no se debe"; se agregó la cita Microsoft (2026), que el texto base no traía; los ejemplos van dentro de una clase y un método, con tema de Gin Rummy, y el "Con estándar" no declara la variable porque no se usa. El juego no tiene ningún `throw ex;` ni `throw;`, así que hoy no la viola ni la usa. |
+| 2026-11-22 | 6.3.2 | **Aprobada.** Se pasó de exigir el empaquetamiento solo al lanzar una excepción propia del dominio tras capturar una de bajo nivel, a exigirlo en toda excepción nueva lanzada dentro de un `catch`; "es obligatorio" pasa a "se debe"; se agregó la cita Microsoft (2025), que el texto base no traía. Se agregó por decisión del equipo la excepción para `FaultException`, con la cita Microsoft (2021): los servicios WCF del juego lanzan unos 50 `FaultException` dentro de un `catch` sin pasar la excepción original, ese tipo no recibe una excepción interna y la fuente advierte que las excepciones pueden exponer información interna a los clientes WCF. Los `throw new` dentro de un `catch` del juego (7 `InvalidAccessTokenException`) ya pasan la excepción original. Los ejemplos van dentro de una clase y un método, con tema de partidas guardadas; todos los `catch` usan `FileNotFoundException` por la 6.1.1 y el "Sin estándar" no declara `ex` porque no se usa. |

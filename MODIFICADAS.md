@@ -4488,3 +4488,79 @@ public class HandUpdater
     }
 }
 ```
+
+## 6.3.2 — Empaquetamiento de excepciones (`InnerException`)
+
+### Antes
+Si se captura una excepción de bajo nivel (como errores de entrada/salida) y se decide lanzar una excepción personalizada propia del dominio del juego, es obligatorio pasar la excepción original como argumento en el constructor de la nueva excepción. Esto se conoce como empaquetamiento y permite preservar la excepción original en la propiedad InnerException.
+
+**Con estándar**
+```csharp
+try
+{
+    LoadAssetBundle(bundleName);
+}
+catch (IOException ex)
+{
+    throw new AssetLoadException("Error during asset loading.", ex);
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+    LoadAssetBundle(bundleName);
+}
+catch (IOException ex)
+{
+    throw new AssetLoadException("Error during asset loading.");
+}
+```
+
+### Después
+Cuando se lance una nueva excepción dentro de un bloque `catch`, se debe pasar la excepción capturada como argumento en el constructor de la nueva excepción. Pasar la excepción capturada de esta forma se llama empaquetamiento y permite preservar la excepción original en la propiedad `InnerException` (Microsoft, 2025). Se exceptúan las excepciones `FaultException`, que se envían al cliente y no deben exponer la excepción original (Microsoft, 2021).
+
+**Con estándar**
+```csharp
+public class SavedMatchLoader
+{
+    public void LoadMatch(string matchId)
+    {
+        try
+        {
+            ReadMatchFile(matchId);
+        }
+        catch (FileNotFoundException ex)
+        {
+            throw new InvalidOperationException("The saved match could not be loaded.", ex);
+        }
+    }
+
+    private void ReadMatchFile(string matchId)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class SavedMatchLoader
+{
+    public void LoadMatch(string matchId)
+    {
+        try
+        {
+            ReadMatchFile(matchId);
+        }
+        catch (FileNotFoundException)
+        {
+            throw new InvalidOperationException("The saved match could not be loaded.");
+        }
+    }
+
+    private void ReadMatchFile(string matchId)
+    {
+    }
+}
+```

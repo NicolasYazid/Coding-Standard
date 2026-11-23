@@ -500,3 +500,11 @@
 
 - **Referencia:** Microsoft. (2026, 2 de abril). *CA2200: Rethrow to preserve stack details*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2200
   **Qué respalda:** que volver a lanzar una excepción nombrándola en el `throw` reinicia la traza de la pila en el método actual y pierde la lista de llamadas intermedias, y que se corrige volviendo a lanzarla sin especificar la excepción (`throw;`).
+
+### 6.3.2 — Empaquetamiento de excepciones (`InnerException`)
+**Cita en el texto:** (Microsoft, 2025) para el empaquetamiento y (Microsoft, 2021) para la excepción de `FaultException`
+
+- **Referencia:** Microsoft. (2025, 22 de octubre). *Best practices for exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions
+  **Qué respalda:** que una alternativa a volver a lanzar la excepción es lanzar una nueva e incluir la original como excepción interna; su ejemplo pasa la original con `innerException: ex`. La página no habla de `FaultException`, WCF ni de qué mostrar a los clientes.
+- **Referencia:** Microsoft. (2021, 15 de septiembre). *Specifying and handling faults in contracts and services*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/framework/wcf/specifying-and-handling-faults-in-contracts-and-services
+  **Qué respalda:** que las excepciones administradas pueden exponer información interna de la aplicación a los clientes WCF, y que conviene devolver en un error SOAP solo la información que el cliente necesita saber. Respalda con esto la excepción para `FaultException`, pero no dice textualmente que nunca se deba enviar la excepción original; esa parte de la regla es decisión del equipo.
