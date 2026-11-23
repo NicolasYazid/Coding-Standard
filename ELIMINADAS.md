@@ -793,3 +793,12 @@ public class MatchStateStorage
     }
 }
 ```
+
+## 5.6.1 — Tipo de los parámetros de una lambda
+
+**Motivo de eliminación:** el equipo decidió eliminarla porque no hay tiempo para definirla. El texto base era una plantilla vacía ("El título de la regla falta por definirse"), y el juego puede funcionar sin una regla sobre lambdas: que el código use lambdas no viola nada si el estándar no dice nada sobre ellas.
+
+### Regla original
+El título de la regla falta por definirse
+
+La regla falta por definirse
