@@ -16,7 +16,7 @@
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
-| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 2 | 13 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 2 | 12 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **76** | **123** |
+| | **Total** | **76** | **122** |
 
 ---
 
@@ -172,7 +172,6 @@
 ### 6.1 Uso de bloques try-catch y manejo de excepciones específicas
 - [x] **6.1.1** Captura de excepciones específicas
 - [x] **6.1.2** Contenido de los bloques `catch`
-- [ ] **6.1.3** Priorización de excepciones del sistema 🗑️ 🔗 duplicada con 6.4.2
 
 ### 6.2 Orden jerárquico en los bloques catch
 - [ ] **6.2.1** Orden de mayor a menor especificidad
@@ -184,7 +183,7 @@
 
 ### 6.4 Jerarquía de excepciones personalizadas del videojuego
 - [ ] **6.4.1** Creación de la excepción base del dominio
-- [ ] **6.4.2** Priorización de excepciones del sistema 🔗 duplicada con 6.1.3
+- [ ] **6.4.2** Priorización de excepciones del sistema
 - [ ] **6.4.3** Herencia de excepciones específicas (jerarquía de un solo nivel)
 
 ### 6.5 Uso obligatorio de la sentencia using
@@ -350,6 +349,7 @@
 - ~~**2.2.4** Declaración correcta de propiedades~~ — repetía lo que ya piden la 2.2.1 (PascalCase en propiedades), la 2.2.2 (los métodos que solo devuelven o asignan un campo son propiedades) y la 2.2.6 (`set` restringido); lo demás, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio.
 - ~~**2.2.5** Modificación de valor en propiedades~~ — su único contenido comprobable, que una propiedad no se lea ni se asigne a sí misma, es un error que hace caer el juego en cuanto se ejecuta esa línea (`StackOverflowException`), así que el propio programa lo muestra; el resto ya lo cubren la 2.2.2 y la 2.2.3.
 - ~~**2.3** Componentes de interfaz gráfica y **2.4** Identificadores de interfaz (sin reglas)~~ — el equipo decidió quitar estas dos subsecciones porque, por ahora, no tienen reglas ni propósito en el estándar. Los números 2.3 y 2.4 no se reutilizan.
+- ~~**6.1.3** Priorización de excepciones del sistema~~ — repetía la 6.4.2 con casi las mismas palabras (solo cambiaban los ejemplos y el año de la cita); la regla trata de qué excepción lanzar o crear, no de cómo capturar, así que encaja en la subsección 6.4, donde se evalúa.
 - ~~**11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto (subsección 11.3 completa)~~ — el límite de tres parámetros ya lo pide la regla 2.6.3 para todos los métodos; el resto dependía de los conceptos "método builder" y "objeto complejo" de la 11.3.1, eliminada, y de "valores más críticos", que no se puede medir.
 - ~~**11.3.1** Nomenclatura y visibilidad (métodos *builder* en pruebas)~~ — el prefijo `Builder` no tiene respaldo en ninguna fuente (en las fuentes, "Builder" es una clase y va al final del nombre) y choca con la regla 2.6.2 (nombres de métodos con verbo); "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado, es una recomendación que no se puede volver regla sin inventar un límite arbitrario.
 - ~~**11.2.3** Configuración inicial compartida~~ — no se podía medir ("múltiples métodos" y "los mismos objetos" no tienen un criterio claro), obligaba a usar `[SetUp]` y se acoplaba a NUnit; Microsoft recomienda crear los objetos en cada prueba o en métodos auxiliares y deja la preparación compartida para cuando todas las pruebas de la clase necesitan lo mismo.
@@ -475,3 +475,4 @@
 | 2026-11-22 | 11.3.2 | **Eliminada.** Repetía el límite de la 2.6.3 y dependía de la 11.3.1, eliminada. Subsección 11.3 completa. |
 | 2026-11-22 | 6.1.1 | **Aprobada.** Se quitó "errores rutinarios" (no está en Microsoft y dejaba pensar que `Exception` valía para los demás errores); "es obligatorio" y "queda estrictamente prohibido" pasan a "se debe" y "no se debe"; "problemas críticos del sistema" pasa a "problemas en tiempo de ejecución y dificultar la depuración", como dice CA1031; se agregó el único caso permitido, que el bloque `catch` termine con `throw;`; "la más específica posible" se conserva porque lo pide el profesor; los ejemplos pierden la variable `ex`, que no se usaba; cita Microsoft (2026). Pendiente: confirmar con el profesor si capturar `FaultException` y `CommunicationException` (tienen tipos derivados más específicos) cumple "la más específica posible". |
 | 2026-11-22 | 6.1.2 | **Aprobada.** Renombrada a "Contenido de los bloques `catch`" (el título decía "Prohibición"); redactada como "un bloque `catch` no debe estar vacío; si el error se ignora a propósito, debe contener un comentario que explique la razón"; se quitaron "queda estrictamente prohibido" y "obligatoriamente", y "error esperado, benigno y la arquitectura dicta que debe ser ignorado" por no poder medirse; se quitó la cita Microsoft (2024) porque no se encontró una página de Microsoft sobre C# que la respalde, queda como decisión del equipo; los ejemplos pierden la variable `ex`, que no se usaba. Pendiente en el código: agregar un comentario en el `catch` vacío de `PlayerConnection.cs` (`InvalidOperationException`) y en el de `PlayRoundUseCase.cs` (`DataException`); los otros 5 `catch` vacíos del juego ya lo tienen. |
+| 2026-11-22 | 6.1.3 | **Eliminada.** Repetía la 6.4.2; se conserva la 6.4.2 por ubicarse en la subsección de excepciones personalizadas. |

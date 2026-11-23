@@ -590,3 +590,38 @@ float movementSpeed, int armorLevel)
     return enemyStats;
 }
 ```
+
+## 6.1.3 — Priorización de excepciones del sistema
+
+**Motivo de eliminación:** repetía la regla 6.4.2, que tiene el mismo título y casi el mismo texto (cambian los ejemplos, `ArgumentOutOfRangeException` en esta y `ArgumentNullException` en la otra). La regla trata de qué excepción lanzar o crear, no de cómo capturarla, así que encaja en la subsección 6.4 (excepciones personalizadas) y no en la 6.1. Su contenido se evalúa en la 6.4.2.
+
+### Regla original
+Se debe lanzar obligatoriamente el tipo de excepción predefinido de .NET que describa con exactitud el error antes de crear uno personalizado. Solo se define una excepción propia cuando ningún tipo del sistema la describa adecuadamente, o cuando el bloque que la captura necesite distinguirla programáticamente de otras para aplicar una lógica de recuperación específica (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class ScoreValidator
+{
+    public void ValidateKnock(int deadwoodScore)
+    {
+        if (deadwoodScore < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(deadwoodScore));
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class ScoreValidator
+{
+    public void ValidateKnock(int deadwoodScore)
+    {
+        if (deadwoodScore < 0)
+        {
+            throw new InvalidDeadwoodException();
+        }
+    }
+}
+```
