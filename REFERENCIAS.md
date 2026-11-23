@@ -508,3 +508,9 @@
   **Qué respalda:** que una alternativa a volver a lanzar la excepción es lanzar una nueva e incluir la original como excepción interna; su ejemplo pasa la original con `innerException: ex`. La página no habla de `FaultException`, WCF ni de qué mostrar a los clientes.
 - **Referencia:** Microsoft. (2021, 15 de septiembre). *Specifying and handling faults in contracts and services*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/framework/wcf/specifying-and-handling-faults-in-contracts-and-services
   **Qué respalda:** que las excepciones administradas pueden exponer información interna de la aplicación a los clientes WCF, y que conviene devolver en un error SOAP solo la información que el cliente necesita saber. Respalda con esto la excepción para `FaultException`, pero no dice textualmente que nunca se deba enviar la excepción original; esa parte de la regla es decisión del equipo.
+
+### 6.4.1 — Creación de la excepción base del dominio
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 22 de octubre). *Best practices for exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions
+  **Qué respalda:** que una excepción propia debe derivar de la clase `Exception` y que su nombre debe terminar en `Exception`. Que la clase base sea única es decisión del equipo, no de Microsoft.

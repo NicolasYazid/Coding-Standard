@@ -4564,3 +4564,59 @@ public class SavedMatchLoader
     }
 }
 ```
+
+## 6.4.1 — Creación de la excepción base del dominio
+
+### Antes
+Para separar los errores nativos del lenguaje (como NullReferenceException) de los errores lógicos del propio juego, se debe definir una única clase base obligatoria que herede directamente de System.Exception. Todas las demás excepciones lógicas del juego deberán derivar de esta. Su nombre debe reflejar el núcleo del sistema y cumplir con el sufijo Exception.
+
+**Con estándar**
+```csharp
+public class GameCoreException : Exception
+{
+    public GameCoreException(string message) : base(message)
+    {
+    }
+
+    public GameCoreException(string message, Exception innerException) : base(message, innerException)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameCoreError
+{
+    public GameCoreError(string message)
+    {
+    }
+}
+```
+
+### Después
+Para separar los errores nativos de .NET de los errores propios del juego, se debe definir una única clase base que herede directamente de `Exception`. El equipo de desarrollo debe elegir el nombre de esa clase, y este debe terminar en `Exception` (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class GameCoreException : Exception
+{
+    public GameCoreException(string message) : base(message)
+    {
+    }
+
+    public GameCoreException(string message, Exception innerException) : base(message, innerException)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class GameCoreError
+{
+    public GameCoreError(string message)
+    {
+    }
+}
+```
