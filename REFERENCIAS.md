@@ -522,3 +522,9 @@
   **Qué respalda:** que se introduce una clase de excepción nueva solo cuando ninguna predefinida aplica.
 - **Referencia:** Cwalina, K. (2006, 5 de julio). *Choosing the right type of exception to throw* [Entrada de blog]. Microsoft Learn. https://learn.microsoft.com/en-us/archive/blogs/kcwalina/choosing-the-right-type-of-exception-to-throw
   **Qué respalda:** que se crean excepciones propias cuando el error se puede manejar de forma distinta a cualquier otra excepción existente, y que en los demás casos se lanza una existente. Es un blog de 2006 de uno de los autores de las guías de diseño de .NET, archivado en Microsoft Learn, no una página de documentación actual.
+
+### 6.4.3 — Herencia de excepciones específicas (jerarquía de un solo nivel)
+**Cita en el texto:** (Microsoft, 2006)
+
+- **Referencia:** Microsoft. (2006, 4 de diciembre). *Designing custom exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-2.0/ms229064(v=vs.80)
+  **Qué respalda:** que se deben evitar las jerarquías profundas de excepciones. Es una página archivada de .NET Framework 2.0. No dice que la jerarquía deba ser de exactamente un nivel; eso es decisión del equipo.

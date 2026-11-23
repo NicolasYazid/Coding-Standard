@@ -4691,3 +4691,72 @@ public class MatchLobby
     }
 }
 ```
+
+## 6.4.3 — Herencia de excepciones específicas (jerarquía de un solo nivel)
+
+### Antes
+Al crear excepciones para mecánicas concretas del juego, queda estrictamente prohibido heredar directamente de System.Exception o intercalar clases base intermedias adicionales. Toda excepción propia debe heredar obligatoriamente de la única excepción base del dominio. Esta jerarquía plana facilita las capturas globales (Microsoft, s.f.) y sostiene dos atributos de calidad priorizados: la extensibilidad, permitiendo incorporar nuevos sistemas sin alterar el código de manejo de errores existente (Bass et al., 2013), y la seguridad (accountability), garantizando que todo error de dominio se rastree a un origen común auditable (International Organization for Standardization, 2011).
+
+**Con estándar**
+```csharp
+public class InvalidKnockException : GameCoreException
+{
+    public InvalidKnockException(string message) : base(message)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class InvalidKnockException : Exception
+{
+    public InvalidKnockException(string message) : base(message)
+    {
+    }
+}
+
+public class OutOfTurnException : MatchLogicException
+{
+    public OutOfTurnException(string message) : base(message)
+    {
+    }
+}
+```
+
+### Después
+Las excepciones propias del juego, salvo la excepción base del dominio, deben heredar directamente de ella, sin clases intermedias, para evitar jerarquías profundas (Microsoft, 2006).
+
+**Con estándar**
+```csharp
+public class InvalidKnockException : GameCoreException
+{
+    public InvalidKnockException(string message) : base(message)
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class InvalidKnockException : Exception
+{
+    public InvalidKnockException(string message) : base(message)
+    {
+    }
+}
+
+public class MatchLogicException : GameCoreException
+{
+    public MatchLogicException(string message) : base(message)
+    {
+    }
+}
+
+public class OutOfTurnException : MatchLogicException
+{
+    public OutOfTurnException(string message) : base(message)
+    {
+    }
+}
+```
