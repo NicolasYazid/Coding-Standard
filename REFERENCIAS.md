@@ -464,3 +464,9 @@
 **Cita en el texto:** ninguna (decisión del equipo)
 
 - **Referencia:** ninguna. El estándar base no traía cita y no se encontró una fuente de Microsoft que respalde el sufijo `Tests` en el nombre de la clase de pruebas: la guía de Microsoft sobre pruebas unitarias trata los nombres de las pruebas, no los de las clases.
+
+### 11.2.1 — Estructura de las pruebas (Arrange, Act, Assert)
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 5 de noviembre). *Unit testing best practices for .NET*. Microsoft Learn. https://learn.microsoft.com/dotnet/core/testing/unit-testing-best-practices
+  **Qué respalda:** que el patrón Arrange, Act, Assert son tres pasos (preparar los objetos, actuar sobre uno y afirmar el resultado) y que separarlos resalta lo que se necesita para llamar al código, cómo se llama y qué se afirma. La línea en blanco exacta entre fases, no marcarlas con comentarios (el ejemplo de la página sí usa `// Arrange`, `// Act` y `// Assert`) y "en las fases que tenga" son decisión del equipo: la página no dice si una prueba puede no tener la fase Arrange.

@@ -3991,3 +3991,68 @@ public class TestMeldFinder
 {
 }
 ```
+
+---
+
+## 11.2.1 — Estructura de las pruebas (Arrange, Act, Assert) (antes: Patrón lógico (Arrange, Act, Assert) sin comentarios)
+
+### Antes
+Todo método de prueba debe seguir obligatoriamente la estructura lógica Arrange (preparar), Act (actuar) y Assert (afirmar). Para delimitar cada fase, se utilizará exactamente una línea en blanco. Queda estrictamente prohibido el uso de comentarios explicativos (como // Arrange) para marcar estas secciones, ya que el código y los espacios en blanco deben definir la estructura por sí mismos.
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_TakeDamage_ShieldIsActive_ReturnsZeroDamage()
+{
+    bool hasShield = true;
+    PlayerDefenses playerDefenses = new PlayerDefenses(hasShield);
+
+    int calculatedDamage = playerDefenses.TakeDamage(50);
+
+    Assert.AreEqual(0, calculatedDamage);
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void Test_TakeDamage_ShieldIsActive_ReturnsZeroDamage()
+{
+    bool hasShield = true;
+    PlayerDefenses playerDefenses = new PlayerDefenses(hasShield);
+    int calculatedDamage = playerDefenses.TakeDamage(50);
+    Assert.AreEqual(0, calculatedDamage);
+}
+```
+
+### Después
+Todo método de prueba debe seguir el orden preparar (Arrange), actuar (Act) y afirmar (Assert) en las fases que tenga, separadas entre sí por exactamente una línea en blanco. Las fases no deben marcarse con comentarios como `// Arrange`, porque el orden y las líneas en blanco ya las definen (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+[Test]
+public void Test_CountDeadwood_NoMelds_ReturnsSumOfCards()
+{
+    IList<Card> hand = CreateHandWithoutMelds();
+
+    int deadwood = MeldFinder.CountDeadwood(hand);
+
+    Assert.AreEqual(ExpectedDeadwood, deadwood);
+}
+```
+
+**Sin estándar**
+```csharp
+[Test]
+public void Test_CountDeadwood_NoMelds_ReturnsSumOfCards()
+{
+    // Arrange
+    IList<Card> hand = CreateHandWithoutMelds();
+
+    // Act
+    int deadwood = MeldFinder.CountDeadwood(hand);
+
+    // Assert
+    Assert.AreEqual(ExpectedDeadwood, deadwood);
+}
+```
