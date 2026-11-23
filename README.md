@@ -14,7 +14,7 @@
 |---|---------|:---------:|:-----:|
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
-| 4 | [Estilo de código](#4-estilo-de-código) | 9 | 16 |
+| 4 | [Estilo de código](#4-estilo-de-código) | 10 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 5 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 8 | 8 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 1 | 1 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **91** | **116** |
+| | **Total** | **92** | **116** |
 
 ---
 
@@ -129,7 +129,7 @@
 - [x] **4.2.4** Agrupación lógica y prohibición de múltiples líneas en blanco
 - [x] **4.2.5** Espacios en operadores binarios
 - [x] **4.2.6** Espacios en estructuras de control
-- [ ] **4.2.7** Ausencia de espacios en métodos
+- [x] **4.2.7** Ausencia de espacios en métodos
 - [ ] **4.2.8** Espaciado en delimitadores de listas (comas)
 
 ### 4.3 Organización del código en el archivo
@@ -502,3 +502,4 @@
 | 2026-11-22 | 4.2.4 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
 | 2026-11-22 | 4.2.5 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
 | 2026-11-22 | 4.2.6 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
+| 2026-11-22 | 4.2.7 | **Aprobada sin cambios.** Se conserva el texto del estándar base. |
