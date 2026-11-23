@@ -4329,7 +4329,7 @@ catch (FileNotFoundException ex)
 ```
 
 ### Después
-Cuando una operación requiera capturar múltiples tipos de excepciones, los bloques `catch` deben ordenarse de mayor a menor especificidad. La excepción más derivada (la más específica) debe colocarse en el primer bloque, seguida por excepciones más generales en los bloques inferiores, evitando así errores de compilación por enmascaramiento (Microsoft, 2025).
+Cuando una operación requiera capturar múltiples tipos de excepciones, los bloques `catch` deben ordenarse de mayor a menor especificidad, incluidas las excepciones propias del juego. La excepción más derivada (la más específica) debe colocarse en el primer bloque, seguida por excepciones más generales en los bloques inferiores, evitando así errores de compilación por enmascaramiento (Microsoft, 2025).
 
 **Con estándar**
 ```csharp
