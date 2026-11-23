@@ -4401,7 +4401,7 @@ public class SavedMatchLoader
 
 ---
 
-## 6.3.1 — Propagación directa (`throw;`)
+## 6.3.1 — Propagación directa (Preservación del Stack Trace)
 
 ### Antes
 Cuando se necesite capturar una excepción para realizar una acción de mitigación (como revertir un estado) y luego volver a lanzarla para que una capa superior la maneje, se debe utilizar obligatoriamente la instrucción throw;. Queda estrictamente prohibido utilizar throw ex; (donde ex es la variable capturada), ya que esto reinicia la traza de la pila (stack trace) y destruye la información sobre el origen real del error.

@@ -495,7 +495,7 @@
 - **Referencia complementaria (no citada en el texto):** Microsoft. (s.f.). *Compiler Error CS0160*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0160
   **Qué respalda:** que un `catch` general antes de uno más derivado es un error de compilación, que es lo que dice la parte "evitando así errores de compilación por enmascaramiento". La página no muestra fecha.
 
-### 6.3.1 — Propagación directa (`throw;`)
+### 6.3.1 — Propagación directa (Preservación del Stack Trace)
 **Cita en el texto:** (Microsoft, 2026)
 
 - **Referencia:** Microsoft. (2026, 2 de abril). *CA2200: Rethrow to preserve stack details*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2200

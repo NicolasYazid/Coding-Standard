@@ -177,7 +177,7 @@
 - [x] **6.2.1** Orden de los bloques `catch` por especificidad
 
 ### 6.3 Propagación y empaquetamiento de excepciones
-- [x] **6.3.1** Propagación directa (`throw;`)
+- [x] **6.3.1** Propagación directa (Preservación del Stack Trace)
 - [ ] **6.3.2** Empaquetamiento de excepciones (`InnerException`)
 
 ### 6.4 Jerarquía de excepciones personalizadas del videojuego
