@@ -558,3 +558,35 @@ public EnemyStats builderEnemyStats()
 {
 }
 ```
+
+---
+
+## 11.3.2 — Límite de parámetros en constructores auxiliares e inicialización por defecto
+
+**Motivo de eliminación:** la primera frase repetía el límite de tres parámetros de la regla 2.6.3, que ya aplica a todos los métodos, incluidos los auxiliares de las pruebas. El resto dependía de los conceptos "método builder" y "objeto complejo" de la regla 11.3.1, eliminada, así que ya no tenía de qué hablar, y "los valores más críticos de la prueba" no se podía medir. Sus ejemplos tampoco cumplían las reglas 2.6.2 (nombre `BuilderEnemyStats`) y 5.2.1 (números sueltos `5.5f` y `1`). Se eliminó la subsección 11.3 completa.
+
+### Regla original
+Al igual que los métodos operativos regulares, los métodos builder auxiliares no deben recibir más de tres parámetros. Si el objeto complejo requiere una mayor cantidad de atributos para ser instanciado, los parámetros permitidos se usarán para los valores más críticos de la prueba, mientras que los valores sobrantes deberán inicializarse obligatoriamente con datos por defecto dentro del cuerpo del método.
+
+**Con estándar**
+```csharp
+private EnemyStats BuilderEnemyStats(int maxHealth, float attackDamage, bool isEnraged)
+{
+    EnemyStats enemyStats = new EnemyStats(maxHealth, attackDamage, isEnraged);
+    enemyStats.MovementSpeed = 5.5f;
+    enemyStats.ArmorLevel = 1;
+    return enemyStats;
+}
+```
+
+**Sin estándar**
+```csharp
+private EnemyStats BuilderEnemyStats(int maxHealth, float attackDamage, bool isEnraged,
+float movementSpeed, int armorLevel)
+{
+    EnemyStats enemyStats = new EnemyStats(maxHealth, attackDamage, isEnraged);
+    enemyStats.MovementSpeed = movementSpeed;
+    enemyStats.ArmorLevel = armorLevel;
+    return enemyStats;
+}
+```

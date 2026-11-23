@@ -21,11 +21,11 @@
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
-| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 3 | 4 |
+| 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 3 | 3 |
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **74** | **124** |
+| | **Total** | **74** | **123** |
 
 ---
 
@@ -301,9 +301,6 @@
 - [x] **11.2.1** Estructura de las pruebas (Arrange, Act, Assert)
 - [x] **11.2.2** Límite de aserciones por método
 
-### 11.3 Métodos builders en pruebas
-- [ ] **11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto
-
 ---
 
 ## 13. DTOs y modelos de dominio
@@ -353,6 +350,7 @@
 - ~~**2.2.4** Declaración correcta de propiedades~~ — repetía lo que ya piden la 2.2.1 (PascalCase en propiedades), la 2.2.2 (los métodos que solo devuelven o asignan un campo son propiedades) y la 2.2.6 (`set` restringido); lo demás, prohibir cualquier método `Get...` o `Set...` que obtenga o modifique el estado, era demasiado amplio.
 - ~~**2.2.5** Modificación de valor en propiedades~~ — su único contenido comprobable, que una propiedad no se lea ni se asigne a sí misma, es un error que hace caer el juego en cuanto se ejecuta esa línea (`StackOverflowException`), así que el propio programa lo muestra; el resto ya lo cubren la 2.2.2 y la 2.2.3.
 - ~~**2.3** Componentes de interfaz gráfica y **2.4** Identificadores de interfaz (sin reglas)~~ — el equipo decidió quitar estas dos subsecciones porque, por ahora, no tienen reglas ni propósito en el estándar. Los números 2.3 y 2.4 no se reutilizan.
+- ~~**11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto (subsección 11.3 completa)~~ — el límite de tres parámetros ya lo pide la regla 2.6.3 para todos los métodos; el resto dependía de los conceptos "método builder" y "objeto complejo" de la 11.3.1, eliminada, y de "valores más críticos", que no se puede medir.
 - ~~**11.3.1** Nomenclatura y visibilidad (métodos *builder* en pruebas)~~ — el prefijo `Builder` no tiene respaldo en ninguna fuente (en las fuentes, "Builder" es una clase y va al final del nombre) y choca con la regla 2.6.2 (nombres de métodos con verbo); "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado, es una recomendación que no se puede volver regla sin inventar un límite arbitrario.
 - ~~**11.2.3** Configuración inicial compartida~~ — no se podía medir ("múltiples métodos" y "los mismos objetos" no tienen un criterio claro), obligaba a usar `[SetUp]` y se acoplaba a NUnit; Microsoft recomienda crear los objetos en cada prueba o en métodos auxiliares y deja la preparación compartida para cuando todas las pruebas de la clase necesitan lo mismo.
 - ~~**11.1.1** Ubicación lógica (namespaces)~~ — se acoplaba a la estructura del código de producción (`Entities`, `UseCases`, `Ports`) y a la organización de los proyectos de pruebas; lo único comprobable, que el namespace lleve `.Tests`, ya lo cumple el nombre de los proyectos de pruebas.
@@ -474,3 +472,4 @@
 | 2026-11-22 | 11.2.2 | **Aprobada.** Renombrada a "Límite de aserciones por método"; el límite de una aserción es impuesto por el profesor y no cambia; se aclaró que cuenta cualquier aserción de la biblioteca de pruebas (`Assert` o cualquier otra clase de aserciones), porque `CollectionAssert` podía no contarse; los ejemplos usan constantes en lugar de `20`, `15` y `35` (5.2.1); sin cita, decisión del profesor. Pendiente en el código: `Test_SplitIntoNeighbors_CardApart_StartsNewStretch` en `HandOrderTests` tiene tres aserciones y debe dividirse en tres pruebas. |
 | 2026-11-22 | 11.2.3 | **Eliminada.** No se podía medir, obligaba a usar `[SetUp]` y se acoplaba a NUnit; en 7 clases de pruebas del juego se repetía la creación de los mismos objetos. |
 | 2026-11-22 | 11.3.1 | **Eliminada.** El prefijo `Builder` no tiene respaldo y choca con la 2.6.2; "objeto complejo" no se podía medir; la parte con respaldo es una recomendación, no una regla. |
+| 2026-11-22 | 11.3.2 | **Eliminada.** Repetía el límite de la 2.6.3 y dependía de la 11.3.1, eliminada. Subsección 11.3 completa. |
