@@ -22,10 +22,10 @@
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 3 | 3 |
-| 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
+| 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 1 | 3 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **82** | **115** |
+| | **Total** | **83** | **118** |
 
 ---
 
@@ -294,7 +294,9 @@
 ## 13. DTOs y modelos de dominio
 
 ### 13.1 Estructura de un DTO
-- 🕳️ Sin reglas
+- [x] **13.1.1** Contrato de datos explícito 🆕
+- [ ] **13.1.2** Una clase de transferencia solo contiene datos 🆕 — Regla pendiente de revisión
+- [ ] **13.1.3** Sin herencia entre clases de transferencia 🆕 — Regla pendiente de revisión
 
 ---
 
@@ -487,3 +489,5 @@
 | 2026-11-22 | 5.6.1 | **Eliminada.** El equipo decidió eliminarla porque no hay tiempo para definirla; el texto base era una plantilla vacía. |
 | 2026-11-22 | 5.6.2 | **Eliminada.** El equipo decidió eliminarla porque no hay tiempo para definirla; el texto base era una plantilla vacía. |
 | 2026-11-22 | 5.6.3 | **Eliminada.** El equipo decidió eliminarla porque no hay tiempo para definirla; el texto base era una plantilla vacía. Subsección 5.6 completa. |
+| 2026-11-22 | 13.1.1 | **Aprobada (nueva).** El estándar base no tenía reglas para los DTOs. Una clase que se envía entre el cliente y el servidor lleva `[DataContract]`, y cada una de sus propiedades públicas `[DataMember]`; exigir el contrato explícito es decisión del equipo (la fuente permite que el serializador lo infiera). El juego la cumple: sus 19 clases y 99 propiedades. |
+| 2026-11-22 | 13.1.2, 13.1.3 | Reglas nuevas propuestas para los DTOs (solo propiedades; sin herencia). Quedan como **Regla pendiente de revisión**. |

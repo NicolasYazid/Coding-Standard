@@ -258,3 +258,34 @@ public class RankingBuilder
 **Origen:** escrito por el equipo al eliminar la regla 2.8.3. Es texto explicativo, no una regla: no se audita.
 
 La realización de pruebas unitarias priorizará la verificación de la capa lógica del videojuego, abarcando aspectos como el cálculo de puntuaciones y las reglas de la partida. De este modo, se evita forzar una cobertura del 100% que pueda volver frágil el código, ya que tratar de cubrir el 100% es imposible.
+
+---
+
+## 13.1.1 — Contrato de datos explícito
+
+**Origen:** el estándar base solo traía el título de la subsección 13.1 (Estructura de un DTO), sin ninguna regla. Regla nueva pedida por el equipo para controlar las clases que se envían por WCF.
+
+Una clase que se envía entre el cliente y el servidor debe declararse con `[DataContract]`, y cada una de sus propiedades públicas con `[DataMember]` (Microsoft, 2021).
+
+**Con estándar**
+```csharp
+[DataContract]
+public class PlayerScore
+{
+    [DataMember]
+    public string Username { get; set; }
+
+    [DataMember]
+    public int Points { get; set; }
+}
+```
+
+**Sin estándar**
+```csharp
+public class PlayerScore
+{
+    public string Username { get; set; }
+
+    public int Points { get; set; }
+}
+```

@@ -528,3 +528,9 @@
 
 - **Referencia:** Microsoft. (2006, 4 de diciembre). *Designing custom exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-2.0/ms229064(v=vs.80)
   **Qué respalda:** que se deben evitar las jerarquías profundas de excepciones. Es una página archivada de .NET Framework 2.0. No dice que la jerarquía deba ser de exactamente un nivel; eso es decisión del equipo.
+
+### 13.1.1 — Contrato de datos explícito
+**Cita en el texto:** (Microsoft, 2021)
+
+- **Referencia:** Microsoft. (2021, 15 de septiembre). *Using data contracts*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/using-data-contracts
+  **Qué respalda:** que, con un contrato de datos explícito, el atributo `DataMember` se aplica a cada miembro que se debe serializar. La página también permite que el serializador infiera el contrato sin atributos, así que exigir el contrato explícito es decisión del equipo.
