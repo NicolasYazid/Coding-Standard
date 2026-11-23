@@ -535,3 +535,26 @@ public void InitializeConfig()
     _weaponSystem = new WeaponSystem();
 }
 ```
+
+---
+
+## 11.3.1 — Nomenclatura y visibilidad
+
+**Motivo de eliminación:** el prefijo `Builder` no tiene respaldo en ninguna fuente consultada: en el patrón Test Data Builder, "Builder" es el final del nombre de una clase (por ejemplo `AddressDTOBuilder`) con métodos `WithX()` y `Build()`, no un prefijo de método. Además choca con la regla 2.6.2, que pide nombres de métodos con verbo, y "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado de la misma clase de pruebas (Microsoft, 2026), es una recomendación que no se puede convertir en regla sin fijar un límite arbitrario.
+
+### Regla original
+Cuando un caso de prueba requiera construir un objeto complejo, esta lógica debe extraerse a un método auxiliar de acceso estrictamente privado (private) dentro de la misma clase de prueba. El nombre del método debe definirse en PascalCase comenzando obligatoriamente con el prefijo Builder seguido de la entidad que se está instanciando.
+
+**Con estándar**
+```csharp
+private EnemyStats BuilderEnemyStats()
+{
+}
+```
+
+**Sin estándar**
+```csharp
+public EnemyStats builderEnemyStats()
+{
+}
+```
