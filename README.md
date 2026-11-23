@@ -22,10 +22,10 @@
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
 | 10 | [Conexión con la base de datos](#10-conexión-con-la-base-de-datos--almacenamiento-local) | 0 | 0 |
 | 11 | [Pruebas unitarias](#11-pruebas-unitarias) | 3 | 3 |
-| 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 1 | 2 |
+| 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 1 | 1 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **83** | **117** |
+| | **Total** | **83** | **116** |
 
 ---
 
@@ -295,7 +295,6 @@
 
 ### 13.1 Estructura de un DTO
 - [x] **13.1.1** Contrato de datos explícito 🆕
-- [ ] **13.1.3** Sin herencia entre clases de transferencia 🆕 — Regla pendiente de revisión
 
 ---
 
@@ -348,6 +347,7 @@
 - ~~**5.6.2** Paréntesis de los parámetros de una lambda~~ — regla nueva creada el 2026-11-17 al separar la plantilla vacía 5.6.1; nunca se redactó.
 - ~~**5.6.3** Cuerpo de una lambda (subsección 5.6 completa)~~ — regla nueva creada el 2026-11-17 al separar la plantilla vacía 5.6.1; nunca se redactó.
 - ~~**13.1.2** Una clase de transferencia solo contiene datos~~ — regla nueva propuesta el 2026-11-22 que el equipo no aprobó. Era más estricta que la fuente, que permite validación básica en un DTO, y no previene un defecto que hoy exista en el juego.
+- ~~**13.1.3** Sin herencia entre clases de transferencia~~ — regla nueva propuesta el 2026-11-22 que el equipo no aprobó. Microsoft no prohíbe la herencia en los contratos de datos, solo pide declarar `KnownType` cuando se usa, y el juego no usa herencia en ninguna de sus 19 clases.
 - ~~**11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto (subsección 11.3 completa)~~ — el límite de tres parámetros ya lo pide la regla 2.6.3 para todos los métodos; el resto dependía de los conceptos "método builder" y "objeto complejo" de la 11.3.1, eliminada, y de "valores más críticos", que no se puede medir.
 - ~~**11.3.1** Nomenclatura y visibilidad (métodos *builder* en pruebas)~~ — el prefijo `Builder` no tiene respaldo en ninguna fuente (en las fuentes, "Builder" es una clase y va al final del nombre) y choca con la regla 2.6.2 (nombres de métodos con verbo); "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado, es una recomendación que no se puede volver regla sin inventar un límite arbitrario.
 - ~~**11.2.3** Configuración inicial compartida~~ — no se podía medir ("múltiples métodos" y "los mismos objetos" no tienen un criterio claro), obligaba a usar `[SetUp]` y se acoplaba a NUnit; Microsoft recomienda crear los objetos en cada prueba o en métodos auxiliares y deja la preparación compartida para cuando todas las pruebas de la clase necesitan lo mismo.
@@ -492,3 +492,4 @@
 | 2026-11-22 | 13.1.1 | **Aprobada (nueva).** El estándar base no tenía reglas para los DTOs. Una clase que se envía entre el cliente y el servidor lleva `[DataContract]`, y cada una de sus propiedades públicas `[DataMember]`; exigir el contrato explícito es decisión del equipo (la fuente permite que el serializador lo infiera). El juego la cumple: sus 19 clases y 99 propiedades. |
 | 2026-11-22 | 13.1.2, 13.1.3 | Reglas nuevas propuestas para los DTOs (solo propiedades; sin herencia). Quedan como **Regla pendiente de revisión**. |
 | 2026-11-22 | 13.1.2 | **Eliminada.** Regla nueva propuesta que el equipo no aprobó. |
+| 2026-11-22 | 13.1.3 | **Eliminada.** Regla nueva propuesta que el equipo no aprobó. |

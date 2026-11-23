@@ -850,3 +850,40 @@ public class PlayerScore
     }
 }
 ```
+
+## 13.1.3 — Sin herencia entre clases de transferencia
+
+**Motivo de eliminación:** regla nueva propuesta el 2026-11-22 que el equipo no aprobó. Microsoft no prohíbe la herencia en los contratos de datos, solo pide declarar `KnownType` cuando se usa, y el juego no usa herencia en ninguna de sus 19 clases.
+
+### Regla propuesta (nunca aprobada)
+Una clase que se envía entre el cliente y el servidor no debe heredar de otra clase (Microsoft, 2021).
+
+**Con estándar**
+```csharp
+[DataContract]
+public class PlayerScore
+{
+    [DataMember]
+    public int Points { get; set; }
+
+    [DataMember]
+    public string Username { get; set; }
+}
+```
+
+**Sin estándar**
+```csharp
+[DataContract]
+public class BaseScore
+{
+    [DataMember]
+    public int Points { get; set; }
+}
+
+[DataContract]
+public class PlayerScore : BaseScore
+{
+    [DataMember]
+    public string Username { get; set; }
+}
+```
