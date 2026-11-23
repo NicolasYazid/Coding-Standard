@@ -816,3 +816,37 @@ Regla nueva sin texto: quedó como "Regla pendiente de revisión" y nunca se red
 
 ### Regla original
 Regla nueva sin texto: quedó como "Regla pendiente de revisión" y nunca se redactó.
+
+## 13.1.2 — Una clase de transferencia solo contiene datos
+
+**Motivo de eliminación:** regla nueva propuesta el 2026-11-22 que el equipo no aprobó. Era más estricta que la fuente, que permite validación básica en un DTO, y no previene un defecto que hoy exista en el juego.
+
+### Regla propuesta (nunca aprobada)
+Una clase que se envía entre el cliente y el servidor debe tener solo propiedades públicas con `get` y `set`. No se debe declarar campos ni métodos en ella (Microsoft, 2014).
+
+**Con estándar**
+```csharp
+[DataContract]
+public class PlayerScore
+{
+    [DataMember]
+    public int Points { get; set; }
+}
+```
+
+**Sin estándar**
+```csharp
+[DataContract]
+public class PlayerScore
+{
+    private int _opponentPoints;
+
+    [DataMember]
+    public int Points { get; set; }
+
+    public bool HasWon()
+    {
+        return Points > _opponentPoints;
+    }
+}
+```
