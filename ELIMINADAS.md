@@ -664,3 +664,36 @@ catch (SaveFileCorruptedException ex)
     RestoreBackup();
 }
 ```
+
+## 6.5.2 — Preferencia por la declaración simplificada (C# 8.0+)
+
+**Motivo de eliminación:** la declaración `using` sin llaves (`using StreamReader replayReader = ...;`) se agregó en C# 8.0, según la lista de novedades de esa versión, y el proyecto usa C# 7.3, así que el ejemplo "Con estándar" no compila. Una regla que el proyecto no puede cumplir no se puede dejar en el estándar. Referencia: Microsoft. (2026, 12 de noviembre). *The history of C#*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history
+
+### Regla original
+Para evitar la anidación innecesaria de llaves y reducir la complejidad visual, se debe utilizar preferentemente la declaración simplificada de using (sin llaves) cuando el recurso deba existir durante todo el alcance (scope) del método (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class MatchReplayParser
+{
+    public void ParseGinRummyHistory(string replayFilePath)
+    {
+        using StreamReader replayReader = new StreamReader(replayFilePath);
+        replayReader.ReadToEnd();
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchReplayParser
+{
+    public void ParseGinRummyHistory(string replayFilePath)
+    {
+        using (StreamReader replayReader = new StreamReader(replayFilePath))
+        {
+            replayReader.ReadToEnd();
+        }
+    }
+}
+```

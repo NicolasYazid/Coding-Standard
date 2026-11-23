@@ -16,7 +16,7 @@
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
-| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 8 | 11 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 8 | 10 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **82** | **121** |
+| | **Total** | **82** | **120** |
 
 ---
 
@@ -187,7 +187,6 @@
 
 ### 6.5 Uso obligatorio de la sentencia using
 - [ ] **6.5.1** Prohibición de liberación manual (`Dispose`)
-- [ ] **6.5.2** Preferencia por la declaración simplificada (C# 8.0+) ⚠️ no disponible en C# 7.3
 - [ ] **6.5.3** Uso del bloque tradicional para liberación anticipada
 
 ---
@@ -350,6 +349,7 @@
 - ~~**2.3** Componentes de interfaz gráfica y **2.4** Identificadores de interfaz (sin reglas)~~ — el equipo decidió quitar estas dos subsecciones porque, por ahora, no tienen reglas ni propósito en el estándar. Los números 2.3 y 2.4 no se reutilizan.
 - ~~**6.2.2** Jerarquía con excepciones personalizadas~~ — era la 6.2.1 aplicada a las excepciones propias del juego, sin ningún criterio nuevo que se pudiera revisar; ponerlas en el orden contrario tampoco compila (error CS0160). Usaba `GameSystemException` como excepción base, pero el juego y la 6.4.1 usan `GameCoreException`. Su contenido quedó dentro de la 6.2.1, que ahora dice "incluidas las excepciones propias del juego".
 - ~~**6.1.3** Priorización de excepciones del sistema~~ — repetía la 6.4.2 con casi las mismas palabras (solo cambiaban los ejemplos y el año de la cita); la regla trata de qué excepción lanzar o crear, no de cómo capturar, así que encaja en la subsección 6.4, donde se evalúa.
+- ~~**6.5.2** Preferencia por la declaración simplificada (C# 8.0+)~~ — la declaración `using` sin llaves se agregó en C# 8.0 (Microsoft, 2026) y el proyecto usa C# 7.3, así que el ejemplo "Con estándar" no compila.
 - ~~**11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto (subsección 11.3 completa)~~ — el límite de tres parámetros ya lo pide la regla 2.6.3 para todos los métodos; el resto dependía de los conceptos "método builder" y "objeto complejo" de la 11.3.1, eliminada, y de "valores más críticos", que no se puede medir.
 - ~~**11.3.1** Nomenclatura y visibilidad (métodos *builder* en pruebas)~~ — el prefijo `Builder` no tiene respaldo en ninguna fuente (en las fuentes, "Builder" es una clase y va al final del nombre) y choca con la regla 2.6.2 (nombres de métodos con verbo); "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado, es una recomendación que no se puede volver regla sin inventar un límite arbitrario.
 - ~~**11.2.3** Configuración inicial compartida~~ — no se podía medir ("múltiples métodos" y "los mismos objetos" no tienen un criterio claro), obligaba a usar `[SetUp]` y se acoplaba a NUnit; Microsoft recomienda crear los objetos en cada prueba o en métodos auxiliares y deja la preparación compartida para cuando todas las pruebas de la clase necesitan lo mismo.
@@ -485,3 +485,4 @@
 | 2026-11-22 | 6.4.1 | **Aprobada.** Se quitó "Todas las demás excepciones lógicas del juego deberán derivar de esta" (la 6.4.3 ya lo cubre), "obligatoria" y "su nombre debe reflejar el núcleo del sistema", que no se puede medir; se aclaró que el equipo de desarrollo elige el nombre de la clase y que solo debe terminar en `Exception`; "System.Exception" pasa a `Exception`; se agregó la cita Microsoft (2025), que el texto base no traía. Que la clase base sea única es decisión del equipo. Los ejemplos son los del estándar base. El juego la cumple: solo `GameCoreException` hereda directamente de `Exception`. |
 | 2026-11-22 | 6.4.2 | **Aprobada.** Se quitó "obligatoriamente"; "con mayor exactitud" pasa a "que corresponda al error" y "adecuadamente" a "se aplique al error"; la condición "la capa superior necesite atraparla programáticamente para aplicar una lógica de recuperación muy específica" pasa a "el error deba manejarse de forma distinta a cualquier otra excepción existente"; la cita pasa de Microsoft (2024) a Microsoft (2025) y se agrega Cwalina (2006), un blog archivado en Microsoft Learn que respalda la segunda condición. El ejemplo "Sin estándar" define `NullSessionTokenException` para que compile. El juego la cumple: sus 18 excepciones propias tienen al menos un `catch` por su tipo. Esta regla cubre lo que decía la 6.1.3 (eliminada). |
 | 2026-11-22 | 6.4.3 | **Aprobada.** "Queda estrictamente prohibido" y "obligatoriamente" pasan a "deben"; se quitaron los argumentos de extensibilidad y *accountability* (Bass et al., 2013; ISO, 2011), que no se verificaron; la cita Microsoft (s.f.) se reemplaza por Microsoft (2006), que respalda evitar jerarquías profundas. Esa fuente no dice que la jerarquía deba ser de exactamente un nivel; eso es decisión del equipo. El ejemplo "Sin estándar" define `MatchLogicException` para que compile. El juego la cumple: sus 18 excepciones propias heredan directamente de `GameCoreException`, sin clases intermedias. |
+| 2026-11-22 | 6.5.2 | **Eliminada.** La declaración `using` sin llaves requiere C# 8.0 y el proyecto usa C# 7.3, así que la regla no se puede cumplir. |
