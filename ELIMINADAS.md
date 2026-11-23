@@ -742,3 +742,54 @@ public class MatchDealer
     }
 }
 ```
+
+## 6.5.1 — Prohibición de liberación manual (`Dispose`)
+
+**Motivo de eliminación:** el equipo decidió eliminarla porque no se entendía. Además, el texto base obligaba a que todo objeto `IDisposable` se creara con `using`, y eso no se puede cumplir con los objetos guardados en campos de una clase (como `_context` y `_transaction` de `EntityFrameworkUnitOfWork`) ni con los clientes de WCF, que Microsoft indica cerrar con `Close()` y `Abort()` en lugar de `using`. Referencia: Microsoft. (2021, 15 de septiembre). *Use Close and Abort to release WCF client resources*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/framework/wcf/samples/use-close-abort-release-wcf-client-resources
+
+### Regla original
+Todo objeto que implemente la interfaz `IDisposable` (como flujos de archivos o sockets de red) debe instanciarse obligatoriamente empleando la sentencia `using`. Queda estrictamente prohibido intentar liberar los recursos manualmente llamando al método `Dispose()` dentro de un bloque `finally`, ya que `using` automatiza y garantiza esta operación a nivel de compilador. Si es necesario capturar errores operativos, se debe envolver la sentencia `using` completamente dentro de un bloque `try-catch`, manteniendo así el manejo de errores intacto sin sacrificar la delegación automática de la memoria (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class MatchStateStorage
+{
+    public void SaveMatchLog(string logFilePath)
+    {
+        try
+        {
+            using (FileStream logStream = new FileStream(logFilePath, FileMode.OpenOrCreate))
+            {
+                logStream.Flush();
+            }
+        }
+        catch (IOException ex)
+        {
+            throw new MatchLogException("Failed to save match log.", ex);
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchStateStorage
+{
+    public void SaveMatchLog(string logFilePath)
+    {
+        FileStream logStream = new FileStream(logFilePath, FileMode.OpenOrCreate);
+        try
+        {
+            logStream.Flush();
+        }
+        catch (IOException ex)
+        {
+            throw new MatchLogException("Failed to save match log.", ex);
+        }
+        finally
+        {
+            logStream.Dispose();
+        }
+    }
+}
+```
