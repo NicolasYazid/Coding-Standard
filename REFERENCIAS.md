@@ -481,3 +481,8 @@
 
 - **Referencia:** Microsoft. (2026, 2 de abril). *CA1031: Do not catch general exception types*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1031
   **Qué respalda:** que no se debe capturar un tipo de excepción general como `System.Exception`, que hacerlo puede ocultar problemas en tiempo de ejecución y dificultar la depuración, y que se corrige capturando una excepción más específica o volviendo a lanzar la general como última instrucción del bloque `catch`. "La más específica posible" es un requisito del profesor: la página dice "más específica", no "la más específica posible".
+
+### 6.1.2 — Contenido de los bloques `catch`
+**Cita en el texto:** ninguna (decisión del equipo)
+
+- **Referencia:** ninguna. El estándar base citaba (Microsoft, 2024), pero no se encontró una página de Microsoft sobre C# que respalde la regla: la única de Microsoft sobre `catch` vacíos es una regla de PowerShell (PSScriptAnalyzer, AvoidUsingEmptyCatchBlock), que no aplica a C#.

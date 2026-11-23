@@ -4180,3 +4180,83 @@ catch (Exception)
     CreateNewSaveFile();
 }
 ```
+
+---
+
+## 6.1.2 — Contenido de los bloques `catch` (antes: Prohibición de bloques `catch` vacíos (Silenciamiento de errores))
+
+### Antes
+Queda estrictamente prohibido dejar un bloque catch completamente vacío para evitar el silenciamiento de errores críticos. No obstante, en situaciones excepcionales donde el error es esperado, benigno y la arquitectura dicta que debe ser ignorado de manera segura, el bloque puede quedar vacío siempre y cuando incluya obligatoriamente un comentario de implementación que justifique la razón técnica de esta decisión (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class NetworkConnection
+{
+    public void CloseClientSocket(int playerId)
+    {
+        try
+        {
+            TerminateTcpSocket(playerId);
+        }
+        catch (SocketException ex)
+        {
+            // The exception is ignored because the TCP connection was forcibly closed by the client.
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class NetworkConnection
+{
+    public void CloseClientSocket(int playerId)
+    {
+        try
+        {
+            TerminateTcpSocket(playerId);
+        }
+        catch (SocketException ex)
+        {
+        }
+    }
+}
+```
+
+### Después
+Un bloque `catch` no debe estar vacío. Si el error se ignora a propósito, el bloque debe contener un comentario que explique la razón.
+
+**Con estándar**
+```csharp
+public class NetworkConnection
+{
+    public void CloseClientSocket(int playerId)
+    {
+        try
+        {
+            TerminateTcpSocket(playerId);
+        }
+        catch (SocketException)
+        {
+            // The client already closed the TCP connection.
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class NetworkConnection
+{
+    public void CloseClientSocket(int playerId)
+    {
+        try
+        {
+            TerminateTcpSocket(playerId);
+        }
+        catch (SocketException)
+        {
+        }
+    }
+}
+```
