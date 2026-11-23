@@ -514,3 +514,11 @@
 
 - **Referencia:** Microsoft. (2025, 22 de octubre). *Best practices for exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions
   **Qué respalda:** que una excepción propia debe derivar de la clase `Exception` y que su nombre debe terminar en `Exception`. Que la clase base sea única es decisión del equipo, no de Microsoft.
+
+### 6.4.2 — Priorización de excepciones del sistema
+**Cita en el texto:** (Microsoft, 2025; Cwalina, 2006)
+
+- **Referencia:** Microsoft. (2025, 22 de octubre). *Best practices for exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions
+  **Qué respalda:** que se introduce una clase de excepción nueva solo cuando ninguna predefinida aplica.
+- **Referencia:** Cwalina, K. (2006, 5 de julio). *Choosing the right type of exception to throw* [Entrada de blog]. Microsoft Learn. https://learn.microsoft.com/en-us/archive/blogs/kcwalina/choosing-the-right-type-of-exception-to-throw
+  **Qué respalda:** que se crean excepciones propias cuando el error se puede manejar de forma distinta a cualquier otra excepción existente, y que en los demás casos se lanza una existente. Es un blog de 2006 de uno de los autores de las guías de diseño de .NET, archivado en Microsoft Learn, no una página de documentación actual.

@@ -4620,3 +4620,74 @@ public class GameCoreError
     }
 }
 ```
+
+## 6.4.2 — Priorización de excepciones del sistema
+
+### Antes
+Se debe lanzar obligatoriamente el tipo de excepción predefinido de .NET que describa con mayor exactitud el error (como ArgumentNullException o InvalidOperationException) antes de optar por crear una excepción personalizada. Solo se permite definir una excepción propia cuando ningún tipo nativo del framework la describa adecuadamente, o cuando la capa superior necesite atraparla programáticamente para aplicar una lógica de recuperación muy específica (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class MatchLobby
+{
+    public void KickPlayer(string sessionToken)
+    {
+        if (sessionToken == null)
+        {
+            throw new ArgumentNullException(nameof(sessionToken));
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchLobby
+{
+    public void KickPlayer(string sessionToken)
+    {
+        if (sessionToken == null)
+        {
+            throw new NullSessionTokenException();
+        }
+    }
+}
+```
+
+### Después
+Se debe lanzar la excepción predefinida de .NET que corresponda al error (como `ArgumentNullException` o `InvalidOperationException`) antes de definir una excepción propia. Solo se debe definir una excepción propia cuando ninguna excepción predefinida se aplique al error, o cuando el error deba manejarse de forma distinta a cualquier otra excepción existente (Microsoft, 2025; Cwalina, 2006).
+
+**Con estándar**
+```csharp
+public class MatchLobby
+{
+    public void KickPlayer(string sessionToken)
+    {
+        if (sessionToken == null)
+        {
+            throw new ArgumentNullException(nameof(sessionToken));
+        }
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class NullSessionTokenException : GameCoreException
+{
+    public NullSessionTokenException(string message) : base(message)
+    {
+    }
+}
+
+public class MatchLobby
+{
+    public void KickPlayer(string sessionToken)
+    {
+        if (sessionToken == null)
+        {
+            throw new NullSessionTokenException("The session token is missing.");
+        }
+    }
+}
+```
