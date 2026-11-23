@@ -697,3 +697,48 @@ public class MatchReplayParser
     }
 }
 ```
+
+## 6.5.3 — Uso del bloque tradicional para liberación anticipada
+
+**Motivo de eliminación:** con la regla 6.5.2 eliminada, la sentencia `using` con llaves es la única forma que existe en C# 7.3, así que cualquier `using` ya cumple lo que pedía. Lo que quedaba, cerrar el recurso antes de que termine el método ("liberación anticipada"), no tiene un criterio que se pueda medir, y la documentación de Microsoft solo describe cuándo se libera el objeto, no pide hacerlo. Referencia: Microsoft. (2026, 20 de enero). *using statement: ensure the correct use of disposable objects*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using
+
+### Regla original
+Si un recurso debe cerrarse y liberarse explícitamente antes de que finalice el método (por ejemplo, para no retener el archivo abierto mientras se ejecutan operaciones de red posteriores), es obligatorio utilizar la declaración tradicional de using con llaves para delimitar su alcance exacto (Microsoft, 2024).
+
+**Con estándar**
+```csharp
+public class MatchDealer
+{
+    public void LoadDeckAndDeal(string deckConfigPath)
+    {
+        using (StreamReader deckReader = new StreamReader(deckConfigPath))
+        {
+            deckReader.ReadToEnd();
+        }
+
+        DealCardsToPlayers();
+    }
+
+    private void DealCardsToPlayers()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class MatchDealer
+{
+    public void LoadDeckAndDeal(string deckConfigPath)
+    {
+        using StreamReader deckReader = new StreamReader(deckConfigPath);
+        deckReader.ReadToEnd();
+
+        DealCardsToPlayers();
+    }
+
+    private void DealCardsToPlayers()
+    {
+    }
+}
+```
