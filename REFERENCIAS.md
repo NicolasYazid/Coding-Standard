@@ -475,3 +475,9 @@
 **Cita en el texto:** ninguna (el límite lo impone el profesor de la materia)
 
 - **Referencia:** ninguna. El límite de una aserción por método es un requisito del profesor y no se respalda con una fuente.
+
+### 6.1.1 — Captura de excepciones específicas
+**Cita en el texto:** (Microsoft, 2026)
+
+- **Referencia:** Microsoft. (2026, 2 de abril). *CA1031: Do not catch general exception types*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1031
+  **Qué respalda:** que no se debe capturar un tipo de excepción general como `System.Exception`, que hacerlo puede ocultar problemas en tiempo de ejecución y dificultar la depuración, y que se corrige capturando una excepción más específica o volviendo a lanzar la general como última instrucción del bloque `catch`. "La más específica posible" es un requisito del profesor: la página dice "más específica", no "la más específica posible".

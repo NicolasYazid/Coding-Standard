@@ -16,7 +16,7 @@
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
-| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 0 | 13 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 1 | 13 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **74** | **123** |
+| | **Total** | **75** | **123** |
 
 ---
 
@@ -170,7 +170,7 @@
 ## 6. Manejo de errores y excepciones
 
 ### 6.1 Uso de bloques try-catch y manejo de excepciones específicas
-- [ ] **6.1.1** Captura de excepciones específicas
+- [x] **6.1.1** Captura de excepciones específicas
 - [ ] **6.1.2** Prohibición de bloques `catch` vacíos
 - [ ] **6.1.3** Priorización de excepciones del sistema 🗑️ 🔗 duplicada con 6.4.2
 
@@ -473,3 +473,4 @@
 | 2026-11-22 | 11.2.3 | **Eliminada.** No se podía medir, obligaba a usar `[SetUp]` y se acoplaba a NUnit; en 7 clases de pruebas del juego se repetía la creación de los mismos objetos. |
 | 2026-11-22 | 11.3.1 | **Eliminada.** El prefijo `Builder` no tiene respaldo y choca con la 2.6.2; "objeto complejo" no se podía medir; la parte con respaldo es una recomendación, no una regla. |
 | 2026-11-22 | 11.3.2 | **Eliminada.** Repetía el límite de la 2.6.3 y dependía de la 11.3.1, eliminada. Subsección 11.3 completa. |
+| 2026-11-22 | 6.1.1 | **Aprobada.** Se quitó "errores rutinarios" (no está en Microsoft y dejaba pensar que `Exception` valía para los demás errores); "es obligatorio" y "queda estrictamente prohibido" pasan a "se debe" y "no se debe"; "problemas críticos del sistema" pasa a "problemas en tiempo de ejecución y dificultar la depuración", como dice CA1031; se agregó el único caso permitido, que el bloque `catch` termine con `throw;`; "la más específica posible" se conserva porque lo pide el profesor; los ejemplos pierden la variable `ex`, que no se usaba; cita Microsoft (2026). Pendiente: confirmar con el profesor si capturar `FaultException` y `CommunicationException` (tienen tipos derivados más específicos) cumple "la más específica posible". |

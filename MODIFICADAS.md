@@ -4122,3 +4122,61 @@ public void Test_ApplyHealing_HealthIsLow_IncreasesHealth()
     Assert.IsTrue(player.IsAlive);
 }
 ```
+
+---
+
+## 6.1.1 — Captura de excepciones específicas
+
+### Antes
+Al implementar un bloque try-catch, es obligatorio capturar la excepción más específica posible derivada de la operación que podría fallar (por ejemplo, FileNotFoundException o InvalidOperationException). Queda estrictamente prohibido utilizar la clase base genérica Exception para capturar errores rutinarios, ya que esto oculta problemas críticos del sistema.
+
+**Con estándar**
+```csharp
+try
+{
+    LoadPlayerProgress(saveFileId);
+}
+catch (FileNotFoundException ex)
+{
+    CreateNewSaveFile();
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+    LoadPlayerProgress(saveFileId);
+}
+catch (Exception ex)
+{
+    CreateNewSaveFile();
+}
+```
+
+### Después
+Al implementar un bloque `try-catch`, se debe capturar la excepción más específica posible derivada de la operación que podría fallar (por ejemplo, `FileNotFoundException` o `InvalidOperationException`). No se debe utilizar la clase base genérica `Exception` para capturar errores, ya que esto puede ocultar problemas en tiempo de ejecución y dificultar la depuración, salvo que el bloque `catch` termine con `throw;` para que el error siga su camino (Microsoft, 2026).
+
+**Con estándar**
+```csharp
+try
+{
+    LoadPlayerProgress(saveFileId);
+}
+catch (FileNotFoundException)
+{
+    CreateNewSaveFile();
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+    LoadPlayerProgress(saveFileId);
+}
+catch (Exception)
+{
+    CreateNewSaveFile();
+}
+```
