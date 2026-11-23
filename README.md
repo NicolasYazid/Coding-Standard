@@ -15,7 +15,7 @@
 | 1 | [Idioma](#1-idioma) | 2 | 2 |
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
-| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 7 |
+| 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 6 |
 | 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 8 | 8 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **82** | **117** |
+| | **Total** | **82** | **116** |
 
 ---
 
@@ -161,7 +161,6 @@
 - [x] **5.5.1** Prohibición de retorno nulo en colecciones
 
 ### 5.6 Uso de expresiones lambda
-- [ ] **5.6.2** Paréntesis de los parámetros de una lambda 🆕 — Regla pendiente de revisión
 - [ ] **5.6.3** Cuerpo de una lambda 🆕 — Regla pendiente de revisión
 
 ---
@@ -348,6 +347,7 @@
 - ~~**6.5.3** Uso del bloque tradicional para liberación anticipada~~ — con la 6.5.2 eliminada, la forma con llaves es la única que existe en C# 7.3, así que cualquier `using` ya la cumple; cerrar el recurso antes de que termine el método no se puede medir, y la fuente solo describe cuándo se libera el objeto, no pide hacerlo.
 - ~~**6.5.1** Prohibición de liberación manual (`Dispose`) (subsección 6.5 completa)~~ — el equipo decidió eliminarla porque no se entendía. Además, el texto base obligaba a que todo objeto `IDisposable` usara `using`, y eso no se puede cumplir con los objetos guardados en campos de una clase (como `_context` y `_transaction` de `EntityFrameworkUnitOfWork`) ni con los clientes de WCF, que Microsoft indica cerrar con `Close()` y `Abort()` (Microsoft, 2021).
 - ~~**5.6.1** Tipo de los parámetros de una lambda~~ — el equipo decidió eliminarla porque no hay tiempo para definirla.
+- ~~**5.6.2** Paréntesis de los parámetros de una lambda~~ — regla nueva creada el 2026-11-17 al separar la plantilla vacía 5.6.1; nunca se redactó.
 - ~~**11.3.2** Límite de parámetros en constructores auxiliares e inicialización por defecto (subsección 11.3 completa)~~ — el límite de tres parámetros ya lo pide la regla 2.6.3 para todos los métodos; el resto dependía de los conceptos "método builder" y "objeto complejo" de la 11.3.1, eliminada, y de "valores más críticos", que no se puede medir.
 - ~~**11.3.1** Nomenclatura y visibilidad (métodos *builder* en pruebas)~~ — el prefijo `Builder` no tiene respaldo en ninguna fuente (en las fuentes, "Builder" es una clase y va al final del nombre) y choca con la regla 2.6.2 (nombres de métodos con verbo); "objeto complejo" no tiene una medida. Lo que sí tiene respaldo, extraer la construcción de objetos a un método auxiliar privado, es una recomendación que no se puede volver regla sin inventar un límite arbitrario.
 - ~~**11.2.3** Configuración inicial compartida~~ — no se podía medir ("múltiples métodos" y "los mismos objetos" no tienen un criterio claro), obligaba a usar `[SetUp]` y se acoplaba a NUnit; Microsoft recomienda crear los objetos en cada prueba o en métodos auxiliares y deja la preparación compartida para cuando todas las pruebas de la clase necesitan lo mismo.
@@ -487,3 +487,4 @@
 | 2026-11-22 | 6.5.3 | **Eliminada.** Con la 6.5.2 eliminada, la forma con llaves es la única en C# 7.3 y "liberación anticipada" no se puede medir. |
 | 2026-11-22 | 6.5.1 | **Eliminada.** El equipo decidió eliminarla porque no se entendía; el texto base obligaba a usar `using` en todo objeto `IDisposable`, lo que no se puede cumplir con campos de clase ni con clientes de WCF. Subsección 6.5 completa. |
 | 2026-11-22 | 5.6.1 | **Eliminada.** El equipo decidió eliminarla porque no hay tiempo para definirla; el texto base era una plantilla vacía. |
+| 2026-11-22 | 5.6.2 | **Eliminada.** El equipo decidió eliminarla porque no hay tiempo para definirla; el texto base era una plantilla vacía. |

@@ -802,3 +802,10 @@ public class MatchStateStorage
 El título de la regla falta por definirse
 
 La regla falta por definirse
+
+## 5.6.2 — Paréntesis de los parámetros de una lambda
+
+**Motivo de eliminación:** regla nueva creada el 2026-11-17 al separar la plantilla vacía 5.6.1; nunca se redactó. El equipo decidió eliminarla porque no hay tiempo para definirla, y que el código use lambdas no viola nada si el estándar no dice nada sobre ellas.
+
+### Regla original
+Regla nueva sin texto: quedó como "Regla pendiente de revisión" y nunca se redactó.
