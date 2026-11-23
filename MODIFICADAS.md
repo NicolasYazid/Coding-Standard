@@ -4260,3 +4260,113 @@ public class NetworkConnection
     }
 }
 ```
+
+---
+
+## 6.2.1 — Orden de los bloques `catch` por especificidad (antes: Orden de mayor a menor especificidad)
+
+### Antes
+Cuando una operación requiera capturar múltiples tipos de excepciones, los bloques catch deben ordenarse obligatoriamente de mayor a menor especificidad. La excepción más derivada (la más específica) debe colocarse en el primer bloque, seguida por excepciones más generales en los bloques inferiores, evitando así errores de compilación por enmascaramiento.
+
+**Con estándar**
+```csharp
+try
+{
+    LoadLevelData(levelId);
+}
+catch (FileNotFoundException ex)
+{
+    GenerateDefaultLevel();
+}
+catch (IOException ex)
+{
+    AbortLevelLoad();
+}
+```
+
+**Sin estándar**
+```csharp
+try
+{
+    LoadLevelData(levelId);
+}
+catch (IOException ex)
+{
+    AbortLevelLoad();
+}
+catch (FileNotFoundException ex)
+{
+    GenerateDefaultLevel();
+}
+```
+
+### Después
+Cuando una operación requiera capturar múltiples tipos de excepciones, los bloques `catch` deben ordenarse de mayor a menor especificidad. La excepción más derivada (la más específica) debe colocarse en el primer bloque, seguida por excepciones más generales en los bloques inferiores, evitando así errores de compilación por enmascaramiento (Microsoft, 2025).
+
+**Con estándar**
+```csharp
+public class SavedMatchLoader
+{
+    public void LoadMatch(string matchId)
+    {
+        try
+        {
+            ReadMatchFile(matchId);
+        }
+        catch (FileNotFoundException)
+        {
+            StartNewMatch();
+        }
+        catch (IOException)
+        {
+            AbortMatchLoad();
+        }
+    }
+
+    private void ReadMatchFile(string matchId)
+    {
+    }
+
+    private void StartNewMatch()
+    {
+    }
+
+    private void AbortMatchLoad()
+    {
+    }
+}
+```
+
+**Sin estándar**
+```csharp
+public class SavedMatchLoader
+{
+    public void LoadMatch(string matchId)
+    {
+        try
+        {
+            ReadMatchFile(matchId);
+        }
+        catch (IOException)
+        {
+            AbortMatchLoad();
+        }
+        catch (FileNotFoundException)
+        {
+            StartNewMatch();
+        }
+    }
+
+    private void ReadMatchFile(string matchId)
+    {
+    }
+
+    private void StartNewMatch()
+    {
+    }
+
+    private void AbortMatchLoad()
+    {
+    }
+}
+```

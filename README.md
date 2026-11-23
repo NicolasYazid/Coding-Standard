@@ -16,7 +16,7 @@
 | 2 | [Reglas de nombrado](#2-reglas-de-nombrado) | 32 | 37 |
 | 4 | [Estilo de código](#4-estilo-de-código) | 0 | 16 |
 | 5 | [Prácticas de programación](#5-prácticas-de-programación) | 5 | 8 |
-| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 2 | 12 |
+| 6 | [Manejo de errores y excepciones](#6-manejo-de-errores-y-excepciones) | 3 | 12 |
 | 7 | [Manejo de logs](#7-manejo-de-logs) | 0 | 12 |
 | 8 | [Comentarios](#8-comentarios) | 9 | 9 |
 | 9 | [Estructuras de control](#9-estructuras-de-control) | 23 | 23 |
@@ -25,7 +25,7 @@
 | 13 | [DTOs y modelos de dominio](#13-dtos-y-modelos-de-dominio) | 0 | 0 |
 | 14 | [Manejo de documentos / Assets](#14-manejo-de-documentos--assets) | 0 | 0 |
 | 15 | [Gestión gráfica](#15-gestión-gráfica) | 0 | 0 |
-| | **Total** | **76** | **122** |
+| | **Total** | **77** | **122** |
 
 ---
 
@@ -174,7 +174,7 @@
 - [x] **6.1.2** Contenido de los bloques `catch`
 
 ### 6.2 Orden jerárquico en los bloques catch
-- [ ] **6.2.1** Orden de mayor a menor especificidad
+- [x] **6.2.1** Orden de los bloques `catch` por especificidad
 - [ ] **6.2.2** Jerarquía con excepciones personalizadas
 
 ### 6.3 Propagación y empaquetamiento de excepciones
@@ -476,3 +476,4 @@
 | 2026-11-22 | 6.1.1 | **Aprobada.** Se quitó "errores rutinarios" (no está en Microsoft y dejaba pensar que `Exception` valía para los demás errores); "es obligatorio" y "queda estrictamente prohibido" pasan a "se debe" y "no se debe"; "problemas críticos del sistema" pasa a "problemas en tiempo de ejecución y dificultar la depuración", como dice CA1031; se agregó el único caso permitido, que el bloque `catch` termine con `throw;`; "la más específica posible" se conserva porque lo pide el profesor; los ejemplos pierden la variable `ex`, que no se usaba; cita Microsoft (2026). Pendiente: confirmar con el profesor si capturar `FaultException` y `CommunicationException` (tienen tipos derivados más específicos) cumple "la más específica posible". |
 | 2026-11-22 | 6.1.2 | **Aprobada.** Renombrada a "Contenido de los bloques `catch`" (el título decía "Prohibición"); redactada como "un bloque `catch` no debe estar vacío; si el error se ignora a propósito, debe contener un comentario que explique la razón"; se quitaron "queda estrictamente prohibido" y "obligatoriamente", y "error esperado, benigno y la arquitectura dicta que debe ser ignorado" por no poder medirse; se quitó la cita Microsoft (2024) porque no se encontró una página de Microsoft sobre C# que la respalde, queda como decisión del equipo; los ejemplos pierden la variable `ex`, que no se usaba. Pendiente en el código: agregar un comentario en el `catch` vacío de `PlayerConnection.cs` (`InvalidOperationException`) y en el de `PlayRoundUseCase.cs` (`DataException`); los otros 5 `catch` vacíos del juego ya lo tienen. |
 | 2026-11-22 | 6.1.3 | **Eliminada.** Repetía la 6.4.2; se conserva la 6.4.2 por ubicarse en la subsección de excepciones personalizadas. |
+| 2026-11-22 | 6.2.1 | **Aprobada.** Se conserva por decisión del equipo aunque el compilador ya la exige (error CS0160: un `catch` general antes de uno específico no compila), así que no se puede violar. Renombrada a "Orden de los bloques `catch` por especificidad"; se quitó "obligatoriamente"; se agregó la cita Microsoft (2025), que el texto base no traía; los ejemplos van dentro de una clase y un método, con tema de partidas guardadas en lugar de niveles y sin la variable `ex`, que no se usaba. El ejemplo "Sin estándar" no compila, a propósito. Pendiente: corregir los ejemplos de la 6.1.1 (son fragmentos sueltos, sin clase ni método). |

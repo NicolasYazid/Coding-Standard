@@ -486,3 +486,11 @@
 **Cita en el texto:** ninguna (decisión del equipo)
 
 - **Referencia:** ninguna. El estándar base citaba (Microsoft, 2024), pero no se encontró una página de Microsoft sobre C# que respalde la regla: la única de Microsoft sobre `catch` vacíos es una regla de PowerShell (PSScriptAnalyzer, AvoidUsingEmptyCatchBlock), que no aplica a C#.
+
+### 6.2.1 — Orden de los bloques `catch` por especificidad
+**Cita en el texto:** (Microsoft, 2025)
+
+- **Referencia:** Microsoft. (2025, 22 de octubre). *Best practices for exceptions*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions
+  **Qué respalda:** que en los bloques `catch` se ordenan las excepciones de la más derivada a la menos derivada.
+- **Referencia complementaria (no citada en el texto):** Microsoft. (s.f.). *Compiler Error CS0160*. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0160
+  **Qué respalda:** que un `catch` general antes de uno más derivado es un error de compilación, que es lo que dice la parte "evitando así errores de compilación por enmascaramiento". La página no muestra fecha.
