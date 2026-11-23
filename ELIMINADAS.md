@@ -507,3 +507,31 @@ namespace VideoGame.Pruebas.Combat
 {
 }
 ```
+
+---
+
+## 11.2.3 — Configuración inicial compartida
+
+**Motivo de eliminación:** la regla no se podía medir: "múltiples métodos de prueba" no indica cuántos y "los mismos objetos" no indica si deben ser idénticos o parecidos. Además obligaba a usar un método de inicialización (`[SetUp]`), lo que la acoplaba a NUnit, y un método auxiliar normal no la cumplía. Microsoft recomienda crear los objetos en cada prueba o en métodos auxiliares, y deja la preparación compartida para cuando todas las pruebas de la clase necesitan la misma inicialización (Microsoft, 2026). En 7 clases de pruebas del juego (`PlayRoundUseCaseTests`, `ChallengeBoardTests`, `GameMatchTests`, `GameRoundTests`, `PlayerStatsTests`, `LeaderboardRulesTests` y `MatchRegistryTests`) se repetía la creación de los mismos objetos.
+
+### Regla original
+Cuando múltiples métodos de prueba requieran la instanciación de los mismos objetos, esta preparación común debe extraerse obligatoriamente a un método exclusivo marcado con el atributo de inicialización correspondiente (como [SetUp] en NUnit), en lugar de repetirse en cada prueba.
+
+**Con estándar**
+```csharp
+[SetUp]
+public void SetUp()
+{
+    _playerStats = new PlayerStats();
+    _weaponSystem = new WeaponSystem();
+}
+```
+
+**Sin estándar**
+```csharp
+public void InitializeConfig()
+{
+    _playerStats = new PlayerStats();
+    _weaponSystem = new WeaponSystem();
+}
+```
